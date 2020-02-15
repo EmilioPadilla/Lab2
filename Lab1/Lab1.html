@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Laboratorio 1</title>
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  </head>
+  <body>
+
+    <nav>
+      <div class="nav-wrapper blue darken-4">
+        <a href="tec.html" class="brand-logo"><img height="65px" src="images/itesm_logo.jpg" alt=""></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a class="blue-text" href="sass.html">FDI Portfolio</a></li>
+          <li><a class="blue-text" href="badges.html">Servicio Becario</a></li>
+          <li><a class="blue-text" href="referencias.html">Referencias</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header>
+      <h1 class="center blue-text">Mi pequeño espacio personal</h1>
+    </header>
+
+    <section class="row">
+      <article class="col s6">
+        <ul class="collapsible popout">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">restaurant</i>¿Cuál es la diferencia entre Internet y la World Wide Web?</div>
+            <div class="collapsible-body"><span>Esta es una común confusion, sin embargo, no debemos olvidarnos que el internet es la infraestructura que proporciona recursos necesario para que la World Wide
+            Web funcione correctamente. Es decir, la www fue un invento creado por Berners-Lee con propositos militares, sin embargo, se percataron que este facilitaba la intercambio de información entre equipos
+          físicos a largas distancias. La web, es especificamente el resultado de combinar le lenguaje HTML, el protocolo HTTP y la url. La internet, por su lado, se creó en 1969 en el momento en que hubo comunicación
+          entre dos ordenadores conectados entre sí. La red informatica que posibilitó este intercambio se denominaba ARPANET, mas tarde incorporando protocolos TCP/IP, renombrándose como internet. (LINUBE, 2019)</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">restaurant</i>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</div>
+            <div class="collapsible-body"><span><strong>GET:</strong> Solicita representación de un recurso específico. Solo datos. Datos que viajan por el encabezado.
+            <br><strong>HEAD:</strong> Solicita la representacion de un recurso específico, sin el cuerpo de la respuesta.
+            <br><strong>POST:</strong> Enviar una identidad a un recurso específico, causando cambio en el estado del servidor. Se utiliza para enviar información sensible.
+            <br><strong>PUT:</strong> Reemplaza todas las representaciones del recurso destino por la carga útil de la petición.
+            <br><strong>PATCH:</strong> Aplicar modificaciones parciales a un recurso. Actualizar. (Puede estar bloqueado por el servidor)
+            <br><strong>DELETE:</strong> Borra un recurso específico.(Puede estar bloqueado por el servidor) (Mozilla, 2020)</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">restaurant</i>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</div>
+            <div class="collapsible-body"><span>Se debe de utilizar el método POST, pues este envía datos de manera "oculta", tal y como presenta la necesidad de usuarios y contraseñas. Caso contrario, el metodo GET envía los datos mostrandolos en el url generado.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">restaurant</i>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</div>
+            <div class="collapsible-body"><span>GET</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">restaurant</i>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</div>
+            <div class="collapsible-body"><span>Significa que la solicitud ha tenido éxito, lo cual es almacenable de forma predeterminada. El 200 OK varía dependiendo del metodo de solicitud HTTP. (Mozilla, 2020)</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">restaurant</i>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</div>
+            <div class="collapsible-body"><span>No necesariamente, la respuesta 404 Not Found indica que el servidor no ha podido encontrar el recurso solicitado. Estos son llamados vinculos rotos. Tecnicamente, el desarrollador debe solicitar que el contenido se vuelva a almacenar en los servidores o algun otro recurso de manera permanente.
+              <br> Culpa de usuario si tecleo mal el url.
+              <br> Culpa de programador si el recurso no esta en el servidor(Mozilla, 2020)</span></div>
+          </li>
+        </ul>
+      </article>
+
+      <article class="col s6">
+        <ul class="collapsible popout">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">restaurant</i>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</div>
+            <div class="collapsible-body"><span>La respuesta 500 representa un error interno del servidor, que significa que algo salió mal con el servidor pero no se puede ser más específico al respecto. Es decir, podria ser un error temporal del servidor que no necesita de correccion del desarrollador, pues no es un caso en especifico del url solicitado.
+              <br>Culpa del programador por no tener los recursos de manera correcta en el servidor. (Mozilla, 2020)</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">restaurant</i>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</div>
+            <div class="collapsible-body"><span>Existen tags y atributos que han sido depreciados debido a que función, en la nueva versión de HTML5, se maneja mucho mejor con CSS. Algunos ejemplos de los tags son acronym, applet, big y frame. Algunos ejemplos de los atributos son reve, shape, profile, classid.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">restaurant</i>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</div>
+            <div class="collapsible-body"><span>HTML5 es una version más avanzada de HTML4, sin embargo, HTML sigue siendo mas compatible con algunos buscadores.
+            <br><strong>Diferencias generales </strong>son una sintaxis mas simple y clara, elementos multimedia soportados nativamente, accesar a la ubicacion geografica del usuario, memoria caché extendida almacenandola en servidores SQL y multithreading con JS.
+            <br> De igual manera, HTML4 es considerado como codigo spaguetti (no sabes donde empieza ni donde termina)
+            <br> y HTML5 esta en formato lasagna (por capas).(Mozilla, 2020)</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">restaurant</i>¿Qué componentes de estructura y estilo tiene una tabla?</div>
+            <div class="collapsible-body"><span>Los componentes de estructura son table, tr (table row) th (table head) td, tfoot, and tbody. Para combinar filas o columnas, utilizamos rowspan o colspan, que aceptan valores enteros. Todos los componentes de estilo se han depreciado y pasado a cambiarse mediante una hoja de estilo CSS. (Mozilla, 2020)</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">restaurant</i>¿Cuáles son los principales controles de una forma HTML5?</div>
+            <div class="collapsible-body"><span>
+              <ul>
+                <li><strong>input</strong>, al que se le han agregado nuevas funciones en HTML5. Aqui entra text control, checkbox, radio, drop-down list, date, control, submit, color y optgroup</li>
+                <li><strong>select</strong></li>
+                <li><strong>option</strong></li>
+                <li><strong>datalist</strong>, propio de html5</li>
+                <li><strong>output</strong> tag</li>
+                <li><strong>fieldset</strong> que sirve para agrupar controles del formulario</li>
+                <br>(Mozilla, 2020)
+              </ul>
+            </span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">restaurant</i>¿Qué tanto soporte HTML5 tiene el navegador que utilizas?</div>
+            <div class="collapsible-body"><span>Safari 11.1 tiene un puntaje de 477 en el html5test, posicionandose sexto en la tabla de compatibilidades de navegadores. Chrome 66, por su lado, tiene el puntaje mas alto, con un total de 528. Uso ambos. Existe un máximo de 555 puntos posibles.(Leenheer, 2016)</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">restaurant</i>Sobre el ciclo de vida y desarrollo de los sistemas de información:</div>
+            <div class="collapsible-body"><span>
+              <strong>¿Cuál es el ciclo de vida de los sistemas de información?</strong><br>
+              Es un enfoque por gases del analisis y diseño, para desarrollar de mejor manera mediante el uso de un ciclo especifico de actividades del analista y del usuario.
+              <br>El ciclo de vida clasico incluye <strong>investigacion preliminar</strong>, <strong>analisis</strong>, <strong>diseño</strong>, <strong>desarrollo</strong>, <strong>implementación</strong>, y <strong>mantenimiento</strong>. Se basa en la premisa de que hay un proceso continuo de mejoramiento. (Tecnologias Informacion, 2018)
+              <br><br>
+
+              <strong>¿Cuál es el ciclo de desarrollo de sistemas de información?</strong> <br>
+              Existen varios ciclos propuestos para el desarrollo de los sistemas o desarrollo de software, sin embargo, el mas comprendido y utilizado es el ciclo de vida en cascada.
+              <br> Se comprende de plan operativo, especificacion de requisitos, especificacion funcional, diseño, implementacion, integracion, validacion y verificacion, y mantenimiento.
+              <br>(Tutorials Point, 2020)
+            </span></div>
+          </li>
+        </ul>
+      </article>
+
+    </section>
+
+
+    <footer class="page-footer blue darken-4">
+
+    </footer>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script>
+      $('.collapsible').collapsible();
+    </script>
+  </body>
+</html>
