@@ -1,0 +1,12 @@
+{
+  "name": "ej_3",
+  "version": "1.0.0",
+  "main": "ej_3.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Emilio Padilla Miranda",
+  "license": "ISC",
+  "description": ""
+}

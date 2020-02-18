@@ -49,4 +49,4 @@ function problemCounter() {
 //
 // }
 
-module.exports = counter;
+// module.exports = counter;
