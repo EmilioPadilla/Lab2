@@ -23,9 +23,9 @@
     </header>
 
     <div class="row">
-      <div class="col s8">
+      <div class="col s6">
         <article id="ejercicio1" class="">
-          <h4 class="blue-text">1.- A continuación se muestran los numeros del 1 al valor dado, secuencialmente,
+          <h4 class="blue-text">1.- Se muestran los numeros del 1 al valor dado, secuencialmente,
             elevados al cuadrado y al cubo</h4>
             <section class="center">
               <button type="button" name="action" class="btn waves-efect waves-light blue" onclick="createTable()"> Ejercicio 1</button>
@@ -33,7 +33,7 @@
         </article>
 
         <article class="">
-          <h4 class="blue-text">2. Se han generado dos numeros aleatorios del 0 al 10 y se han sumando,
+          <h4 class="blue-text">2. Se generan dos numeros aleatorios del 0 al 10 y se han sumando,
             cual crees que sea el resultado?</h4>
             <section class="center">
               <button type="button" name="action" class="btn waves-efect waves-light blue" onclick="numberGuess()"> Ejercicio 2</button>
@@ -43,7 +43,7 @@
             </section>
         </article>
 
-        <article id="placeholder" class="">
+        <article id="placeholder">
           <h4 class="blue-text">3. Muestra cantidad de numeros negativos, neutros, y positivos en un arreglo</h4>
           <section class="center">
             <button type="button" name="action" class="btn waves-efect waves-light blue" onclick="problemCounter()"> Ejercicio 3</button>
@@ -54,7 +54,7 @@
           </section>
         </article>
 
-        <article id="placeholder" class="">
+        <article id="placeholder">
           <h4 class="blue-text">4. Muestra promedios de cada uno de los renglones de la matriz.</h4>
           <section class="center">
             <button type="button" name="action" class="btn waves-efect waves-light blue" onclick="problemAverageMatrix()"> Ejercicio 4</button>
@@ -64,21 +64,101 @@
             <h6 id="respuesta2_4"></h6>
           </section>
         </article>
+
+        <article id="placeholder">
+          <h4 class="blue-text">5. Invierte el numero proporcionado por el usuario</h4>
+          <section class="center">
+            <button type="button" name="action" class="btn waves-efect waves-light blue" onclick="problemInvertNumber()"> Ejercicio 5</button>
+            <h6 id="respuesta1_5"></h6>
+          </section>
+        </article>
+
+        <article id="placeholder">
+          <h4 class="blue-text">6. Crea una contraseña al usuario que cumple con las siguientes condiciones:</h4>
+          <h5><br>-La longitud de la contraseña debe de ser igual a n.
+          <br>-La contraseña solo contiene letras minúsculas.
+          <br>-El numero de letras diferentes es igual a k.
+          <br>-No se pueden repetir dos letras de manera consecutiva.</h5>
+          <section class="center">
+            <button type="button" name="action" class="btn waves-efect waves-light blue" onclick="problemInvertNumber()"> Ejercicio 6</button>
+            <h6 id="ejercicio1_5"></h6>
+            <h6 id="respuesta1_5"></h6>
+            <h6 id="ejercicio2_4"></h6>
+            <h6 id="respuesta2_4"></h6>
+          </section>
+        </article>
       </div>
-      <div class="col s4 center blue darken-4 white-text">
-        <h4 class=""><i class="material-icons left medium">question_answer</i>Preguntas a responder</h4>
+      <div class="col s6 blue darken-4 white-text">
+        <header class="center">
+          <h4 class=""><i class="material-icons left medium">question_answer</i>Preguntas a responder</h4>
+        </header>
+
         <br>
-        <h6>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</h6>
 
-        <h6>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</h6>
+        <h5>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</h5>
+        <p>Como punto de partida, Java es un lenguaje de programación, mientras que no se puede
+        decir lo mismo de JavaScript. Aun con esto, ambos comparten la misma sintaxis.
+        <br> Lo anterior sucede debido a que JavaScript se integra en las páginas HTML y es interpretado (sin compilación)
+        por el cliente. Lo que significa que la pagina web , que es el programa fuente, es el que se ejecuta.
+        JavaScript esta basado en objetos, y Java es un lenguaje con paradigma orientado a objetos, existe diferencia.
+        JavaScript se encarga de la declaracion de tipos de variables. De igual manera, las referencias a los objetos
+        se comprueban en tiempo real durante la ejecucion del HTML. Mientras que en Java se hace al compilarse.
+        <a href="referencias.hmtl">(Rodriguez, 2005)</a></p>
 
-        <h6>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</h6>
+        <h5>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</h5>
+        <p>Los metodos del objeto Date se dividen entre getters y setters. Algunos ejemplos de getters son:<br></p>
+        <ul>
+          <li><strong>getTime()</strong>: regresa el numero de milisegundos desde 1 de Enero de 1970</li>
+          <li><strong>getFullYear()</strong>: regresa el año en formato de 4 digitos</li>
+          <li><strong>getDay()</strong>: regresa el numero del día de la semana (entre 0 y 6)</li>
+        </ul>
+        <p>Algunos ejemplos de setters son:<br></p>
+        <ul>
+          <li><strong>setFullYear()</strong>: establece el año de un objeto Date</li>
+          <li><strong>setHours()</strong>: establece la hora de un objeto Date (entre 0 y 23)</li>
+          <li><strong>setTime()</strong>: establece el tiempo, en milisegundos, desde 1 de Enero de 1970</li>
+        </ul>
+        <a href="referencias.html">(W2Schools, 2020)</a>
 
-        <h6>¿Cómo se declara una variable con alcance local dentro de una función?</h6>
+        <h5>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</h5>
+        <p>Los arreglos, a parte de ser dinámicos desde su creación, generan una serie de metodos que nos permiten modificarlos
+          de a lo largo de su interpretación. Entre los metodos que existen, estan los siguientes:<br></p>
+        <ul>
+          <li><strong>toString()</strong>: regresa el numero de milisegundos desde 1 de Enero de 1970</li>
+          <li><strong>join()</strong>: se comporta como toString() con la adición de un separador entre los elementos fruits.join("*")</li>
+          <li><strong>pop()</strong>: remueve el ultimo elemento del array</li>
+          <li><strong>shift()</strong>: remueve el primer elemento del array, desplazando cada localidad a n-1</li>
+          <li><strong>push()</strong>: agrega un elemento en la ultima localidad del array</li>
+          <li><strong>unshift()</strong>: como push, pero agrega a la primer localidad, y regresa el nuevo número de localidades dentro del arreglo.</li>
+        </ul>
 
-        <h6>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h6>
 
-        <h6>¿Qué método de String se puede utilizar para buscar patrones con expresiones regulares?¿Para qué podrías utilizar esto en una aplicación web?</h6>
+        <h5>¿Cómo se declara una variable con alcance local dentro de una función?</h5>
+        <p class="left">Se declara de forma tradicional, es decir, escribiendo la palabra clave <strong> var </strong> antes del nombre
+        de la variable. La diferencia es que dicha variable se tiene que declarar en el cuerpo de la funcion, es decir, dentro
+        de la misma.</p>
+
+        <h5>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h5>
+        <p>Que la variable a utilizar conserve el valor asignado dentro de una funcion a lo largo de todo el documento. Dicho
+        resultado lo podriamos usar a nuestro favor, o, por omisión, tenerlo en nuestra contra.
+        <br>A nuestro favor, actualizando el estado de la varible de manera constante a lo largo de todo el documento, y usandola para relacionar distintos datos y
+        operaciones necesarios para la ejecicion del programa.
+        <br>En nuestra contra al alterar el valor de la variable (sin saberlo) y afectando resultados posteriores dentro del documento,
+        o de igual manera, dentro de la función.
+        <br> La variable <strong>let</strong> ha sido recientemente agregada a JavaScript, la cual nos sirve para permitir que una variable unicamente
+        viva dentro de los corchetes de la funcion. Por su parte, <strong> var</strong> vive dentro de toda la funcion. Por ejemplo, cuando usamos un contador
+        'i' dentro de un ciclo for, si lo declaramos con var, podríamos volver acceder a ella ya que se encuentra dentro del codigo donde se ejecuta la funcion.
+        Es decir, podríamos acceder a ella a traves de 'function.x', y cambiarla. Si la declaramos con let, esta muere tras terminar la funcion y no podemos acceder
+        a ella con el ejemplo anterior.</p>
+
+        <h5>¿Qué método de String se puede utilizar para buscar patrones con expresiones regulares? ¿Para qué podrías utilizar esto en una aplicación web?</h5>
+        <p>Las regex son una secuencia de caracteres que podemos utilizar para trabajar efectivamente con Strings. De acuerdo a esta sintaxis,
+        podemos buscar por un texto en un string, reemplazar un substring en un string, o extraer informacion de un string.
+        Para buscar patrones con expresiones regulares dentro de un string, es necesaria la funcion
+        <br><strong> regex.test(str)</strong>. Donde regex es una expresion que nosotros buscamos dentro del string, y es necesario definirla, por ejemplos
+        <br><strong> var regex = /hello/;</strong>. Se notara que el valor va dentro de diagonales, esto es NECESARIO. Siguiendo, <strong>str</strong> es el
+        string dentro del cual estamos buscando la expresion regular. Todo lo anterior nos regresara 'True' si el regex se encuentra dentro de 'str'
+        . 'False' si el regex no se encuentro en el str.</p> <a href="referencias.html">(Robards, 2019)</a>
       </div>
     </div>
 
@@ -88,5 +168,6 @@
     <script type="text/javascript" src="js/ej_2.js"></script>
     <script type="text/javascript" src="js/ej_3.js"></script>
     <script type="text/javascript" src="js/ej_4.js"></script>
+    <script type="text/javascript" src="js/ej_5.js"></script>
   </body>
 </html>
