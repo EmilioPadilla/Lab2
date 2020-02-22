@@ -24,21 +24,32 @@ function range(start, stop, step) {
 function generateK(k){
   ascii_letters = []
   range_lower_case = range(97, 123);
-  forEach((range(k), i) => {
-    if (!range_lower_case[i].includes(ascii_letters)){
-      ascii_letters + String.fromCharCode(range_lower_case[i]);
+  range(k).forEach(function(i) {
+    if (!(ascii_letters.includes(range_lower_case[i]))){
+      ascii_letters += String.fromCharCode(range_lower_case[i]);
     }
   });
   return ascii_letters;
 }
 
 function generateN(n, ascii){
-
+  let n_password = ""
+  range(n).forEach(function(i) {
+    let k = i%ascii.length;
+    n_password += ascii[k];
+  });
+  return n_password;
 }
 
 function generateNewPassword() {
-  let askK = prompt("# de letras distintas en tu contraseña?");
-  let Kinput = generateK(askK);
-  document.getElementById("respuesta1_6").innerHTML = Kinput;
+  let ask_k = prompt("# de letras distintas en tu contraseña?");
+  let ask_n = prompt("# de letras de longitud de tu contraseña?");
+  let password = "";
+  if (ask_n >= ask_k){
+    let k_result = generateK(ask_k);
+    password = generateN(ask_n, k_result);
+  }
+
+  document.getElementById("respuesta1_6").innerHTML = password;
 
 }
