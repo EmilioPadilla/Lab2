@@ -49,7 +49,7 @@ function generateNewPassword() {
     let k_result = generateK(ask_k);
     password = generateN(ask_n, k_result);
   }
-
   document.getElementById("respuesta1_6").innerHTML = password;
-
 }
+
+module.exports = generateN;
