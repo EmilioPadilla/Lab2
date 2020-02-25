@@ -8,8 +8,6 @@
   let number = document.getElementById("numberid");
   let special = document.getElementById("specialid");
 
-  // document.getElementById("psw_valid").style.display = "none";
-
 
   let num_check = /[0-9]/;
   let low_check = /[a-z]/;
@@ -77,8 +75,9 @@
 
   }
 
+
 valpsw.onkeyup = function() {
-  if (contrasena.toString().localeCompare(valpsw.toString()) === 0) {
+  if (document.getElementById('valpassword').value === document.getElementById('psw').value) {
     document.getElementById("psw_match").style.display = 'block';
   } else {
     document.getElementById("psw_match").style.display = 'none';
