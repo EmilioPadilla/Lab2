@@ -79,36 +79,10 @@
           <div class="card-content">
             <h5>$700.00 mxn</h5>
           </div>
-          <div class="card-action">
-              <a href="#">This is a link</a>
-          </div>
-        </div>
-      </section>
-      <section class="col s4">
-        <div class="card">
-          <div class="card-image">
-            <img src="images/playera_jaguar.png">
-            <span class="card-title blue-text">Balam Ojos</span>
-          </div>
-          <div class="card-content">
-            <h5>$690.00 mxn</h5>
-          </div>
-          <div class="card-action">
-              <a href="#">This is a link</a>
-          </div>
-        </div>
-      </section>
-      <section class="col s4">
-        <div class="card">
-          <div class="card-image">
-            <img src="images/playera_gris.png">
-            <span class="card-title blue-text">Aguila Mx</span>
-          </div>
-          <div class="card-content">
-            <h5>$710.00 mxn</h5>
-          </div>
+
           <section class="card-action">
             <div class="col s6">
+              <br>
               <label>Seleccionar talla</label>
               <select>
                 <option value="XG">XG</option>
@@ -120,35 +94,135 @@
             </div>
 
               <div class="col s6">
-                <form class="col s6" action="#">
-                  <p>
-                    <label>
-                      <input name="group1" type="radio" checked />
-                      <span>XG</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input name="group1" type="radio" />
-                      <span>Gr</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input name="group1" type="radio"  />
-                      <span>Md</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input name="group1" type="radio" disabled="disabled" />
-                      <span>Ch</span>
-                    </label>
-                  </p>
+                <form class="" action="index.html" method="">
+                  <div class="s12">
+                    <label for="cantidad">Cantidad</label>
+                  </div>
+
+
+                  <div class="col s3">
+                    <br>
+                    <a class="btn-floating btn-small waves-effect waves-light blue" id="add" onclick="increase()"><i class="material-icons">add</i></a>
+                  </div>
+
+                  <div class="col s6 input-field">
+                    <input type="text" name="qty" value="1" id="qty">
+                  </div>
+
+                  <div class="col s3">
+                    <br>
+                    <a class="btn-floating btn-small waves-effect waves-light blue" id="remove" onclick="decrease()"><i class="material-icons">remove</i></a>
+                  </div>
+
                 </form>
-                <br><br><br><br><br><br>
               </div>
-              <a href="#">This is a link</a>
+              <button class="btn waves-effect waves-light blue" type="submit" name="action">Agregar
+                <i class="material-icons right">add_shopping_cart</i>
+              </button>
+          </section>
+        </div>
+      </section>
+      <section class="col s4">
+        <div class="card">
+          <div class="card-image">
+            <img src="images/playera_jaguar.png">
+            <span class="card-title blue-text">Balam Ojos</span>
+          </div>
+          <div class="card-content">
+            <h5>$690.00 mxn</h5>
+          </div>
+
+          <section class="card-action">
+            <div class="col s6">
+              <br>
+              <label>Seleccionar talla</label>
+              <select>
+                <option value="XG">XG</option>
+                <option value="GD">GD</option>
+                <option value="ME">ME</option>
+                <option value="CH">CH</option>
+                <option value="XCH">XCH</option>
+              </select>
+            </div>
+
+              <div class="col s6">
+                <form class="" action="index.html" method="">
+                  <div class="s12">
+                    <label for="cantidad">Cantidad</label>
+                  </div>
+
+
+                  <div class="col s3">
+                    <br>
+                    <a class="btn-floating btn-small waves-effect waves-light blue" id="add" onclick="increase()"><i class="material-icons">add</i></a>
+                  </div>
+
+                  <div class="col s6 input-field">
+                    <input type="text" name="qty" value="1" id="qty">
+                  </div>
+
+                  <div class="col s3">
+                    <br>
+                    <a class="btn-floating btn-small waves-effect waves-light blue" id="remove" onclick="decrease()"><i class="material-icons">remove</i></a>
+                  </div>
+
+                </form>
+              </div>
+              <button class="btn waves-effect waves-light blue" type="submit" name="action">Agregar
+                <i class="material-icons right">add_shopping_cart</i>
+              </button>
+          </section>
+        </div>
+      </section>
+      <section class="col s4">
+        <div class="card">
+          <div class="card-image">
+            <img src="images/playera_gris.png">
+            <span class="card-title blue-text">Aguila Mx</span>
+          </div>
+          <div class="card-content">
+            <h5 id="aguila">$710.00 mxn</h5>
+            <p id="aguilaIVA"></p>
+          </div>
+          <section class="card-action">
+            <div class="col s6">
+              <br>
+              <label>Seleccionar talla</label>
+              <select>
+                <option value="XG">XG</option>
+                <option value="GD">GD</option>
+                <option value="ME">ME</option>
+                <option value="CH">CH</option>
+                <option value="XCH">XCH</option>
+              </select>
+            </div>
+
+              <div class="col s6">
+                <form class="" action="index.html" method="">
+                  <div class="s12">
+                    <label for="cantidad">Cantidad</label>
+                  </div>
+
+
+                  <div class="col s3">
+                    <br>
+                    <a class="btn-floating btn-small waves-effect waves-light blue" id="add" onclick="increase()"><i class="material-icons">add</i></a>
+                  </div>
+
+                  <div class="col s6 input-field">
+                    <input type="text" name="qty" value="1" id="qty">
+                  </div>
+
+                  <div class="col s3">
+                    <br>
+                    <a class="btn-floating btn-small waves-effect waves-light blue" id="remove" onclick="decrease()"><i class="material-icons">remove</i></a>
+                  </div>
+
+                </form>
+              </div>
+              <button class="btn waves-effect waves-light blue" type="submit" name="action">Agregar
+                <i class="material-icons right">add_shopping_cart</i>
+              </button>
           </section>
         </div>
       </section>
