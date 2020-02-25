@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cuestionario BD y BDMS</title>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <header class="center blue-text">
+      <h1>Cuestionario 1: BD y BDMS</h1>
+    </header>
+
+    <section>
+      <article class="">
+        <ul class="collapsible popout">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>¿Qué es entonces una base de datos - DB?</div>
+            <div class="collapsible-body"><span> Coleccion de archivos interrelacionados que, para no caer en archivos supeditados a programas o individuos,
+              cumplen con restricciones que llevan a un mínimo de repeticion de datos. Por supuesto, siempre cumpliendo las necesidades de la empresa.
+              Ej: Una base de datos que represente a los alumnos puede tener registros de matricula, nombre, direccion y el telefono, de manera qeu esto represente
+              al alumno.
+              Si bien, lo anterior suena como cualquier archivo, su practicidad reside en el administrador de bases de datos. <a href="referencias.html">(Juarez, 2020)</a>
+            </span></div>
+          </li>
+
+          <li>
+            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>¿En qué casos es conveniente usar bases de datos?</div>
+            <div class="collapsible-body"><span>Aquellas situaciones en las que haya varios archivos interrelacionados, siendo estos requeridos para usuarios
+              apliaciones. Un factor decidivo es el volumen de los datos, donde, si el numero de registros es grande, es muy conveniente almancenarlo en una base de datos. <a href="referencias.html">(Juarez, 2020)</a>
+            </ol>
+
+
+            </span></div>
+          </li>
+
+          <li>
+            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>¿Qué es un sistema de gestión de base de datos - DBMS?</div>
+            <div class="collapsible-body"><span> Data Base Management System, es aquel sistema que consiste en una coleccion de datos relacionados y un conjunto de
+              programas para acceder a esos datos. Tiene que ser conveniente y eficiente para extraer y almacenar informacion en la base de datos.
+              Esto incluye definicion de estructuras para almacenamiento de informacion, es decir, mecanismos de gestion de informacion. De igual  manera, deben
+              garantizar la seguridad de los datos, pese a caidas o intentos de acceso no autorizados. <a href="referencias.html">(Silberschatz, Korth, Sudarshan, 2006)</a>
+            </span></div>
+          </li>
+
+          <li>
+            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Enlista y explica las funciones/responsabilidades que tienen los DBMS.</div>
+            <div class="collapsible-body"><span>Su objetivo primordial es simplicar y facilitar el acceso a los datos. Es decir, el funcionamiento del sistema depende la eficiencia
+              de las estructuras de datos usadas para representar los datos en la base de datos y de la capacidad de eficiencia para operar sobre dichas estructuras de datos.
+              <br>Entonces, el gestor de base de datos es <strong>responsable</strong> Interaccion con el gestor de archivos y traduccion de distintas sentencias DML a comandos del sistema
+              de archivos de bajo nivel. Dicho de otra manera, lo podemos enlistar en lo siguiente:
+              <br><strong>Implantacion de integridad</strong> => Se refiere a restricciones de consistencia de datos. Y acciones consecuentes de la restriccion.
+              <br><strong>Implantacion de seguridad</strong> => Se refiere a RBAC a nivel datos, siendo trabajo del gestor cumplir con estos requisitos.
+              <br><strong>Copia de seguridad y recuperacion</strong> => Debido a la probabilidad de fallos (perdida de informacion de datos por roturas de disco, fallas de software, etc.) es responsabilidad
+              del gestor restaurar la base de datos al estado que tenía antes de ocurrir el fallo. Ocurre gracias a la iniciacion de procedimientos de copias de seguridad y recuperacion.
+              <br><strong>Control de concurrencia</strong> => Controlar interaccion entre usuarios concurrentes, de lo contrario, se perderia consistencia.
+              <a href="referencias.html">(Silberschatz, Korth, Sudarshan, 2006)</a>
+            </span></div>
+          </li>
+
+          <li>
+            <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Ejemplifica y justifica en que proyecto de los que has realizado hubiera sido conveniente utilizar una base de datos.</div>
+            <div class="collapsible-body"><span>Proyecto final en C para fundamentos de programación. - Se usaron archivos para crear un registro de las recetas disponibles dentro del catalogo.
+              El sistema era capaz de buscar recetas existentes, de agregar nuevas recetas, y de catalogar. <strong>Las bases de datos</strong> hubieran servido para simplificar la insercion, modifiacion y eliminacion
+              de recetas. Las bases de datos podrían haber ampliado el catálogo, ademas de simplificar la busqueda de recetas, asi como la modificación de las mismas.
+              <br>Proyecto final de desarrollo de videojuegos - Se usaron archivos para guardar los mapas que se crearan a lo largo del videojuego. De igual manera, guardabamos los datos de los jugadores que llegaban
+              a interactuar con el videojuego. Las bases de datos hubieran sido de ayuda para simplificar el acceso a los jugadores regitrados, asi como la actualizacion de los mismos datos mediante estructuras
+              que optimicen sus modificaciones.
+            </span></div>
+          </li>
+
+        </ul>
+      </article>
+    </section>s
+
+    <footer class="right">
+      <a href="referencias.html">Lista de referencias</a>
+    </footer>
+
+
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script>
+      $('.collapsible').collapsible();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab5</title>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/lab5.css"  media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper blue darken-4">
+        <a href="tec.html" class="brand-logo"><img height="65px" src="images/itesm_logo.jpg" alt=""></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a class="blue-text" href='#anchor-contrasena'>Validar contraseña</a></li>
+          <li><a class="blue-text" href="#anchor-ecommerce">Ecommerce</a></li>
+          <li><a class="blue-text" href="referencias.html">Referencias</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="center">
+      <h1>Laboratorio 5</h1>
+    </header>
+
+    <article class="row center">
+      <a name="anchor-contrasena"><h2 class="center"><i class="medium material-icons">enhanced_encryption</i>  Validador de contraseñas</h2></a>
+      <form class="col s12">
+        <div class="row">
+          <div class="col s4">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">Contraseña segura</span>
+                <p class="left-align" id="lengthpassid">Que tenga más de 8 caracteres</p>
+                <p class="left-align" id="mayusid">Que contenga al al menos una letra mayúscula.</p>
+                <p class="left-align" id="minusid">Que contenga al menos una letra minúscula.</p>
+                <p class="left-align" id="numberid">Que contenga un número.</p>
+                <p class="left-align" id="specialid">Que contenga un caracter especial.</p>
+              </div>
+            </div>
+          </div>
+          <div class="input-field col s4">
+            <input id="psw" type="password" class="validate" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+            <label for="psw">Password</label>
+
+            <div id="psw_valid">
+              <div class="card teal accent-3">
+                <div class="card-content green-text darken-4">
+                  <span class="card-title">Contraseña validada</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="input-field col s4">
+            <input id="valpassword" type="password" class="validate" name="valpassword">
+            <label for="valpassword">Validate password</label>
+
+            <div id="psw_match">
+              <div class="card teal accent-3">
+                <div class="card-content green-text darken-4">
+                  <span class="card-title">Contraseñas coinciden</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </article>
+
+    <article class="center row">
+      <a name="anchor-ecommerce"><h2><i class="medium material-icons">local_offer</i>  Ecommerce</h2></a>
+      <section class="col s4">
+        <div class="card">
+          <div class="card-image">
+            <img src="images/playera_geom.png">
+            <span class="card-title blue-text">Dios JHEX</span>
+          </div>
+          <div class="card-content">
+            <h5>$700.00 mxn</h5>
+          </div>
+          <div class="card-action">
+              <a href="#">This is a link</a>
+          </div>
+        </div>
+      </section>
+      <section class="col s4">
+        <div class="card">
+          <div class="card-image">
+            <img src="images/playera_jaguar.png">
+            <span class="card-title blue-text">Balam Ojos</span>
+          </div>
+          <div class="card-content">
+            <h5>$690.00 mxn</h5>
+          </div>
+          <div class="card-action">
+              <a href="#">This is a link</a>
+          </div>
+        </div>
+      </section>
+      <section class="col s4">
+        <div class="card">
+          <div class="card-image">
+            <img src="images/playera_gris.png">
+            <span class="card-title blue-text">Aguila Mx</span>
+          </div>
+          <div class="card-content">
+            <h5>$710.00 mxn</h5>
+          </div>
+          <section class="card-action">
+            <div class="col s6">
+              <label>Seleccionar talla</label>
+              <select>
+                <option value="XG">XG</option>
+                <option value="GD">GD</option>
+                <option value="ME">ME</option>
+                <option value="CH">CH</option>
+                <option value="XCH">XCH</option>
+              </select>
+            </div>
+
+              <div class="col s6">
+                <form class="col s6" action="#">
+                  <p>
+                    <label>
+                      <input name="group1" type="radio" checked />
+                      <span>XG</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="group1" type="radio" />
+                      <span>Gr</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="group1" type="radio"  />
+                      <span>Md</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="group1" type="radio" disabled="disabled" />
+                      <span>Ch</span>
+                    </label>
+                  </p>
+                </form>
+                <br><br><br><br><br><br>
+              </div>
+              <a href="#">This is a link</a>
+          </section>
+        </div>
+      </section>
+
+    </article>
+
+    <article class="center">
+      <a name="anchor-ecommerce"><h2><i class="medium material-icons">forum</i>  Preguntas a responder</h2></a>
+      <section class="left-align">
+        <h5 class="left-align">¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h5>
+        <p>En cuanto a la validacion de datos, es común decir que hay muchas formas de hacerlo incorrectamente, pero no hay una para hacerlo de la manera correcta.
+        Es por eso, que siempre debemos de cumplir con las necesidades de nuestra aplicacion como primer prioridad. Se considera que es una buena practica "limpiar", "sanitizar" y "validar"
+        la informacion desde la interfaz de usuario pues en ese caso tienes un filtro mas para que la informacion que entre a tu base de datos no sea incorrecta (pues este es el peor de los casos).
+        <br>Sin embargo, una excelente practica es hacer validacion en ambos sitios, tanto en el regular donde se recopila la informacion como en donde se almacena.
+        La mejor razón por la cual es bueno validar en el front-end es debido a que se puede dar una retroalimentacion inmediata al usuario de la informacion que se esta ingresando.</p>
+        <h5 class="left-align">¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</h5>
+        <p>Existen diferentes formas para saltarte dicha seguridad. La más común, es simplemente apagando el js del servidor, y así consiguiendo evitar la validacion de informacion de la misma.
+        Para esto, es necesario insertar un dato benigno en la forma, interceptar la validacion de informacion con tu proxy, y despues modificar la informacion al deseo. Burp es una aplicacion que
+        te permite lograr este tipo de maldades.</p>
+        <h5 class="left-align">Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</h5>
+        <p>Porque aunque toda la validación no debe de recaer en el script, es muy importante darle retroalimentacion inmediata de l informacion que el usuario esta ingresando para que esta pueda
+        ser ajustada al momento. Y para hacer esto, es necesario lograrlo dentro del script.</p>
+      </section>
+      </article>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/validar-password.js"></script>
+    <script type="text/javascript" src="js/ecommerce.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('input#psw, input#validate').characterCounter();
+        $('select').formSelect();
+      });
+    </script>
+  </body>
+</html>
