@@ -74,7 +74,7 @@
         <div class="card">
           <div class="card-image">
             <img src="images/playera_geom.png">
-            <span class="card-title blue-text">Dios JHEX</span>
+            <span class="card-title blue-text"><p id="art_name_dios">Dios JHEX</p></span>
           </div>
           <div class="card-content">
             <h5 id="dios">$700.00 mxn</h5>
@@ -85,7 +85,7 @@
             <div class="col s6">
               <br>
               <label>Seleccionar talla</label>
-              <select>
+              <select id="dios_talla">
                 <option value="XG">XG</option>
                 <option value="GD">GD</option>
                 <option value="ME">ME</option>
@@ -117,7 +117,7 @@
 
                 </form>
               </div>
-              <button class="btn waves-effect waves-light blue" type="submit" name="action">Agregar
+              <button class="btn waves-effect waves-light blue" type="submit" name="action" onclick="cart_dios()">Agregar
                 <i class="material-icons right">add_shopping_cart</i>
               </button>
           </section>
@@ -127,7 +127,7 @@
         <div class="card">
           <div class="card-image">
             <img src="images/playera_jaguar.png">
-            <span class="card-title blue-text">Balam Ojos</span>
+            <span class="card-title blue-text"><p id="art_name_balam">Balam Ojos</p></span>
           </div>
           <div class="card-content">
             <h5 id="balam">$690.00 mxn</h5>
@@ -138,7 +138,7 @@
             <div class="col s6">
               <br>
               <label>Seleccionar talla</label>
-              <select>
+              <select id="balam_talla">
                 <option value="XG">XG</option>
                 <option value="GD">GD</option>
                 <option value="ME">ME</option>
@@ -170,7 +170,7 @@
 
                 </form>
               </div>
-              <button class="btn waves-effect waves-light blue" type="submit" name="action">Agregar
+              <button class="btn waves-effect waves-light blue" type="submit" name="action" onclick="cart_balam()">Agregar
                 <i class="material-icons right">add_shopping_cart</i>
               </button>
           </section>
@@ -180,7 +180,7 @@
         <div class="card">
           <div class="card-image">
             <img src="images/playera_gris.png">
-            <span class="card-title blue-text">Aguila Mx</span>
+            <span class="card-title blue-text"><p id="art_name_aguila">Aguila Mx</p></span>
           </div>
           <div class="card-content">
             <h5 id="aguila">$710.00 mxn</h5>
@@ -190,7 +190,7 @@
             <div class="col s6">
               <br>
               <label>Seleccionar talla</label>
-              <select>
+              <select id="aguila_talla">
                 <option value="XG">XG</option>
                 <option value="GD">GD</option>
                 <option value="ME">ME</option>
@@ -222,13 +222,28 @@
 
                 </form>
               </div>
-              <button class="btn waves-effect waves-light blue" type="submit" name="action">Agregar
+              <button class="btn waves-effect waves-light blue" type="submit" name="action" onclick="cart_aguila()">Agregar
                 <i class="material-icons right">add_shopping_cart</i>
               </button>
           </section>
         </div>
       </section>
+      <section class="col s3">
 
+      </section>
+      <section class="col s6" id="cart_section">
+        <h3 class="blue-text blue lighten-5"><i class="material-icons medium">add_shopping_cart</i>Tu carrito</h3>
+
+      </section>
+      <section class="col s3">
+      </section>
+      <section class="col s6 offset-s3">
+        <a class="waves-effect waves-light btn-large" id="pay"><i class="material-icons left">done</i>Pay </a>
+      </section>
+    </article>
+
+    <article class="center">
+      <a name="anchor-ecommerce"><h2><i class="medium material-icons">restaurant</i>  Calculadora de Macronutrientes</h2></a>
     </article>
 
     <article class="center">

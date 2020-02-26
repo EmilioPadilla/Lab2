@@ -48,3 +48,54 @@ function aguila_add() {
 function aguila_rmv() {
   decrease(710, 'qtyaguila', 'aguila', 'aguilaIVA')
 }
+
+
+function createTable(art, talla, cantidad, precio) {
+  // CREATE DYNAMIC TABLE.
+  var table = document.createElement('table');
+
+  var arrHead = new Array();
+  arrHead = ['Articulo', 'Talla', 'Cantidad', 'Precio'];
+
+  var arrValue = new Array();
+  arrValue.push([art, talla, cantidad, precio]);
+
+  var tr = table.insertRow(-1);
+
+  for (var h = 0; h < arrHead.length; h++) {
+      var th = document.createElement('th');              // TABLE HEADER.
+      th.innerHTML = arrHead[h];
+      tr.appendChild(th);
+  }
+
+  for (var c = 0; c <= arrValue.length - 1; c++) {
+      tr = table.insertRow(-1);
+
+      for (var j = 0; j < arrHead.length; j++) {
+          var td = document.createElement('td');          // TABLE DEFINITION.
+          td = tr.insertCell(-1);
+          td.innerHTML = arrValue[c][j];                  // ADD VALUES TO EACH CELL.
+      }
+  }
+  document.getElementById('cart_section').appendChild(table);
+}
+
+function sum_cart() {
+  // document.getElementById().
+}
+
+function update_cart(art_name, talla, qty, precio) {
+  createTable(document.getElementById(art_name).textContent, document.getElementById(talla).value, document.getElementById(qty).value, document.getElementById(precio).textContent);
+}
+
+function cart_aguila() {
+  update_cart('art_name_aguila', "dios_talla", 'qtyaguila', 'aguila')
+}
+
+function cart_balam() {
+  update_cart('art_name_balam', "balam_talla", 'qtybalam', 'balam')
+}
+
+function cart_dios() {
+  update_cart('art_name_dios', "aguila_talla", 'qtydios', 'dios')
+}
