@@ -1,6 +1,6 @@
 .watermark {
  position:relative;
- background-image: url(images/tiger.jpg);
+ background-image: url(../images/tiger.jpg);
  bottom:5px;
  right:20px;
  left:5%;
