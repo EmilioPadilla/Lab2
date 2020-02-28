@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="lab6.css"  media="screen,projection"/>
+    <title></title>
+  </head>
+  <body class="watermark">
+    <h1 id="title" onclick="change_font()">Este texto cambia de estilos al presionar click sobre él.</h1>
+<br><br>
+<h3 id="cinco_seg">Han pasado 5 segundos desde que diste el primer click en el titulo!</h3><br>
+    <p id="lorem" onmouseover="help()" onmouseout="quit()" draggable="true" ondragstart="drag(event)">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+      in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <br><br><br><br>
+      <div id="rectangle" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h4 id="info_rect">Agarra el lorem ipsum y suéltalo aqui!</h4>
+      </div>
+      <br>
+      <p id="ayuda">¿Que es un lorem ipsum?
+      <br> Texto que se usa habitualmente en diseño grafico en <br>demostraciones de tipografia o de borradores de diseño.</p>
+      <br><br><br>
+      <h4 class="PyR">¿Cuáles son las diferencias entre los posibles valores de la propiedad position?</h4>
+      <p class="PyR">Position puede ser absolute o relative, siendo los mayores diferenciadores. Donde absolute es relativo al
+        primer elemento posicionado padre, mientras que relative es es posicionado a su posicino normal, sin importar
+        su padre. Fixed es otro que habrá que mencionar, donde es relativo a la ventana del navegador.
+        <strong>Sticky</strong> esta basado en el scroll del usuario.</p>
+        <br>
+      <h4 class="PyR">¿Cuáles son los valores estándar para la propiedad visibility?</h4>
+      <p class="PyR">Como visibility determina si el elemento es visible dentro de la pantalla, el estandar es que esta tenga el valor
+        'visible', como default. Sin embargo, este puede cambiarse a hidden, que ese esconde el elemento pero aun
+        ocupa espacio, o collapse, que es el equivalente a hidden pero orientado a tables.</p>
+        <br>
+      <h4 class="PyR">¿Qué es el zIndex y para qué sirve?</h4>
+      <p class="PyR">El nombre va relacionado al eje z de un plano cartesiano. Es decir, determina la posicion del elemento
+      con respecto a la superposicion del mismo. En general, a mayor el valor del zIndex, este cubrira a otro con un valor menor.
+      Entonces, para una caja, esto indica el nivel de apilamiento en el contexto de aplicado, asi como si la caja tiene un contexto de apilamiento.
+      El valor inicial es auto. <a href="#bottom"> (Mozilla, 2020) </a></p>
+
+      <br><br><br><br><br>
+
+      <h4><a href="referencias">Referencias<a/></h4>
+        <ul>
+          <li>Mozilla. (2020). <i>z-index.</i> Recuperado de https://developer.mozilla.org/es/docs/Web/CSS/z-index</li>
+        </ul>
+
+
+    <script type="text/javascript" src="lab6.js"></script>
+  </body>
+</html>
