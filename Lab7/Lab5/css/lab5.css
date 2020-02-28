@@ -1,0 +1,14 @@
+/* label color */
+.input-field label {
+  color: #33A1FF;
+}
+
+/* turn text green when requirements met */
+.valid {
+  color: green;
+}
+
+/* Turn text red when requirements aren's met */
+.invalid {
+  color: red;
+}

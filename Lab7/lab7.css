@@ -1,0 +1,40 @@
+.watermark {
+ position:relative;
+ background-image: url(images/tiger.jpg);
+ bottom:5px;
+ right:20px;
+ left:5%;
+ opacity:0.5;
+ z-index:99;
+ color:white;
+ text-align: center;
+}
+
+#titulo {
+  color: $purple;
+}
+
+.PyR {
+  color: white;
+  background-color: black;
+  opacity:1.5;
+}
+
+#ayuda {
+  display: none;
+  color: lightblue;
+}
+
+#cinco_seg {
+  display: none;
+  color: lightblue;
+}
+
+#rectangle {
+  align-items: center;
+  width: 70%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  margin-left: 15%;
+}

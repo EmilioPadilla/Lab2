@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link type="text/css" rel="stylesheet" href="lab7.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title></title>
+  </head>
+  <body class="watermark">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="../lab5/lab5.html">Materialize</a>
+      </li>
+    </ul>
+    <h1 id="titulo" onclick="change_font()" class="display-2">Este texto ya no cambia de estilos <small class="text-muted"><br>al presionar click sobre él.
+    <br> ya que ahora tiene bootstrap</small></h1>
+<br><br>
+<h3 id="cinco_seg">Han pasado 5 segundos desde que diste el primer click en el titulo!</h3><br>
+    <p id="lorem" onmouseover="help()" onmouseout="quit()" draggable="true" ondragstart="drag(event)">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+      in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <br><br><br><br>
+      <div id="rectangle" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h4 id="info_rect">Agarra el lorem ipsum y suéltalo aqui!</h4>
+      </div>
+      <br>
+      <p id="ayuda">¿Que es un lorem ipsum?
+      <br> Texto que se usa habitualmente en diseño grafico en <br>demostraciones de tipografia o de borradores de diseño.</p>
+      <br><br><br>
+      <h2 class="display-4">Preguntas de Laboratorio 6</h2>
+      <h4 class="PyR">¿Cuáles son las diferencias entre los posibles valores de la propiedad position?</h4>
+      <p class="PyR">Position puede ser absolute o relative, siendo los mayores diferenciadores. Donde absolute es relativo al
+        primer elemento posicionado padre, mientras que relative es es posicionado a su posicino normal, sin importar
+        su padre. Fixed es otro que habrá que mencionar, donde es relativo a la ventana del navegador.
+        <strong>Sticky</strong> esta basado en el scroll del usuario.</p>
+        <br>
+      <h4 class="PyR">¿Cuáles son los valores estándar para la propiedad visibility?</h4>
+      <p class="PyR">Como visibility determina si el elemento es visible dentro de la pantalla, el estandar es que esta tenga el valor
+        'visible', como default. Sin embargo, este puede cambiarse a hidden, que ese esconde el elemento pero aun
+        ocupa espacio, o collapse, que es el equivalente a hidden pero orientado a tables.</p>
+        <br>
+      <h4 class="PyR">¿Qué es el zIndex y para qué sirve?</h4>
+      <p class="PyR">El nombre va relacionado al eje z de un plano cartesiano. Es decir, determina la posicion del elemento
+      con respecto a la superposicion del mismo. En general, a mayor el valor del zIndex, este cubrira a otro con un valor menor.
+      Entonces, para una caja, esto indica el nivel de apilamiento en el contexto de aplicado, asi como si la caja tiene un contexto de apilamiento.
+      El valor inicial es auto. <a href="#bottom"> (Mozilla, 2020) </a></p>
+
+      <br><br>
+      <h2 class="display-4">Pregunta de Laboratorio 7</h2>
+      <h4 class="PyR">Describe Material Design</h4>
+      <p>Es un lenguaje visual que sintetiza los principios clasicos del buen diseño, siendo revolucionado por la tecnologia y la ciencia. Consiste de tres metas:
+      <br><strong>Crear</strong>: se refiere a la creacion de un lenguaje visual generico.
+      <br> <strong>Unificar</strong>: se refiere a centralizar un solo sistema para UX entre plataformas, dispositivos y metodos de entrada.
+      <br><strong>Personalizar</strong>: se refiere a hacer crecer a la comunidad y proveer una fundacion de flexible de innovación y expresiones de marca.
+      <br><br> Los principios principales son: material es la metafora(inspirarnos en el mundo fisico); negrita, grafico e intencional (guiado por diseños de impresion);
+      movimiento provee significado(elementos dinamicos); fundacion flexible (implementacion de plugins); cross-platform (disponible para distintos SO's).</p>
+
+      <br><br><br>
+
+      <h4><a href="referencias">Referencias<a/></h4>
+        <ul>
+          <li>Google. (2020) <i>Material Design. </i> Recuperado de https://material.io/design/introduction/#principles</li>
+          <li>Mozilla. (2020). <i>z-index.</i> Recuperado de https://developer.mozilla.org/es/docs/Web/CSS/z-index</li>
+        </ul>
+
+
+    <script type="text/javascript" src="lab7.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
