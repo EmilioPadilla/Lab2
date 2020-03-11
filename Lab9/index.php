@@ -1,10 +1,10 @@
 
 <?php
-  include("_header.html");
-  echo '<div class="row blue-text text-darken-3">';
-  echo '<div>';
+  include("html/_header.html");
 
-  echo '</div>';
+  include("html/_questions.html");
+
+  echo '<div class="row">';
   echo '<div class="col s6 blue lighten-4">';
 
   include("average.php");
@@ -58,10 +58,10 @@
   computeCalories(190, 88, "Emilio");
 
   echo '<h5>Calculo de IMC para Juan, que pesa 65 kg y mide 188 cm</h5>';
-  computeCalories(188, 65, "Emilio");
+  computeCalories(188, 65, "Juan");
 
   echo '</div>';
   echo '</div>';
 
-  include ("_footer.html");
+  include ("html/_footer.html");
 ?>

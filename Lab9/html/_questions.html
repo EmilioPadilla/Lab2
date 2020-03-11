@@ -1,0 +1,31 @@
+<section class="row">
+    <article class="col s12">
+      <ul class="collapsible popout">
+        <li>
+          <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>¿Qué hace la función phpinfo()? Describe y discute 3 datos que llamen tu atención.</div>
+          <div class="collapsible-body"><span> Primer Dato: Sirve para conocer el ambiente de programacion que esta trabajando en el servidor por el momento.
+            <br>Segundo dato: Puedes encontrar informacion valiosa del servidor sobre el cual esta corriendo una página. Si no se protege debidmente esta informacion, el acceso a
+            usuarios malintencionados puede causar que todo nuestro entorno se caiga.
+            <br> Tercer dato: Es una herramienta valiosa para encontrar errores dentro de la pagina y el servidor, pues contiene los datos de entorno, GET, POST, Cookies y servidores.</span></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Qué cambios tendrías que hacer en la configuración del servidor para que pudiera ser apto en un ambiente de producción?</div>
+          <div class="collapsible-body"><span>Para empezar, se le considera ambiente de produccion como la ultima meta de cualquier pagina o aplicacion web. El estado inicial es llamado entorno de ensayo.
+          El entorno de produccion varia dependiendo de la naturaleza y proposito del contenido Web, asi como por el tamaño de la organizacion, publico destino, entre otros. Dicho estado puede tener las sig. caracteristicas:
+        <br> Consta de varios servidores web, y uno o varias bases de datos.
+        <br> Si el entorno es accesible desde internet, es probable que sea segregado desde una red interna
+        <br> Los desarrolladores no tienen privilegios de administrador dentro de la aplicacion.
+        <br> Los cambios en la aplicacion son espaciados, a diferencia de cuando se encuentra en ensayo.
+        <br> <strong>Para lograr cambiar a un ambiente de produccion, simplemente te tienes que asegurar de que el servidor cuente con el acceso al sitio desde cualquier parte.</strong>
+      <br> https://docs.microsoft.com/es-es/aspnet/web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment</span></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>¿Cómo es que si el código está en un archivo con código html que se despliega del lado del cliente, se ejecuta del lado del servidor? Explica.</div>
+          <div class="collapsible-body"><span> PHP cuenta con la funcion de poder procesar el hipertexto para despues trabajar con él, y regresarlo al usuario con los datos requridos. De ahi su nombre, de hecho. La forma en la que el
+            codigo se ejecuta es mandandolo a llamar desde el servidor, para poder acceder a los datos del mismo. Una forma facil de entenderlo es que el servidor cuenta con un controlador que permite mostrar, procesar, y dirigir
+            aquellos datos con los que esta trabajando el cliente. Esto es de gran conveniencia al momento de querer crear aplicaciones web que procesen datos, los guarden y mantengan dentro de un mismo sitio.
+          </span></div>
+        </li>
+
+      </ul>
+    </article>
