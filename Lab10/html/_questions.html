@@ -3,20 +3,45 @@
       <ul class="collapsible popout">
         <li>
           <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>¿Por qué es una buena práctica separar el controlador de la vista?</div>
-          <div class="collapsible-body"><span> </span></div>
+          <div class="collapsible-body"><span> Porque gracias a esta separacion, podemos lograr formar un patrón de diseño tipicamente conocido como MVC. En español este patrón
+            se traduce como el paradigma de modelo-vista-controlador (Model-View-Controller paradigm). A lo que hace referencia es a separar la vista (la interaccion con el usuario), el modelo (el procesamiento de los datos),
+            y el controlador (el ingreso de datos por parte del usuario). Si quisieramos hacer una analogia con cualquier sistema, entendemos que estos estan formados por tres capas: entrada-->procesamiento-->salida de datos; lo
+            cual lo podemos entender como controlador-->modelo-->vista. Todo esto nos permite organizar la informacion que ingresa el usuario para que se pueda tomar una decision estructurada por medio del modelo, y asi darle la
+          salida esperada de datos al usuario por medio del sistema versionador (Marston, 2004).          </span></div>
         </li>
         <li>
           <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Aparte de los arreglos $_POST y $_GET, ¿qué otros arreglos están predefinidos en php y cuál es su función?</div>
-          <div class="collapsible-body"><span> </span></div>
+          <div class="collapsible-body"><span><strong> $_SERVER </strong>: Es un array que contiene informacion, tales como ubicacion, cabeceras y rutas de script.
+            <br><strong> $_SESSION </strong>: Contiene variables de sesion, es decir, aquellas variables disponibles por el script actual.
+            <br><strong> $_FILES </strong>: Contiene variables de subidas de ficheros, es decir, esta asociado a elementos subidos al script en curso mediante _POST.
+            <br><strong> $_COOKIE </strong>: Variable tipo array asociado a las variables pasadas del script en curso a traves de las cookies.
+            <br><strong> $_REQUEST </strong>: Por defecto contiene los contenidos de _GET, _POST, y _COOKIE.
+            <br><strong> $_ENV </strong>: Variables pasadas por el script actual a traves del metodo del entorno. </span></div>
         </li>
         <li>
           <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Explora las funciones de php, y describe 2 que no hayas visto en otro lenguaje y que llamen tu atención.</div>
-          <div class="collapsible-body"><span>
+          <div class="collapsible-body"><span><strong> $_SERVER["PHP_SELF"] </strong>: Regresa el nombre del archivo del script que esta corriendo en la aplicacion web. Me llama la atencion porque de esta manera podemos obtener
+            que los datos se envien a la misma pagina web y no una pagina diferente. Es un tipo de ataque que causara que el usuario obtenga errores en los formularios de las aplicaciones web.
+            <br><strong> $_SESSION </strong>: Contiene variables de sesion, es decir, aquellas variables disponibles por el script actual.
+          </span></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Qué es una cookie.</div>
+          <div class="collapsible-body"><span>Son pequeños pedazos de informacion guardados en el navegador en forma de texto. Son usadas para guardar informacion que ha sido guardada o cambiada en los diferentes sitios web
+            para no tener que modificar todo lo que hagamos desde cero cada vez que entramos de nuevo a un sitio. Si fueran borradas, perderiamos todos los logs y configuraciones de las paginas web que usamos y tendriamos que
+            reingresar y volver a configurar nuestro entorno.
           </span></div>
         </li>
         <li>
           <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>¿Qué es XSS y cómo se puede prevenir? </div>
-          <div class="collapsible-body"><span> Cross Site Scripting, colocando la funcion 'html.specialchars'. De esta manera se omiten las llamadas de caracteres especiales dentro de las peticiones.
+          <div class="collapsible-body"><span> Cross Site Scripting, el cual es un tipo de vulnerabilidad en seguridad que se encuentra tipicamente en nuestras aplicaciones web.
+            El XSS permite a los malintencionados inyectar informacion por medio del script lado del cliente, y mostrarla en las paginas web de los usuarios. Se puede evitar
+            colocando la funcion 'html.specialchars'. De esta manera se omiten las llamadas de caracteres especiales dentro de las peticiones. y se elimina casi completamente el XSS.
+          </span></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">local_library</i>Referencias </div>
+          <div class="collapsible-body"><span> Marston, T. (2004). <i>The Model-View-Controller (MVC) Design Pattern for PHP.</i> Recuperado de https://www.tonymarston.net/php-mysql/model-view-controller.html
           </span></div>
         </li>
       </ul>
