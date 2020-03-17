@@ -13,6 +13,16 @@
   }
   full_name($name, $last_name);
 
+  $cm = $kg = 0;
+  if (!(isset($_POST["kg"]) && isset($_POST["cm"]))){
+	   die();
+	} else {
+    $kg = htmlspecialchars($_POST["kg"]);
+    $cm = htmlspecialchars($_POST["cm"]);
+  }
+
+  calcular_IMC($kg, $cm);
 
 
+  include("html/_footer.html");
  ?>

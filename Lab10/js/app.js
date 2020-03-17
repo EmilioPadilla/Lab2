@@ -2,26 +2,6 @@
 
 console.log("app.js is running.");
 
-var template2 = React.createElement(
-  "div",
-  null,
-  React.createElement(
-    "h1",
-    null,
-    "Hello Emilio!"
-  ),
-  React.createElement(
-    "p",
-    null,
-    "Age: 21"
-  ),
-  React.createElement(
-    "p",
-    null,
-    "You must be from Irapuato, Gto.!"
-  )
-);
-
 var form = React.createElement(
   "div",
   { "class": "row" },
@@ -77,8 +57,32 @@ var form = React.createElement(
       { "class": "row" },
       React.createElement(
         "div",
+        { "class": "input_field col s4 offset-s2" },
+        React.createElement("input", { id: "kg", type: "number", "class": "validate", name: "kg", required: true }),
+        React.createElement(
+          "label",
+          { "for": "kg" },
+          "Peso en Kilogramos"
+        )
+      ),
+      React.createElement(
+        "div",
+        { "class": "input_field col s4" },
+        React.createElement("input", { id: "cm", type: "number", "class": "validate", name: "cm", required: true }),
+        React.createElement(
+          "label",
+          { "for": "cm" },
+          "Altura en centimetros"
+        )
+      )
+    ),
+    React.createElement(
+      "div",
+      { "class": "row" },
+      React.createElement(
+        "div",
         { "class": "col s3 offset-s9" },
-        React.createElement("input", { "class": "btn", type: "submit", value: "Match!" })
+        React.createElement("input", { "class": "btn", type: "submit", value: "Calcular!" })
       )
     )
   )

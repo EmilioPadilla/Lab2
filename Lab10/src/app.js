@@ -1,13 +1,5 @@
 console.log("app.js is running.");
 
-var template2 = (
-  <div>
-    <h1>Hello Emilio!</h1>
-    <p>Age: 21</p>
-    <p>You must be from Irapuato, Gto.!</p>
-  </div>
-);
-
 var form = (
   <div class="row">
     <form class="col s12" method="POST" action="index.php">
@@ -28,8 +20,18 @@ var form = (
         </div>
       </div>
       <div class="row">
+        <div class="input_field col s4 offset-s2">
+          <input id="kg" type="number" class="validate" name="kg" required></input>
+          <label for="kg">Peso en Kilogramos</label>
+        </div>
+        <div class="input_field col s4">
+          <input id="cm" type="number" class="validate" name="cm" required></input>
+          <label for="cm">Altura en centimetros</label>
+        </div>
+      </div>
+      <div class="row">
         <div class="col s3 offset-s9">
-          <input class="btn" type="submit" value="Match!"></input>
+          <input class="btn" type="submit" value="Calcular!"></input>
         </div>
       </div>
     </form>
