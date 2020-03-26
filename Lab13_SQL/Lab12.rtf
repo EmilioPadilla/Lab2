@@ -1,0 +1,86 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2512
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fswiss\fcharset0 ArialMT;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red52\green52\blue52;
+\red253\green176\blue192;\red0\green0\blue0;\red27\green29\blue31;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0\c87059;\cssrgb\c100000\c100000\c100000;\cssrgb\c26667\c26667\c26667;
+\cssrgb\c100000\c75294\c79608;\cssrgb\c0\c0\c0;\cssrgb\c14118\c15294\c16078;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs30 \cf2 \cb3 \expnd0\expndtw0\kerning0
+Ejercicio 2\
+1. \'bfCu\'e1l es? \'bfA qu\'e9 se debe? \
+La table ya no tiene las claves en orden, ademas, no se agregaron todas las x que se pusieron como descripci\'f3n del material.\
+De igual forma, se crearon dos tablas que tienen la misma clave, y la base de datos no evito este proceso\
+\
+2. \'bfQu\'e9 ocurri\'f3? \
+SQL arrojo esto 
+\f1\fs21\fsmilli10660 \cf4 \cb5 #1062 - Duplicate entry '1000' for key 'PRIMARY'
+\f0\fs30 \cf2 \cb3 \
+Lo cual significa que no podemos agregar dos entradas con la misma llave primaria pues eso perder\'eda unicidad. \
+\
+3. \'bfQu\'e9 informaci\'f3n muestra esta consulta? \
+No existe tal formato para MariaDB, pero arrojara clave establecido como llave primaria dentro de la tabla.\
+\
+4. \'bfQu\'e9 sentencias utilizaste para definir las llaves primarias? \
+ALTER TABLE Materiales add constraint llave(NombreTabla) PRIMARY KEY (\'93NombreVarParaPK\'94) \
+\
+5. \'bfQu\'e9 sentencias utilizaste para definir este constraint? \
+\pard\pardeftab720\partightenfactor0
+\cf2 ALTER TABLE Entregan add constraint llaveEntregan PRIMARY KEY (Clave, RFC, Numero, Fecha) \
+\
+Ejercicio 3\
+\pard\pardeftab720\partightenfactor0
+\cf2 \'bfQu\'e9 particularidad observas en los valores para clave, rfc y numero? \
+No cumplen con el formato de las otras entradas\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb1 \uc0\u8232 \cf2 \cb3 \'bfC\'f3mo responde el sistema a la inserci\'f3n de este registro? \
+Lo inserta de todas maneras\
+\
+\'bfQu\'e9 significa el mensaje que emite el sistema? \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs21\fsmilli10660 \cf4 \cb5 Cannot add or update a child row: a foreign key constraint fails (`lab12`.`entregan`, CONSTRAINT `fkentreganclave` FOREIGN KEY (`Clave`) REFERENCES `materiales` (`Clave`))
+\f0\fs30 \cf2 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 Que no se pudo agregar una entrada debido a que fallo un constraint de la llave for\'e1nea\
+\
+\'bfQu\'e9 significado tiene la sentencia anterior? \
+Aparece 
+\f2 \cf7 cuando intentas agregar un registro con una dependencia no existente en otra tabla.\
+\
+\
+
+\f0 \cf2 \'bfQu\'e9 significan las columnas de esas consultas?\
+Muestran todas las variables dentro de la base de datos, asi como las primary key y los constraints (llaves for\'e1neas)\
+\
+Ejercicio 4\
+\pard\pardeftab720\partightenfactor0
+
+\fs29 \cf2 \'bfQu\'e9 uso se le est\'e1 dando a GETDATE()? \
+Obtener la fecha actual\
+\
+\'bfTiene sentido el valor del campo de cantidad? \
+S\'ed, porque hay unicidad en los campos al encontrar una fecha distinta a la de la otra fila que contiene 1000\
+\
+\'bfC\'f3mo responde el sistema? \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs21\fsmilli10660 \cf4 \cb5 #4025 - CONSTRAINT `Cantidad` failed for `lab12`.`entregan`
+\f0\fs30 \cf2 \cb3 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs29 \cf2 \'bfQu\'e9 significa el mensaje? 
+\fs30 \cf2 \
+\pard\pardeftab720\partightenfactor0
+\cf2 Lo cual nos indica que un constraint no permite realizar la inserci\'f3n\cf2 \
+\
+\
+Qu\'e9 es la integridad referencial?\
+Es un concepto que se explica sencillo pero tiene que llevar a cabo de manera cuidadosa. Es la propiedad de la base de datos que asegura que la clave externa de una tabla de referencia (tabla que contiene FK) siempre debe de aludir una fila valida de la tabla a la que se haga referencia (tabla a la que alude la FK). \
+\
+\
+}
