@@ -1,0 +1,115 @@
+a {
+	color: white;
+  }
+
+  table {
+	color: #0a0d52 !important;
+	background-color: #fff3f9;
+  }
+
+  th {
+	background-color: #fccce5;
+  }
+
+	h5 {
+		color: #f0037f;
+	}
+
+	textarea {
+		background-color: #fff3f9 !important;
+	}
+
+
+
+/*
+ICON COLORS
+*/
+.succeed {
+	color: green;
+  }
+
+  .tries {
+	color: lightblue;
+  }
+
+  .fails {
+	color: red;
+  }
+
+
+  /*
+  PROGRESS BARS COLORS
+  */
+  .pb-completed {
+	background-color: #f0037f;
+  }
+
+  .pb-progress {
+	background-color: #0a0d52;
+  }
+
+  .pb-undone {
+	background-color: #fff3f9;
+  }
+
+
+
+/* CARD BENEFICIARIA */
+  .content {
+	color: #0a0d52;
+  }
+  .foto-prueba {
+	width: 130px;
+	height: 170px;
+	align-content: center !important;
+  }
+
+  .card-title {
+	  color: #f0037f;
+  }
+
+	.planCard {
+		position: fixed;
+		margin: inherit;
+	}
+
+
+	/* TABLA */
+	.areaHab {
+		max-width: 150px;
+	}
+
+	.tabComparar {
+		max-width: 20%;
+		text-align: center;
+	}
+
+
+/* Botones */
+.btn-next {
+border: 2px solid #f0037f !important;
+color: #f0037f;
+}
+
+.btn-next:hover {
+	background-color: white;
+	color: #fff3f9;
+}
+
+.btn-next:active {
+	background-color: #f0037f !important;
+}
+
+.btn-plan:active {
+	background-color: white !important;
+}
+
+.btn-comparar {
+	display: none;
+}
+
+
+
+  #commentBox {
+	display: none;
+  }
