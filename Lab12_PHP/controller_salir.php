@@ -4,5 +4,5 @@
   session_unset();
   session_destroy();
 
-  include("html/index.html");
+  include("index.php");
 ?>
