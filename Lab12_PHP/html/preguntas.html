@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Preguntas Lab12</title>
+    <!-- Vendor CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+
+    <a href="../registrarPrueba.php" class="justify-content-start">
+      <h6>Regresar</h6>
+    </a>
+
+    <div class="d-flex flex-row justify-content-center">
+      <div class="p-2">
+        <h4>¿Por qué es importante hacer un session_unset() y luego un session_destroy()?</h4>
+        <p>Session_unset unicamente borra las variables del arreglo $_SESSION, esto significa que la sesion aun existe, solo que los datos son truncados. Siendo sinceros, esta es una función desactualizada.
+
+Session_destroy, por su lado, elimina toda la sesión. No es necesaria hacer ambas, pero es conveniente por fines de seguridad.</p>
+      </div>
+      <br><br>
+      <div class="p-2">
+        <h4>¿Cuál es la diferencia entre una variable de sesión y una cookie?</h4>
+        <p>Una cookie es un archivo que se guarda dentro del navegador, la cual puede servir para permanecer datos dentro de los servidores, que posteriormente servirían para dejar sesiones iniciadas, datos que un usuario haya cambiado dentro de un sitio, o configuraciones predeterminadas dentro cada pagina en especifico, sin necesidad de ocupar espacio de memoria.
+
+En resumen, una cooki es un pedazo de informacion guardado en el servidor que se envia cada vez que se realiza un request, y una variable de sesion es un pedazo de informacion guardado en el servidor y asociado a un usuario en especifico (en ocasiones se hacen via cookie con un id de sesion).</p>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row justify-content-center">
+      <div class="p-2">
+        <h4>Qué técnicas se utilizan en sitios como facebook para que el usuario no sobreescriba sus fotos en el sistema de archivos cuando sube una foto con el mismo nombre?</h4>
+        <p>Agregan id's a cada foto, relacionando con sus caracteristicas, de esta manea pueden ver si el archivo ya se encuentra en la base de datos.
+
+Otra forma es agregar TIME_STAMP a la extension de un archivo, es decir, la hora en la que fue subido dicho archivo, y la propabilidad de que se suban varios archivos al mismo tiempo con el mismo nombre es poca, por lo que funciona para terminos del problema.</p>
+      </div>
+      <br>
+      <div class="p-2">
+        <h4>¿Qué es CSRF y cómo puede prevenirse?</h4>
+        <p>Cross Site Request Forgery**, tambien conocido como enlace hostil, secuestro de sesion y ataque automatico,  es cuando un malintencionado usa a un usuario para identificarse como el dentro de un sistema, esto con fines de aprovechar sus accesos y privilegios dentro del sistema y modificar, ingresar o eliminar archivos dentro de un sistema. De igual manera, sirve para que el tercero monitoree estados de un sistema sin ser descubierto, pues esta usando la sesión de alguien autorizado. Los altos directivos son los principales blancos de este ataque.
+
+Se puede prevenir mediante HTTPOnly flag o un header personalizable de X-Requested-With usando JQuery.
+
+Otra forma mas aceptada es usando Tokens en las cookies, la forma en la que esto opera es la siguiente:</p>
+          <ul>
+            <li>El servidor genera un cookie token y lo guarda</li>
+            <li>Se guarda y encubre dentro de cada form</li>
+            <li>El form se manda con un request POST</li>
+            <li>El POST tambien guarda el token</li>
+            <li>Si los tokens coinciden, entonces el request valida, caso contrario, se rechaza.</li>
+          </ul>
+      </div>
+    </div>
+
+  </body>
+</html>

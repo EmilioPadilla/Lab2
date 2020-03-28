@@ -7,7 +7,8 @@
     die();
   } else {
     if ($_SESSION["login"] == "admin" && $_SESSION["password"] == "admin") {
-      include("html/registrarPrueba.html");
+      
+      include("registrarPrueba.php");
     } else {
       include("html/pwd_incorrecto.html");
     }
