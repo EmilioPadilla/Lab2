@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Preguntas Lab12</title>
+    <!-- Vendor CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+
+    <a href="../index.php" class="justify-content-start">
+      <h6>Regresar</h6>
+    </a>
+
+    <div class="d-flex flex-row justify-content-center">
+      <div class="p-2">
+        <h4>¿Qué es ODBC y para qué es útil?</h4>
+        <p> Corresponde a Conectividad de Bases de datos Abierta (Open Data Base Connectivity, por sus siglas en inglés), y es un estándar de acceso a las bases de datos
+          desarrollado por SQL Access Group. Es útil debido a que sin él, no podríamos acceder a cualquier dato desde cualquier aplicacion, es decir, nos permite acceder
+          a los archivos de las bases de datos sin importar qué sistema de Gestion de Bases de Datos esté almacenando los datos. La idea general de la funcion es
+          proveer salidas y entradas homogeneas a las bases de datos, permitiendo que distintos controladores aseguren la conectividad de la aplicacion con las diferentes bases
+          de datos. (Jac, 2005)
+        </p>
+      </div>
+      <br><br>
+      <div class="p-2">
+        <h4>¿Qué es SQL Injection (SQi)?</h4>
+        <p>Un atacante explota las vulnerabilidades obteniendo ventana de la forma en la que una base de datos realiza consultas. Malintencionados usan SQi para accesar a informacion sensible,
+          modificar o crear nuevos permisos de usuario o manipular/destruir datos sensibles. Forma parte del Top 10 OWASP, y es por eso mismo que debemos de al menos prevenir con las recomendaciones
+        generales para evitar este ataque. </p>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row justify-content-center">
+      <div class="p-2">
+        <h4>¿Qué técnicas puedes utilizar para evitar ataques de SQL Injection?</h4>
+        <p>Forma parte del Top 10 OWASP, y es por eso mismo que debemos de al menos prevenir con las recomendaciones
+      generales para evitar este ataque. Entre estas, se encuentran: </p>
+      <ul>
+        <li>Evitar construir consultas dinamicas, es mejor utilizar declaraciones preparadas con consultas parametrizadas.</li>
+        <li>Usar procedimientos guardados, usando sintaxis canónica.</li>
+        <li>Sanitizar datos del usuario, usando htmlspecialchars()</li>
+        <li>Suprimir mensajes de error por parte de la base de datos, para evitar revelar errores que un atacante puede explotar</li>
+        <li>Limitar los permisos al usuario de la aplicacion, siguiendo el principio de menos privilegios</li>
+        <li>Usar soluciones SAST (Static Application Security Testing)</li>
+      </ul>
+      </div>
+    </div>
+      <div class="d-flex flex-row justify-content-start">
+      <div class="p-2">
+        <h4>Referencias</h4>
+        <p>Jac. (2005). Guia para escribir documentos HTML. Recuperado de https://www.uv.es/jac/guia/
+          <br>Kiuwan. (2020). Prevent SQL Injection with Kiuwan Code Security.
+          Recuperado de https://www.kiuwan.com/prevent-sql-injection/?creative=406780601689&keyword=%2 <br>Bavoid%20%2Bsql%20%2Binjection&matchtype=b&network=g&device=c&utm_source=google&utm_medium=cpc&utm_campaign=latam_en_generic&utm_term=%2Bavoid%20%2Bsql%20%2Bin
+          <br>jection&gclid=Cj0KCQjwsYb0BRCOARIsAHbLPhFQz_y4vuAelsR3J9KXrNXRuuAIklz8DfM1BpVi_EfCgm8Zk_6YhwwaAoBEEALw_wcB</p>
+      </div>
+    </div>
+
+  </body>
+</html>
