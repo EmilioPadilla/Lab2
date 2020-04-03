@@ -9,9 +9,9 @@ if (isset($_POST["Materiales"]) && isset($_POST["Proveedores"]) && isset($_POST[
   $_POST["Cantidad"] = htmlspecialchars($_POST["Cantidad"]);
 
   insertar_entrega($_POST["Materiales"], $_POST["Proveedores"], $_POST["Proyectos"], $_POST["Cantidad"]);
-  $_SESSION["exito"] = "Se registró el caso con éxito";
+  $_SESSION["exito"] = "Se registró la entrega con éxito";
 } else {
-  $_SESSION["warning"] = "Se registró el caso con éxito";
+  $_SESSION["warning"] = "Hubo un error al registrar la entrega";
 }
   header("location:index.php");
 

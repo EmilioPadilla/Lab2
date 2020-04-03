@@ -1,9 +1,10 @@
 <?php
 require_once("model.php");
-$titulo = "Insertar Nueva Entrega";
+$titulo = "Eliminar Entrega";
+$warning_eliminar = true;
 include("html/_header.html");
 
-include("html/_form_insertar.html");
+include("html/_form_eliminar.html");
 
 include("html/_footer.html");
 

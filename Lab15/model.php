@@ -91,7 +91,12 @@
   }
 
 
+
 //Funcion para insertar en la BD Entregan. Es necesario hacer un select para insertar en $Clave $RFC y $Numero
+//@param $Clave: id de la tabla Materiales en BD
+//@param $RFC: id de la tabla Proveedores en BD
+//@param $Numero: id clave de la tabla Proyectos en BD
+//@param $Cantidad: Cantidad a insertar en BD
   function insertar_entrega($Clave, $RFC, $Numero, $Cantidad) {
     $conexion_bd = connectBD();
 
@@ -122,11 +127,37 @@
     return 0;
   }
 
-  function eliminar_entrega($Clave, $RFC, $Numero, $Fecha) {
 
+  //Funcion para insertar en la BD Entregan. Es necesario hacer un select para insertar en $Clave $RFC y $Numero
+  //@param $Clave: id de la tabla Materiales en BD
+  //@param $RFC: id de la tabla Proveedores en BD
+  //@param $Numero: id clave de la tabla Proyectos en BD
+  //@param $Cantidad: Cantidad a insertar en BD
+  function eliminar_entrega($Clave, $RFC, $Numero, $Cantidad) {
+    $conexion_bd = connectBD();
+
+    //Preparar la consulta
+    $dml = 'DELETE FROM Entregan WHERE Clave = ? AND RFC = ? AND Numero = ? AND Cantidad = ?';
+    if ( !($statement = $conexion_bd->prepare($dml)) ) {
+        die("Error: (" . $conexion_bd->errno . ") " . $conexion_bd->error);
+        return 1;
+    }
+
+    //Unir los parametros de la funcion con los parametros de la consulta
+    if (!$statement->bind_param("ssss", $Clave,$RFC,$Numero,$Cantidad)) {
+        die("Error en vinculación: (" . $statement->errno . ") " . $statement->error);
+        return 1;
+    }
+
+    //Executar la consulta
+    if (!$statement->execute()) {
+      die("Error en ejecución: (" . $statement->errno . ") " . $statement->error);
+      return 1;
+    }
+
+    disconnectBD($conexion_bd);
+    return 0;
   }
-
-
 
 
  ?>
