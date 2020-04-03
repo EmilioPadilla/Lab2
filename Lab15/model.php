@@ -91,42 +91,35 @@
   }
 
 
-//Funcion que selecciona de la tabla de entregan el parametro a agregar dentro de la tabla
-  // function select_modificar($tabla, $id, $col_descripcion) {
-  //   $conexion_bd = connectBD();
-  //
-  //   $consulta = "SELECT $id, $col_descripcion FROM $tabla";
-  //   $resultados = $conexion_bd->query($consulta);
-  //
-  //   $resultado = '<label>'.$tabla.'...</label>
-  //                 <select class="form-control-sm form-control" name='.$tabla.'>
-  //                   <option value="" disabled selected>Selecciona una opción</option>';
-  //   while ($row = mysqli_fetch_array($resultados, MYSQLI_BOTH)) {
-  //       $resultado .= '<option value="'.$row["$id"].'">'.$row["$col_descripcion"].'</option>';
-  //   }
-  //
-  //
-  //   $resultado .=  '</select>';
-  //   mysqli_free_result($resultados); #Liberar espacio de memoria
-  //   disconnectBD($conexion_bd); #Desconectarme de BD
-  //   return $resultado;
-  // }
-
-
 //Funcion para insertar en la BD Entregan. Es necesario hacer un select para insertar en $Clave $RFC y $Numero
-  function insertar_entrega($Clave = "", $RFC ="", $Numero = "", $Cantidad = "") {
+  function insertar_entrega($Clave, $RFC, $Numero, $Cantidad) {
     $conexion_bd = connectBD();
 
-    //Preparar la consultar
-    $dml = 'INSERT INTO Entregan (lugar_id) VALUES (?) ';
+    //Preparar la consulta
+    $dml = 'INSERT INTO Entregan (Clave,RFC,Numero, Fecha, Cantidad) VALUES (?,?,?,?,?) ';
     if ( !($statement = $conexion_bd->prepare($dml)) ) {
         die("Error: (" . $conexion_bd->errno . ") " . $conexion_bd->error);
+        return 1;
     }
 
+    //Definir zona horaria a insertar dentro de la tabla
+    date_default_timezone_set('America/Mexico_City');
+    $date = date('Y/m/d h:i:s', time());
 
-    mysqli_free_result($resultados);
+    //Unir los parametros de la funcion con los parametros de la consulta
+    if (!$statement->bind_param("sssss", $Clave,$RFC,$Numero, $date, $Cantidad)) {
+        die("Error en vinculación: (" . $statement->errno . ") " . $statement->error);
+        return 1;
+    }
+
+    //Executar la consulta
+    if (!$statement->execute()) {
+      die("Error en ejecución: (" . $statement->errno . ") " . $statement->error);
+      return 1;
+    }
+
     disconnectBD($conexion_bd);
-
+    return 0;
   }
 
   function eliminar_entrega($Clave, $RFC, $Numero, $Fecha) {

@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Laboratorio 14</title>
+    <title>Laboratorio 15</title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"  media="screen,projection"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
@@ -15,18 +15,32 @@
           </a>
           <div class="d-flex navbar-nav justify-content-end">
             <ul class="navbar-nav justify-content-end">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.php"><i class="material-icons">search</i>Buscar Materiales <span class="sr-only">(current)</span></a>
+              <li class="nav-item">
+                <a class="nav-link" href="index.php"><i class="material-icons">search</i>Buscar Materiales</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="controller_modificar_entrega.php"><i class="material-icons">track_changes</i>Modificar Entregas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="html/preguntas.html"><i class="material-icons">question_answer</i>Preguntas</a>
+                <a class="nav-link" href="controller_preguntas.php"><i class="material-icons">question_answer</i>Preguntas</a>
               </li>
             </ul>
           </div>
 
       </nav>
+
+      <?php if(isset($_SESSION["warning"])): ?>
+        <div class="alert alert-danger" role="alert">
+          <?=$_SESSION["warning"] ?>
+        </div>
+        <?php unset($_SESSION["warning"])?>
+      <?php endif;?>
+
+      <?php if(isset($_SESSION["exito"])): ?>
+        <div class="alert alert-success" role="alert">
+          <?=$_SESSION["exito"] ?>
+        </div>
+        <?php unset($_SESSION["exito"])?>
+      <?php endif;?>
 
       <!-- Navbar ends -->
