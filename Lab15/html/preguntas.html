@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Preguntas Lab12</title>
+    <!-- Vendor CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+
+    <a href="../index.php" class="justify-content-start">
+      <h6>Regresar</h6>
+    </a>
+
+    <div class="d-flex flex-row justify-content-center">
+      <div class="p-2">
+        <h4>¿Por qué es una buena práctica separar el modelo del controlador?</h4>
+        <p> Porque de esta manera te permite separar la manipulacion y extraccion de datos por parte de la base de datos
+          en una entidad distinta a la que controla toda tu aplicacion. Dejando aparte de que siempre debemos de buscar que todas
+          nuestras funciones sean atomicas, es decir, que cumplan con una y solo una funcion; el modelo vista controlador llegó para que
+          podamos separar la idea de manejar e ingresar datos en la base de datos, y pedir y verificar los datos por parte del usuario.
+
+        </p>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row justify-content-center">
+      <div class="p-2">
+        <h4>¿Qué es SQL injection y cómo se puede prevenir?</h4>
+        <p>Existen diferentes formas para asegurar que no caigamos en uno de los principales ataques que marca la OWASP -> SQL Injection.
+        SQL Injection es la practica de inyectar codigo SQL que pueda alterar de cualquier manera las bases de datos de las que depende
+        nuestra aplicacion, es decir, meter código correspondiente a las bases de datos que pueda condecernos privilegios, mostrarnos informacion,
+      agregar relaciones que afecten el funcionamiento, o hasta eliminar una base de datos completa. Esto a traves de los formularios que usamos
+    dentro de nuestra aplicacion para conseguir datos del usuario. Algunos metodos para prevenirnos son los siguientes:</p>
+      <ul>
+        <li>Usar sentencias preparadas: Esta forma comprueba que el codigo que recibamos del usuario si corresponda con el tipo de dato que estamos buscanod.</li>
+        <li>Usar procedimientos almacenados: Limitar las entradas que pueda ingresar el usuario mediante un banco de respuestas pre diseñadas para el codigo</li>
+        <li>Validacion de input de WhiteList: Tener un set de caracteres válidos, y comparar constantemente con estos caracteres para saber si lo podemos usar</li>
+        <li>Sanitizar los inputs: Esto es, en sí, la combinacion de todas las practicas.</li>
+      </ul>
+      </div>
+    </div>
+      <div class="d-flex flex-row justify-content-start">
+      <div class="p-2">
+        <h4>Referencias</h4>
+        <p>
+          https://medium.com/visually-explained/sql-injection-attacks-visually-explained-c71b5f9e1af2
+          <br>https://medium.com/@jpmorris/prevent-sql-injection-attacks-with-prepared-statements-3e4b7ec13a7
+          <br>https://medium.com/codeep-io/common-security-issues-in-web-applications-part-1-af339360c646
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
