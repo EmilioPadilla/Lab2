@@ -2,14 +2,10 @@
     <div class="p-2">
       <form method="POST">
           <?= select_buscar("Materiales", "Clave", "Descripcion");?>
-          <?= select_buscar("Proveedores", "RFC", "RazonSocial");?>
+          <?= select_buscar("Proveedores", "RFC", "RazonSocial", "");?>
           <?= select_buscar("Proyectos", "Numero", "Denominacion");?>
 
         <input class="btn btn-outline-dark btn-sm" type="submit" value="Buscar">
       </form>
     </div>
     <div class="p-2">
-      <!-- <?= consultar_existencia(1020, 'AAA800101', 5000);?>
-    </div>
-  </div>
-</div> -->

@@ -59,6 +59,7 @@
       $tabla .= '<td>'.$row['py_numero'].'</td>';
       $tabla .= '<td>'.$row['e_fecha'].'</td>';
       $tabla .= '<td>'.$row['e_cantidad'].'</td>';
+      $tabla .= '<td><a href="controller_actualizar_entrega.php?e_fecha='.$row['e_fecha'].'">'."<i class='material-icons'>update</i>"."</a></td>";
       $tabla .= '</tr>';
     }
     $tabla .= '</tbody></table>';
@@ -71,7 +72,7 @@
 
 
 //Funcion que busca dentro de la tabla dependiendo de los valores seleccionados
-  function select_buscar($tabla, $id, $col_descripcion) {
+  function select_buscar($tabla, $id, $col_descripcion, $seleccion=0) {
     $conexion_bd = connectBD();
 
     $consulta = "SELECT $id, $col_descripcion FROM $tabla";
@@ -81,7 +82,15 @@
                   <select class="form-control-sm form-control" name='.$tabla.'>
                     <option value="" disabled selected>Selecciona una opción</option>';
     while ($row = mysqli_fetch_array($resultados, MYSQLI_BOTH)) {
-        $resultado .= '<option value="'.$row["$id"].'">'.$row["$col_descripcion"].'</option>';
+        $resultado .= '<option value="'.$row["$id"].'" ';
+
+        if($seleccion == $row["$id"]) {
+            $resultado .= 'selected';
+        }
+
+        $resultado .= '>'.$row["$col_descripcion"].'</option>';
+
+
     }
 
     $resultado .=  '</select>';
@@ -138,6 +147,7 @@
 
     //Preparar la consulta
     $dml = 'DELETE FROM Entregan WHERE Clave = ? AND RFC = ? AND Numero = ? AND Cantidad = ?';
+
     if ( !($statement = $conexion_bd->prepare($dml)) ) {
         die("Error: (" . $conexion_bd->errno . ") " . $conexion_bd->error);
         return 1;
@@ -153,6 +163,90 @@
     if (!$statement->execute()) {
       die("Error en ejecución: (" . $statement->errno . ") " . $statement->error);
       return 1;
+    }
+
+    disconnectBD($conexion_bd);
+    return 0;
+  }
+
+
+  //Funcion para insertar en la BD Entregan. Es necesario hacer un select para insertar en $Clave $RFC y $Numero
+  //@param $Clave: id de la tabla Materiales en BD
+  //@param $RFC: id de la tabla Proveedores en BD
+  //@param $Numero: id clave de la tabla Proyectos en BD
+  //@param $Cantidad: Cantidad a insertar en BD
+  function actualizar_entrega($Clave, $RFC, $Numero, $Cantidad) {
+    $conexion_bd = connectBD();
+
+    //Preparar la consulta
+    $dml = 'DELETE FROM Entregan WHERE Clave = ? AND RFC = ? AND Numero = ? AND Cantidad = ?';
+    if ( !($statement = $conexion_bd->prepare($dml)) ) {
+        die("Error: (" . $conexion_bd->errno . ") " . $conexion_bd->error);
+        return 1;
+    }
+
+    //Unir los parametros de la funcion con los parametros de la consulta
+    if (!$statement->bind_param("ssss", $Clave,$RFC,$Numero,$Cantidad)) {
+        die("Error en vinculación: (" . $statement->errno . ") " . $statement->error);
+        return 1;
+    }
+
+    //Executar la consulta
+    if (!$statement->execute()) {
+      die("Error en ejecución: (" . $statement->errno . ") " . $statement->error);
+      return 1;
+    }
+
+    disconnectBD($conexion_bd);
+    return 0;
+  }
+
+
+
+  //función para editar un registro de caso de coronavirus
+  //@param caso_id: id del caso que se va a editar
+  //@param lugar_id: id de la tabla lugar en la base de datos
+  function editar_entrega($fecha, $clave, $rfc, $numero, $cantidad) {
+    $conexion_bd = connectBD();
+
+    //Prepara la consulta
+    $dml = 'UPDATE Entregan SET Clave=(?), RFC=(?), Numero=(?), Cantidad =(?) WHERE Fecha=(?)';
+
+    if ( !($statement = $conexion_bd->prepare($dml)) ) {
+        die("Error: (" . $conexion_bd->errno . ") " . $conexion_bd->error);
+        return 0;
+    }
+
+    //Unir los parámetros de la función con los parámetros de la consulta
+    //El primer argumento de bind_param es el formato de cada parámetro
+      if (!$statement->bind_param("isids", $clave, $rfc, $numero, $cantidad, $fecha)) {
+          die("Error en vinculación: (" . $statement->errno . ") " . $statement->error);
+          return 0;
+      }
+
+
+
+    //Executar la consulta
+    if (!$statement->execute()) {
+      die("Error en ejecución: (" . $statement->errno . ") " . $statement->error);
+        return 0;
+    }
+
+    disconnectBD($conexion_bd);
+      return 1;
+  }
+
+
+
+  //Consultar campo de entrega a partir de la Fecha
+  function recuperar_campo($fecha, $campo) {
+    $conexion_bd = connectBD();
+
+    $sql = "SELECT $campo FROM Entregan WHERE Fecha = '$fecha'";
+    $resultados = $conexion_bd->query($sql);
+    while ($row = mysqli_fetch_array($resultados, MYSQLI_BOTH)) {
+      disconnectBD($conexion_bd);
+      return $row["$campo"];
     }
 
     disconnectBD($conexion_bd);
