@@ -72,15 +72,15 @@
 
 
 //Funcion que busca dentro de la tabla dependiendo de los valores seleccionados
-  function select_buscar($tabla=, $id=, $col_descripcion=, $seleccion=0) {
+  function select_buscar($tabla, $id, $col_descripcion, $seleccion=0) {
     $conexion_bd = connectBD();
 
     $consulta = "SELECT $id, $col_descripcion FROM $tabla";
     $resultados = $conexion_bd->query($consulta);
 
     $resultado = '<label>'.$tabla.'...</label>
-                  <select class="form-control-sm form-control" name="'.$tabla.'" id="'.$tabla.'">
-                    <option disabled selected>Selecciona una opción</option>';
+                  <select class="form-control-sm form-control" name='.$tabla.' id='.$tabla.'>
+                    <option value="" disabled selected>Selecciona una opción</option>';
     while ($row = mysqli_fetch_array($resultados, MYSQLI_BOTH)) {
         $resultado .= '<option value="'.$row["$id"].'" ';
 

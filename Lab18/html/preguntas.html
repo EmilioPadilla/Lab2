@@ -1,36 +1,11 @@
 
     <div class="d-flex flex-row justify-content-center">
       <div class="p-2">
-        <h4>¿Qué importancia tiene AJAX en el desarrollo de RIA's (Rich Internet Applications)?</h4>
-        <p> Para empezar, AJAX es considerada como la opcion mas viable para crear RIA's. Este es un acronimo para
-          Asynchronous Javascript and XML, la cual nos sirve para crear aplicaciones web que sean mas rapidas, mejoras, y
-          mucho mas interactivas.
-
-          Es decir, AJAX ha revolucionado la forma en la que el usuario interactua con el servidor para poder brindarle
-          una experiencia mucho mas interactiva, y en consecuencia, con mayor fluidez, respuesta, y rapidez. AJAX, debido
-          a su modelo, es capaz de mandar constantemente fracciones de requests al servidor para que este, de manera
-          asincrona, pueda recibir la peticion, procesarla y mandarla, todo esto mientras seguimos interactuando con el
-          sitio web, por lo que parece que nunca necesitamos esperar para seguir interactuando con el sitio en cuestion
-
-
-
-        </p>
-      </div>
-
-      <div class="p-2">
-        <h4>¿Qué es JSON?</h4>
-        <p> JSON corresponde a JavaScript Object Notation, el cual es un formato ligero para el intercambio de datos.
-          Hoy en dia, es comunmente usado en aplicaciones RIA's que encesitan de informacion fraccionada para mandar al
-          servidor. En esencia, solo es un subconjunto de la notacion literal de objetos de JS, pero debido a su alta
-          implementacion para reemplazar XML, hoy en dia es considerado como un lenguaje independiente.
-
-          Es importante mencionar que utiliza convenciones conocidas por programadores en la familia de lenguajes C, incluyendo
-          C, C++, C#, Java, JavaScript, Perl, Python, y muchos otros.
-
-          Este esta constituido por dos estrucutras: Las que corresponden a nombre-valor (conocido como objetos) y una lista
-          ordenada de valores, que se implementan como arreglos, vectores, listas o secuencias.
-
-
+        <h4>¿Por qué es una buena práctica separar el modelo del controlador?</h4>
+        <p> Porque de esta manera te permite separar la manipulacion y extraccion de datos por parte de la base de datos
+          en una entidad distinta a la que controla toda tu aplicacion. Dejando aparte de que siempre debemos de buscar que todas
+          nuestras funciones sean atomicas, es decir, que cumplan con una y solo una funcion; el modelo vista controlador llegó para que
+          podamos separar la idea de manejar e ingresar datos en la base de datos, y pedir y verificar los datos por parte del usuario.
 
         </p>
       </div>
@@ -38,35 +13,27 @@
 
     <div class="d-flex flex-row justify-content-center">
       <div class="p-2">
-        <h4>¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones de seguridad, del lado del cliente o del lado del servidor?</h4>
-        <p> Las implicaciones de seguridad que conlleva manejar AJAX no son mas complicadas que las que debemos de implementar
-          dentro de aplicaciones que no son RIA's. Para empezar, ya que AJAX interactua con JS, CSS, HTML y PHP, es necesario
-          seguir cumpliendo estas validaciones para que un malintencionado no logre su cometido.
-
-        Por ejemplo, para JS, tenemos que seguir validando que no ocurra el XSS o el XSFR. De igual manera, por el lado de PHP y
-        HTML, tenemos que asegurarnos de limpiar de manera constante los datos ingresados en html, con las herramientas que PHP
-        nos ofrece, esto para evitar SQL Injection o ataques al cliente de manera directa.
-
-       De igual manera, debemos de validar en todo momento que la sesion que busca utilizar el programa, sea el unico que pueda
-       interactuar con el mismo, esto para evitar que un malintencionado llegue a la direccion del sitio de manera directa,
-       saltandose paginas.
-
-        Por ultimo, es importante mencionar las ultimas tecnologias, como los tokens, los cuales son un poco mas complicados,
-        pero casi infalibles. Los tokens funcionan de manera que cuando el programador crea un formulario dentro de un sitio,
-        este lleva consigo un token unico. Una vez que el cliente empieza a interactuar con el formulario y manda respuestas,
-        el token unico acompaña al request hasta el servidor, el cual pasara si y solo si se encuentra con el mismo token que
-        el generado.
-
-        </p>
-
+        <h4>¿Qué es SQL injection y cómo se puede prevenir?</h4>
+        <p>Existen diferentes formas para asegurar que no caigamos en uno de los principales ataques que marca la OWASP -> SQL Injection.
+        SQL Injection es la practica de inyectar codigo SQL que pueda alterar de cualquier manera las bases de datos de las que depende
+        nuestra aplicacion, es decir, meter código correspondiente a las bases de datos que pueda condecernos privilegios, mostrarnos informacion,
+      agregar relaciones que afecten el funcionamiento, o hasta eliminar una base de datos completa. Esto a traves de los formularios que usamos
+    dentro de nuestra aplicacion para conseguir datos del usuario. Algunos metodos para prevenirnos son los siguientes:</p>
+      <ul>
+        <li>Usar sentencias preparadas: Esta forma comprueba que el codigo que recibamos del usuario si corresponda con el tipo de dato que estamos buscanod.</li>
+        <li>Usar procedimientos almacenados: Limitar las entradas que pueda ingresar el usuario mediante un banco de respuestas pre diseñadas para el codigo</li>
+        <li>Validacion de input de WhiteList: Tener un set de caracteres válidos, y comparar constantemente con estos caracteres para saber si lo podemos usar</li>
+        <li>Sanitizar los inputs: Esto es, en sí, la combinacion de todas las practicas.</li>
+      </ul>
       </div>
     </div>
       <div class="d-flex flex-row justify-content-start">
       <div class="p-2">
         <h4>Referencias</h4>
         <p>
-          [https://www.tutorialspoint.com/ajax/what_is_ajax.htm]
-          <br>[https://www.json.org/json-es.html](https://www.json.org/json-es.html)
+          https://medium.com/visually-explained/sql-injection-attacks-visually-explained-c71b5f9e1af2
+          <br>https://medium.com/@jpmorris/prevent-sql-injection-attacks-with-prepared-statements-3e4b7ec13a7
+          <br>https://medium.com/codeep-io/common-security-issues-in-web-applications-part-1-af339360c646
         </p>
       </div>
     </div>

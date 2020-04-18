@@ -13,15 +13,15 @@ function getRequestObject() {
     }
 }
 
+
 //Función que detonará la petición asíncrona
 function buscar() {
     request = getRequestObject();
     if (request != null) {
-        let material_id = document.getElementById("Materiales").value;
-        let proveedor_id = document.getElementById("Proveedores").value;
-        let proyecto_id = document.getElementById("Proyectos").value;
-        var url = 'controller_buscar.php?Materiales=' + material_id
-        + '&Proveedores=' + proveedor_id + '&Proyectos=' + proyecto_id;
+        let mat_id = document.getElementById("Materiales").value;
+        let proy_id = document.getElementById("Proyectos").value;
+        let prov_id = document.getElementById("Proveedores").value;
+        var url = 'controller_buscar.php?Materiales=' + mat_id + '&Proyectos=' + proy_id + '&Proveedores=' + prov_id;
 
         request.open('GET', url, true);
         request.onreadystatechange =
