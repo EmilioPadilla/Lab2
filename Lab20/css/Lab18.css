@@ -5,15 +5,13 @@
 	margin-right: auto;
 	position: relative;
 }
-th
-{
-	background-color: dimgray;
-}
 
 .tablaIndex thead th {
-	position: sticky;
-	top: 0;
+	position: sticky !important;
+	top: 0 !important;
 }
+
+
 
 
 .my-custom-scrollbar {

@@ -9,25 +9,38 @@
 
       <div class="p-2">
         <h4>¿Qué alternativas a jQuery existen?</h4>
-        <p>  Po
-
-        </p>
+        <p> Para empezar, cuándo debemos de usar una alternativa? Se usa cuando no necesitas todos los metodos que ofrece JQuery. Las alternativas son los siguientes. </p>
+        <ul>
+          <li><b>Native JavaScript:</b> Es el mejor porque no tienes que instalar nada. Tambien porque soporta navegadores viejos. Su sintaxis, sin embargo, no es tan amigable</li>
+          <li><b>Cash:</b> Su sintaxis es similar a JQuery. Tiene todo lo basico de lo mismo.</li>
+          <li><b>UmbrellaJS:</b> Es mas chico en cuanto a sus metodos. Aqui, puedes usar JS nativo  en selectores Umbrella, a diferencia de JQuery.</li>
+          <li><b>ChibiJS:</b> Creado para deshacerse del gran tamaño de jQuery, y tiene todos los metodos esenciales que este ofrece. No provee animaciones.</li>
+        </ul>
+        </ul>
       </div>
     </div>
 
     <div class="d-flex flex-row justify-content-center">
       <div class="p-2">
         <h4>¿Qué es una promesa en js?</h4>
-        <p>Existen dtes:
-
-        </p>
+        <p>Se usa cuando el servidor promete que va a realizar una peticion. No implica que la vaya a realizar al momento, sino
+          que ha recibido el request, y va a producir un valor unico. Ya sea un valor resuelto, o la razon por la cual no se resolvio.
+          (i.e. un problema de conexion con la red). Dicha promesa puede tener 3 distintos estados:</p>
+          <ul>
+            <li><b>Pending:</b> Cuando el valor regresado no esta listo aun.</li>
+            <li><b>Fulfilled:</b> Cuando y si el valor final esta listo. Este valor se asigna permanentemente con la promesa</li>
+            <li><b>Rejected:</b> Si un error previno que el valor final fuera determinado.</li>
+          </ul>
       </ul>
       </div>
 
       <div class="p-2">
         <h4>¿Cómo funcionan async y await?</h4>
-        <p>Existen dtes:
-
+        <p>Async se usa antes de 'function', para indicar que la siguiente funcion va a funcionar de forma asincrona. Es decir, que no se va cargar
+          junto con toda la pagina, sino que se van a mandar fragmentos de la aplicacion para que tanto el servidor como el cliente lo procesen de
+          forma asincrona, y que no tengan que esperar a que todo la aplicacion cargue. <b>La funcion siempre va a regresar una promesa al usar async.</b>
+          La palabra clave <b>await</b> determina que JS va a esperar hasta que la promesa regrese un resultado, para poder ejecutarse.
+          <b>Await significa JS esperará hasta que la promesa fije un valor.</b>
         </p>
       </ul>
       </div>
@@ -37,9 +50,9 @@
       <div class="p-2">
         <h4>Referencias</h4>
         <p>
-          https://mediu
-          <br>https://medium.com/@jpm
-          <br>https://medium
+          https://developer.mozilla.org/en-US/docs/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+          <br>https://javascript.info/async-await
+          <br>https://www.educba.com/jquery-alternatives/
         </p>
       </div>
     </div>

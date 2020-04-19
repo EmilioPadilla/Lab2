@@ -40,8 +40,8 @@
 
 
     $resultados = $conexion_bd->query($consulta);
-    $tabla = "<div class='table-responsive text-center miTabla table-wrapper-scroll-y my-custom-scrollbar'>
-              <table class='table table-responsive tablaIndex table-hover'>
+    $tabla = "<div class='table-responsive text-center tablaIndex table-wrapper-scroll-y my-custom-scrollbar'>
+              <table class='table table-hover'>
                 <thead class='thead-dark'>
                   <tr>
                     <th scope='col'>Clave</th>
