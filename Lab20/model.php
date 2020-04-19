@@ -256,5 +256,20 @@
     return 0;
   }
 
+  function obtener_registros($tabla, $campo)
+	{
+		$conexion_bd = connectBD();
+		$array = "";
+		$consulta = 'SELECT '.$campo.' FROM '.$tabla;
+		$resultados = $conexion_bd->query($consulta);
+		while ($row = mysqli_fetch_array($resultados, MYSQLI_BOTH)){
+			$array .= $row["$campo"].",";
+		}
+		mysqli_free_result($resultados);
+		disconnectBD($conexion_bd);
+		$array = explode(",", $array);
+		return $array;
+	}
+
 
  ?>

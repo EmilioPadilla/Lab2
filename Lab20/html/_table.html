@@ -1,9 +1,15 @@
   <div class="d-flex flex-row justify-content-center">
     <div class="p-2">
 
+
       <?= select_buscar("Materiales", "Clave", "Descripcion");?>
       <?= select_buscar("Proveedores", "RFC", "RazonSocial", "");?>
-      <?= select_buscar("Proyectos", "Numero", "Denominacion");?>
+      <!-- Implementar busquedas onkeyup -->
+      <label  for="Proyectos">Proyectos</label>
+      <input class="form-control col-md-12 mx-auto" type="text" placeholder="Vamos México"  id="userInputProyectos" onkeyup="sendRequest('Proyectos')">
+      <div id="ajaxResponseProyectos"></div>
+      <input type="hidden" name="Proyectos" id="Proyectos" value="">
+      <!-- <?= select_buscar("Proyectos", "Numero", "Denominacion");?> -->
       <br>
       <button type="button" id="buscar" name="button" class="btn btn-outline-dark btn-sm">Buscar</button>
       <br><br>
@@ -11,6 +17,8 @@
         El boton "Buscar" funciona <br>
         con <b>AJAX</b> y jQuery.
       </div>
+
+
 
     </div>
     <div class="p-2">
