@@ -20,7 +20,7 @@
 //@param $Mat_Clave: Si se ingresa la clave de materiales, buscara dentro de la base de datos con este criterio agregado
 //@param $Prov_RFC: Si se ingresa el RFC de Proveedores, buscara dentro de la base de datos con este criterio agregado
 //@param $Proy_Numero: Si se ingresa el $Proy_Numero de proyectos, buscara dentro de la base de datos con este criterio agregado
-  function consultar_existencia($Mat_Clave = "", $Prov_RFC= "", $Proy_Numero = "") {
+  function consultar_existencia($Mat_Clave="", $Prov_RFC="", $Proy_Numero ="") {
     $conexion_bd = connectBD();
     $consulta = 'SELECT M.Clave as m_clave, Pv.RFC as pv_rfc, Py.Numero as py_numero,E.Fecha as e_fecha, E.Cantidad as e_cantidad
                   FROM Materiales as M, Proyectos as Py, Proveedores as Pv, Entregan as E
