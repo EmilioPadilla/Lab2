@@ -22,7 +22,7 @@
 //@param $Proy_Numero: Si se ingresa el $Proy_Numero de proyectos, buscara dentro de la base de datos con este criterio agregado
   function consultar_existencia($Mat_Clave = "", $Prov_RFC= "", $Proy_Numero = "") {
     $conexion_bd = connectBD();
-    $consulta = 'SELECT M.Clave as m_clave, Pv.RFC as pv_rfc, Py.Numero as py_numero,E.Fecha as e_fecha, E.Cantidad as e_cantidad
+    $consulta = 'SELECT M.Clave as m_clave, Pv.RFC as pv_rfc, Py.Numero as py_numero,E.Fecha as e_fecha, E.Cantidad as e_cantidad, Denominacion
                   FROM Materiales as M, Proyectos as Py, Proveedores as Pv, Entregan as E
                   WHERE E.Clave = M.Clave AND E.RFC = Pv.RFC AND E.Numero = Py.Numero';
 
@@ -49,6 +49,7 @@
                     <th scope='col'>Numero</th>
                     <th scope='col'>Fecha</th>
                     <th scope='col'>Cantidad</th>
+                    <th scope='col'>Proyecto</th>
                   </tr>
                 </thead>
                 <tbody>";
@@ -60,6 +61,7 @@
       $tabla .= '<td>'.$row['py_numero'].'</td>';
       $tabla .= '<td>'.$row['e_fecha'].'</td>';
       $tabla .= '<td>'.$row['e_cantidad'].'</td>';
+      $tabla .= '<td>'.$row['Denominacion'].'</td>';
       $tabla .= '<td><a href="controller_actualizar_entrega.php?e_fecha='.$row['e_fecha'].'">'."<i class='material-icons'>update</i>"."</a></td>";
       $tabla .= '</tr>';
     }
