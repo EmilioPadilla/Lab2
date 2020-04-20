@@ -7,8 +7,8 @@
 }
 
 .tablaIndex thead th {
-	position: sticky !important;
-	top: 0 !important;
+	position: sticky;
+	top: 0;
 }
 
 

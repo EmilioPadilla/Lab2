@@ -43,7 +43,7 @@ function sendRequest(tabla) {
   if(request != null) {
     let userInput = document.getElementById("userInput"+tabla);
 
-    let url = 'controller_ajax.php?tabla='+tabla+'&pattern='+userInput.value;
+    let url = 'controller_ajax.php?tabla'+tabla+'='+tabla+'&pattern'+tabla+'='+userInput.value;
 
     request.open('GET', url, true);
     request.onreadystatechange =

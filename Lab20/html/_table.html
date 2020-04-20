@@ -2,13 +2,25 @@
     <div class="p-2">
 
 
-      <?= select_buscar("Materiales", "Clave", "Descripcion");?>
-      <?= select_buscar("Proveedores", "RFC", "RazonSocial", "");?>
+      <!-- <?= select_buscar("Materiales", "Clave", "Descripcion");?> -->
+      <label  for="Proyectos">Materiales</label>
+      <input class="form-control col-md-12 mx-auto" type="text" placeholder="Sillar gris"  id="userInputMateriales" onkeyup="sendRequest('Materiales')">
+      <div id="ajaxResponseMateriales"></div>
+      <input type="hidden" name="Materiales" id="Materiales" value="">
+
+      <!-- <?= select_buscar("Proveedores", "RFC", "RazonSocial", "");?> -->
+      <label  for="Proyectos">Proveedores</label>
+      <input class="form-control col-md-12 mx-auto" type="text" placeholder="La Ferre"  id="userInputProveedores" onkeyup="sendRequest('Proveedores')">
+      <div id="ajaxResponseProveedores"></div>
+      <input type="hidden" name="Proveedores" id="Proveedores" value="">
+
       <!-- Implementar busquedas onkeyup -->
       <label  for="Proyectos">Proyectos</label>
       <input class="form-control col-md-12 mx-auto" type="text" placeholder="Vamos México"  id="userInputProyectos" onkeyup="sendRequest('Proyectos')">
       <div id="ajaxResponseProyectos"></div>
       <input type="hidden" name="Proyectos" id="Proyectos" value="">
+
+
       <!-- <?= select_buscar("Proyectos", "Numero", "Denominacion");?> -->
       <br>
       <button type="button" id="buscar" name="button" class="btn btn-outline-dark btn-sm">Buscar</button>
