@@ -70,5 +70,45 @@ function selectValue(tabla) {
   userInput.focus();
 }
 
-//Asignar al botón buscar, la función buscar()
-document.getElementById("buscar").onclick = buscar;
+
+//Función que detonará la petición asíncrona como se hace ahora con js vanilla
+//async sirve para indicar que la función hace una petición asíncrona
+async function buscar_vanilla() {
+    //Para poder pasar parámetros
+    let parametros = new FormData();
+    parametros.append("lugar_id", document.getElementById("lugar").value);
+    parametros.append("estado_id", document.getElementById("estado").value);
+    try {
+        //await sirve para indicar que en este punto se espera una petición asíncrona
+        //fetch es la función que hace la petición asíncrona
+        await fetch('controlador_buscar.php', {
+            method: 'POST', //El método GET de fetch no permite parámetros
+            body: parametros
+                //.then se ejecuta cuando concluye la petición asíncrona, pero esto también genera una promesa que se ejecuta de manera asíncrona
+        }).then(function (response) {
+            return response.text();
+            //Este segundo then nos permite recuperar el contenido de la respuesta cuando se termina la promesa anterior
+        }).then(function (data) { //
+            document.getElementById("resultados_consulta").innerHTML = data;
+        });
+        //El uso de async y await permite que atrapar un error en la comunicación
+    } catch (e) {
+        console.log(e);
+        document.getElementById("resultados_consulta").innerHTML = "Error en la comunicación con el servidor";
+    }
+}
+
+
+//Función que detonará la petición asíncrona como se hace ahora con la librería jquery
+function buscar_jQuery() {
+    //$.post manda la petición asíncrona por el método post. También existe $.get
+    $.post("controlador_buscar.php", {
+        lugar_id: $("#lugar").val(),
+        estado_id: $("#estado").val()
+    }).done(function (data) {
+        $("#resultados_consulta").html(data);
+    });
+}
+
+//Asignar al botón buscar, la función buscar() con jQuery
+$("#buscar").click(buscar);
