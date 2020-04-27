@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab18</title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"  media="screen,projection"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/Lab18.css"  media="screen,projection"/>
+  </head>
+  <body>
+       <!-- Navbar  -->
+       <nav class="navbar navbar-light bg-light navbar-expand-md justify-content-center">
+          <a class="navbar-brand" href="index.php">
+            <img src="images/itesm_logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            Lab18
+          </a>
+          <div class="d-flex navbar-nav justify-content-end">
+            <ul class="navbar-nav justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link" href="index.php"><i class="material-icons">search</i>Buscar</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">track_changes</i>Modificar
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item text-success" href="controller_modificar_entrega.php"><i class="material-icons">add_circle_outline</i>Insertar</a>
+                  <a class="dropdown-item text-danger" href="controller_eliminar_entrega.php"><i class="material-icons">delete</i>Eliminar</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="controller_preguntas.php"><i class="material-icons">question_answer</i>Preguntas</a>
+              </li>
+            </ul>
+          </div>
+      </nav>
+      <!-- Navbar ends -->
+
+      <!-- ALERT FOR COMPLETION -->
+      <?php if(isset($_SESSION["warning"])): ?>
+        <div class="alert alert-danger" role="alert">
+          <?=$_SESSION["warning"] ?>
+        </div>
+        <?php unset($_SESSION["warning"])?>
+      <?php endif;?>
+
+      <?php if(isset($_SESSION["exito"])): ?>
+        <div class="alert alert-success" role="alert">
+          <?=$_SESSION["exito"] ?>
+        </div>
+        <?php unset($_SESSION["exito"])?>
+      <?php endif;?>
+      <!-- ALERT FOR COMPLETION -->
+
+      <!-- Titulo -->
+      <div class="d-flex flex-row justify-content-center">
+        <?php if(isset($warning_eliminar)): ?>
+          <div class="p-2">
+            <h3 class="text-danger"><?=$titulo?></h3>
+          </div>
+        <?php endif;?>
+
+        <?php if(!isset($warning_eliminar)): ?>
+          <div class="p-2">
+            <h3><?=$titulo?></h3>
+          </div>
+        <?php endif;?>
+      </div>

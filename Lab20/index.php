@@ -1,5 +1,7 @@
 <?php
+  session_start();
   require_once("model.php");
+  $titulo = "Buscar Entregas";
   include("html/_header.html");
 
   include("html/_table.html");
@@ -22,7 +24,9 @@
       $numero = "";
   }
 
+  echo '<div id="resultados_consulta">';
   echo consultar_existencia($clave, $rfc, $numero);
+  echo '</div>';
 
 
 

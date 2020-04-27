@@ -1,0 +1,15 @@
+  <div class="d-flex flex-row justify-content-center">
+    <div class="p-2">
+      <form method="POST">
+          <?= selectTabla("Materiales", "Clave", "Descripcion");?>
+          <?= selectTabla("Proveedores", "RFC", "RazonSocial");?>
+          <?= selectTabla("Proyectos", "Numero", "Denominacion");?>
+
+        <input class="btn btn-outline-dark btn-sm" type="submit" value="Buscar">
+      </form>
+    </div>
+    <div class="p-2">
+      <!-- <?= consultar_existencia(1020, 'AAA800101', 5000);?>
+    </div>
+  </div>
+</div> -->
