@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<html lang="es-mx">
+
+<head>
+    <!--Import materialize.css-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title>Welcome to Jurassic Park</title>
+</head>
+
+<body>
+    <header>
+      <div class="navbar-fixed">
+          <nav>
+              <div class="blue darken-1 nav-wrapper">
+                  <a href="index.php" class="brand-logo"><acronym title="Desarrollo de aplicaciones web y Bases de datos"><i class="material-icons left large">home</i>Jurassic Park</acronym></a>
+              </div>
+          </nav>
+      </div>
+    </header>
+    <main>
+
+    </main>
+
+
+    <div class="container">
+
+      <!-- ALERT FOR COMPLETION -->
+        <?php if(isset($_SESSION["exito"])): ?>
+          <div class="row">
+            <div class="col s12">
+              <div class="card-panel teal">
+                <span class="white-text">
+                  <?=$_SESSION["exito"] ?>
+                </span>
+              </div>
+            </div>
+          </div>
+          <?php unset($_SESSION["exito"])?>
+        <?php endif;?>
+
+        <?php if(isset($_SESSION["warning"])): ?>
+          <div class="row">
+            <div class="col s12">
+              <div class="card-panel red">
+                <span class="white-text">
+                  <?=$_SESSION["warning"] ?>
+                </span>
+              </div>
+            </div>
+          </div>
+          <?php unset($_SESSION["warning"])?>
+        <?php endif;?>
+        <!-- ALERT FOR COMPLETION -->
+
+    <h3 class="center"><?= $titulo ?></h3>
