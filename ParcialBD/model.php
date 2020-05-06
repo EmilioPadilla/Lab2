@@ -86,7 +86,7 @@
 			$conexion_bd = conectar_bd();
 
 			//preparar consulta
-			$dml_insertar = 'INSERT INTO incidente (idLugar, idTipo, fecha) VALUES (?, ?, ?)';
+			$dml_insertar = 'CALL agregarIncidente(?,?,?)';
 			if(!($statement = $conexion_bd->prepare($dml_insertar)))
 			{
 				die("Error: (".$conexion_bd->errno.") ".$conexion_bd->error);

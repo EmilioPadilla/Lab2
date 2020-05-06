@@ -115,6 +115,19 @@ ALTER TABLE `incidente`
   ADD CONSTRAINT `incidente_ibfk_2` FOREIGN KEY (`idTipo`) REFERENCES `tipo` (`idTipo`);
 COMMIT;
 
+
+-- Agregar store procedure
+DELIMITER //
+CREATE PROCEDURE `agregarIncidente`(
+Lugar INT(11),
+Tipo INT(11),
+pfecha timestamp
+)
+BEGIN
+	INSERT INTO incidente (idLugar, idTipo, fecha) values (Lugar, Tipo, pfecha);
+END //
+DELIMITER ;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
