@@ -1,0 +1,101 @@
+
+        <!-- Fluid Container -->
+        <div class="fluid-container content">
+          <div class="d-flex flex-row justify-content-center">
+            <h1 class=""><?= $tituloPrueba ?></h1>
+          </div>
+
+          <div class="d-flex flex-row justify-content-end">
+            <div class="p-2 bd-highlight">
+              <button type="button" class="btn btn-outline-dark btnInfoBarra" data-toggle="popover" title="¿Qué significa esta barra?" data-content="El progreso dentro de la prueba. Rosa para completada, azul para en progreso y rosa claro para sin empezar"><i class="material-icons">info</i></button></a>
+            </div>
+
+          </div>
+
+              <div class="progress">
+                <div class="progress-bar progress-bar pb-completed progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 14.2%;">
+                  <a href="#"> Info</a>
+                </div>
+                <div class="progress-bar progress-bar pb-completed progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:14.2%;">
+                    <a href="#"> área 1</a>
+                </div>
+                <div class="progress-bar progress-bar pb-completed  progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 14.2%;">
+                    <a href="#"> área 2</a>
+                </div>
+                <div class="progress-bar progress-bar pb-progress progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 14.2%;">
+                  <a href="#"> area 3</a>
+                </div>
+                <div class="progress-bar progress-bar pb-undone progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:14.2%;">
+                    <a href="#"> habilidad 1</a>
+                </div>
+                <div class="progress-bar progress-bar  pb-undone progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 14.2%;">
+                    <a href="#"> habilidad 2</a>
+                </div>
+                <div class="progress-bar progress-bar pb-undone progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:14.2%;">
+                    <a href="#"> habilidad 3</a>
+                </div>
+              <!-- Progress Bar Ends -->
+              </div>
+
+              <br>
+
+              <!-- Informacion de beneficiaria/Deberia ser Autorellenada -->
+              <h4>Beneficiaria</h4>
+
+                <form class="" method="POST">
+                  <div class="flex-row d-flex justify-content-center">
+                    <div class="p-2 form-group">
+                      <label for="nombreBenef">Nombre(s): </label>
+                      <input type="text" class="form-control" id="nombreBenef" name="nombreBenef" aria-describedby="nombre" value="<?= $nombreBenef ?>" size="40" required/>
+                    </div>
+                  <div class="p-2 form-group">
+                    <label for="ApellidoBenef"> Apellido(s): </label>
+                    <input type="text" class="form-control" id="ApellidoBenef" name="ApellidoBenef" value="<?= $nombreBenef ?>" size="40" required/>
+                  </div>
+                  <div class="p-2 form-group">
+                    <label for="fechanac"> Fecha de Nac. </label><br>
+                    <input type="text" id="fechanac" name="fechanac" value="<?= $nacbenef ?>" size="13" required  />
+
+                  </div>
+
+                  <div class="p-2 form-group">
+                    <label for="DX" name ="DX">Diagnóstico actual: </label>
+                    <input type="text" class="form-control" id="DX" name="DX" aria-describedby="nombreHelp" value="<?= $DXBenef ?>" size="40" required/>
+                  </div>
+                </div>
+
+                <h4>Evaluador</h4>
+                <div class="flex-row d-flex">
+                  <div class="p-2 form-group">
+                    <label for="nombreEmp">Nombre(s): </label>
+                    <input type="text" class="form-control" id="nombreEmp" name="nombreEmp" aria-describedby="nombreEmp" value="<?= $_SESSION["usuario"] ?>" size="40" required/>
+                  </div>
+                  <div class="p-2 form-group">
+                    <label for="apellidoEmp"> Apellido(s): </label>
+                    <input type="text" class="form-control" id="apellidoEmp" name="apellidoEmp" value="<?= $_SESSION["usuario"] ?>" size="40" required/>
+                  </div>
+                  <div class="p-2 form-group">
+                    <label for="fechaEv"> Fecha de Evaluacion </label><br>
+                    <input type="text" id="fechaEv" name="fechaEv" value="" size="13" required  />
+                  </div>
+
+                </div>
+                </form>
+
+
+
+
+              <br>
+
+          <!-- TABLA DE PREGUNTAS DE PRUEBA -->
+          <div class="dflex flex-row">
+
+          </div>
+
+          <div class="d-flex flex-row justify-content-end">
+            <a href="../pruebas/controller_info_prueba.php">
+              <button type="button" class="btn btn-outline-primary border btn-next butonprueba">Comenzar</button>
+            </a>
+          </div>
+        <!-- Fluid Container ends -->
+        </div>

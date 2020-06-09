@@ -1,0 +1,290 @@
+<!-- CONTAINER FOR EVERYTHING -->
+<div class="container-fluid">
+
+<!-- 	PROGRESS BAR -->	
+	<div class="container">
+		<div class="progress">
+			<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:0%" id="progressBar"></div>
+		</div>
+	</div>
+
+<!-- STARTS FORM -->
+	<form method="post" id="registroBeneficiaria" action="controlador_registrarBeneficiaria.php" class="needs-validation">
+	<!-- SECCION 1 DATOS PERSONALES -->
+		<div class="container">
+			<section id="datosPersonales">
+				<h3>DATOS PERSONALES</h3>
+				<div class="row">
+					<div class="col-sm">
+						<!-- NOMBRE COMPLETO BENEFICIARIA -->
+						<div class="form-group">
+							* <i class="fas fa-user"></i>
+							<label for="nombreCompleto">Nombre completo:</label>
+							<input type="text" class="form-control"  placeholder="María Gómez Sandoval" id="nombreCompleto" name="nombreCompleto" required>
+							<div class="invalid-feedback">Escribe un nombre válido (no puede tener números).</div>
+						</div>
+						
+						<!-- FECHA Y CARGA DE ACTA DE NACIMIENTO -->
+						* <i class="far fa-calendar-alt"></i>
+						<label for="fechaNacimiento">Fecha de nacimiento:</label>
+						<div class="form-group form-inline">
+							<input type="date" class="form-control" placeholder="" id="fechaNacimiento" name="fechaNacimiento" required>
+							<!-- CARGA DE ACTA -->
+							<div class="form-group">
+								<input type="file" class="form-control-file" id="actaNacimiento" name="actaNacimiento" aria-describedby="fileHelp">
+							</div>
+						</div>
+
+						<!-- EDAD DE LA BENEFICIARIA -->
+						<div class="form-group">
+							<label for="edad">Edad:</label>
+							<input class="form-control" type="number" value="" placeholder="36" id="edad" name="edad" min="1" max="100">
+							<div class="invalid-feedback">Ingresa una edad válida(no mayor a dos dígitos).</div>
+						</div>
+
+						<!-- CARGA DE CURP -->
+						<i class="fas fa-file-upload"></i>
+						<label for="CURP">CURP:</label>
+						<div class="form-group box">
+							<input class="inputfile" type="file" class="form-control-file" id="CURP" name="CURP" aria-describedby="fileHelp">
+						</div>
+						
+						<!-- CARGA DE IMAGEN DE INGRESO -->
+						<div class="form-group">
+							<i class="fas fa-images"></i>
+							<label for="imagenIngreso">Carga de imagen de ingreso:</label>
+							<input type="file" class="form-control-file" id="imagenIngreso" aria-describedby="fileHelp" name="imagenIngreso">
+						</div>
+					
+						<!-- BOTONES -->
+						<button type="button" class="btn btn-primary" onclick="nextDatosIngreso()">Siguiente</button>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- SECCION 2 DATOS DE INGRESO -->
+		<div class="container">
+			<section id="datosIngreso">
+				<h3>DATOS DE INGRESO</h3>
+
+				<!-- FECHA DE INGRESO -->
+				<div class="form-group">
+					* <i class="far fa-calendar-alt"></i>
+					<label for="fechaIngreso">Fecha de ingreso:</label>
+					<input type="date" class="form-control" placeholder="" id="fechaIngreso" name="fechaIngreso" required>
+				</div>
+
+				<!-- MOTIVO DE INGRESO -->
+				<div class="form-group">
+					<?= crear_select("idMotivoIngreso", "motivoIngreso", "motivosIngreso", true, "", "* Motivo de ingreso:"); ?>   
+				</div>
+
+				<!-- OTRO MOTIVO DE INGRESO -->
+				<div class="form-group">
+					<label for="otroMotivoIngreso">Otro motivo de ingreso:</label>
+					<input type="text" class="form-control"  placeholder="Maltrato y abuso sexual" id="otroMotivoIngreso" name="otroMotivoIngreso">
+					<div class="invalid-feedback">El campo no acepta números.</div>
+				</div>
+
+				<!-- NOMBRE CANALIZADOR -->
+				<div class="form-group">
+					<i class="fas fa-user"></i>
+					<label for="nombreCanalizador">¿Quién canaliza?:</label>
+					<input  type="text" class="form-control" placeholder="Valeria Torres Vera" id="nombreCanalizador" name="nombreCanalizador" >
+					<div class="invalid-feedback">Escribe un nombre válido (no puede tener números).</div>
+				</div>
+
+				<!-- CONSIDERACIONES DE INGRESO -->
+				<div class="form-group">
+					<label for="consideracionesIngreso">Consideraciones relevantes de ingreso:</label>
+					<textarea class="form-control" id="consideracionesIngreso" rows="5" name="consideracionesIngreso"></textarea>
+					<div class="invalid-feedback">El campo solo acepta letras.</div>
+				</div>
+
+				<!-- DIAGNOSTICO INTELECTUAL -->
+				<div class="form-group">
+					* <i class="fas fa-clipboard"></i>
+					<label for="diagnosticoInt">Diagnóstico Intelectual:</label>
+					<input type="text" class="form-control"  placeholder="Síndrome de Down" id="diagnosticoInt" name="diagnosticoInt" required>
+					<div class="invalid-feedback">El campo solo acepta letras.</div>
+				</div>
+
+				<!-- DIAGNOSTICO MOTRIZ -->
+				<div class="form-group">
+					<i class="fas fa-clipboard"></i>
+					<label for="diagnosticoMotriz">Diagnóstico Motriz:</label>
+					<input type="text" class="form-control"  placeholder="Parálisis" id="diagnosticoMotriz" name="diagnosticoMotriz" >
+					<div class="invalid-feedback">El campo solo acepta letras.</div>
+				</div>
+
+				<!-- EDAD MENTAL DE BENEFICIARIA -->
+				<div class="form-group">
+					<label for="edadMental">Edad mental:</label>
+					<input class="form-control" type="number" value="" id="edadMental" name="edadMental" min="1" max="99">
+					<div class="invalid-feedback">Ingresa una edad válida(no mayor a dos dígitos).</div>
+				</div>
+
+				<!-- BOTONES -->
+				<button type="button" class="btn btn-primary" onclick="prevDatosIngreso()">Anterior</button>
+				<button type="button" class="btn btn-primary" onclick="nextDatosFam()">Siguiente</button>
+			</section>
+		</div>
+
+		<!-- SECCION 3 DATOS FAMILIARES -->
+		<div class="container">
+			<section id="datosFamiliares">
+				<h3>DATOS FAMILIARES</h3>
+				
+				<!-- ANTECEDENTES -->
+				<div class="form-group">
+					<i class="fas fa-pencil-alt"></i>
+					<label for="antecedentes">Antecedentes:</label>
+					<textarea class="form-control" id="antecedentes" rows="5" name="antecedentes"></textarea>
+					<div class="invalid-feedback">El campo solo acepta letras.</div>
+				</div>
+
+				<!-- VINCULOS FAMILIARES -->
+				<div class="form-group">
+					<i class="fas fa-user"></i><i class="fas fa-user"></i><i class="fas fa-user"></i>
+					<label for="vinculosFam">Vínculos Familiares:</label>
+					<input type="text" class="form-control" placeholder="Abuela materna" id="vinculosFam" name="vinculosFam">
+					<div class="invalid-feedback">El campo solo acepta letras.</div>
+				</div>
+
+				<!-- CONVIVENCIAS -->
+				<div class="form-group">
+					<i class="fas fa-pencil-alt"></i>
+					<label for="convivencias">Convivencias:</label>
+					<textarea class="form-control" id="convivencias" rows="5" name="convivencias"></textarea>
+				</div>
+
+				<!-- TUTELA -->
+				<div class="form-group">
+					<label for="tutela">Tutela:</label>
+					<input type="text" class="form-control" placeholder="Madre" id="tutela" name="tutela">
+					<div class="invalid-feedback">El campo solo acepta letras.</div>
+				</div>
+
+				<!-- SITUACION JURIDICA -->
+				<div class="form-group">
+					<i class="fas fa-gavel"></i>
+					<label for="situacionJuridica">Situacion Juridica:</label>
+					<input type="text" class="form-control" placeholder="Perdida de patria potestad" id="situacionJuridica" name="situacionJuridica">
+					<div class="invalid-feedback">El campo solo acepta letras.</div>
+				</div>
+
+				<!-- BOTONES -->
+				<button type="button" class="btn btn-primary" onclick="prevDatosFam()">Anterior</button>
+				<button type="button" class="btn btn-primary" onclick="nextDatosAcad()">Siguiente</button>
+			</section>
+		</div>	
+
+		<!-- SECCION 4 DATOS ACADEMICOS -->
+		<div class="container">
+			<section id="datosAcademicos">
+				<h3>DATOS ACADEMICOS</h3>
+				
+				<!-- ESCOLARIDAD -->
+				<div class="form-group">
+					* <i class="fas fa-graduation-cap"></i>
+					<?= crear_select("idEscolaridad", "nivelEscolar", "escolaridad", true, "", "Escolaridad: "); ?>   
+				</div>
+
+				<!-- GRADO ESCOLAR -->
+				<div class="form-group">
+					<label for="gradoEscolar">Grado escolar:</label>
+					<input type="text" class="form-control"  placeholder="Primero" id="gradoEscolar" name="gradoEscolar">
+					<div class="invalid-feedback">El campo solo acepta letras.</div>
+				</div>
+
+				<!-- EXPEDIENTE ESCOLAR -->
+				<div class="form-group">
+					<i class="fas fa-file-upload"></i>
+					<label for="expedienteEscolar">Expediente Escolar</label>
+					<input type="file" id="archivosEscolares[]" name="archivosEscolares[]" multiple="" class="form-control-file">
+				</div>
+
+				<!-- BOTONES -->
+				<button type="button" class="btn btn-primary" onclick="prevDatosAcad()">Anterior</button>
+				<button type="button" class="btn btn-primary" onclick="nextArchivos()">Siguiente</button>
+			</section>
+		</div>
+
+		<div class="container">
+			<section id="archivosVarios">
+			
+				<!-- SECCION 5 ARCHIVOS VARIOS -->
+				<h3>Carga de archivos varios</h3>
+				<div class="row">
+					<div class="col-5 sm">
+						<div class="form-group">
+							<i class="fas fa-briefcase-medical"></i>
+							<label for="expedienteMedico">Expediente Médico</label>
+							<input type="file" id="archivosMedicos[]" name="archivosMedicos[]" multiple="" class="form-control-file">
+						</div>
+					</div>
+
+					<!-- SECCION 6 LOS TRES SACRAMENTOS -->
+					<div class="col-7 sm">
+						<label for="expedienteEscolar">Los tres sacramentos</label>
+
+						<div class="form-group">
+							<i class="fas fa-file-upload"></i>
+							<label for="feBautismo">Carga de fe de bautismo:</label>
+							<input type="file" class="form-control-file" id="feBautismo" name="feBautismo" aria-describedby="fileHelp">
+						</div>
+
+						<div class="form-group">
+							<i class="fas fa-file-upload"></i>
+							<label for="boletaConfirmacion">Carga de boleta de confirmación:</label>
+							<input type="file" class="form-control-file" id="boletaConfirmacion" name="boletaConfirmacion" aria-describedby="fileHelp">
+						</div>
+
+						<div class="form-group">
+							<i class="fas fa-file-upload"></i>
+							<label for="primeraCom">Carga de primera comunión:</label>
+							<input type="file" name="primeraCom" class="form-control-file" id="primeraCom" aria-describedby="fileHelp">
+						</div>
+					</div>
+					<!-- BOTONES -->
+					<button type="submit" class="btn btn-primary" onclick="prevArchivos()">Anterior</button>
+					<button type="button" class="btn btn-primary" 
+						onclick="submitBeneficiarias()">REGISTRAR</button>
+				</div>
+			</section>
+		</div>
+		*Los campos marcados con un asterisco son requeridos.
+	</form>
+
+	<div class="container" id="registroExitoso" >
+		<div class="row">
+			<div class="col">
+				<div class="alert alert-success"><center><h5>EL REGISTRO HA SIDO EXITOSO</h5></center></div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>

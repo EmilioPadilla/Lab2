@@ -1,0 +1,116 @@
+<!-- Fluid Container -->
+<div class="container-fluid">
+	<h1 class="mt-4" align="center">Datos de Egreso</h1>
+	<center><h3><?php if(isset($nombreCompleto)): ?><?=$nombreCompleto?><?php endif;?></h3></center>
+	<hr/>
+<!-- Fluid Container ends -->
+</div>
+
+<div class="container" id="guardarBien" >
+	<div class="row">
+		<div class="col">
+			<div class="alert alert-success"><center><h5>CAMBIOS GUARDADOS CORRECTAMENTE</h5></center></div>
+		</div>
+	</div>
+</div>
+
+<form method="post" action="controlador_modificarBeneficiaria.php">
+<!-- Sección 1 -->
+<div class="container">
+	<section id="datosEgreso">
+		<div class="row">
+			<div class="col-sm">
+				<!-- FECHA DE EGRESO -->
+			<div class="form-group">
+				<i class="far fa-calendar-alt"></i>
+				<label for="fechaEgreso">Fecha de egreso:</label>
+				<input type="date" class="form-control" placeholder="" id="fechaEgreso" value="<?php if(isset($fechaEgreso)): ?><?=$fechaEgreso?><?php else: ?><?php endif;?>"">
+			</div>
+			<!--  SELECTOR MOTIVO DE EGRESO -->
+			<div class="form-group">
+				<?php if(isset($idMotivoEgreso)): ?>
+				<?= crear_select("idMotivoEgreso", "motivoEgreso", "motivosEgreso", true, $idMotivoEgreso, "Motivo de egreso"); ?>   
+				<?php else: ?>
+				<?= crear_select("idMotivoEgreso", "motivoEgreso", "motivosEgreso", true); ?>   
+				<?php endif; ?>
+			</div>
+			<?php if($idMotivoEgreso == 14): ?>
+			<div class="form-group">
+				<label for="otroMotivoIngreso">Otro motivo de egreso:</label>
+				<input type="text" class="form-control"  placeholder="Mala conducta y violencia" id="otroMotivoEgreso" value="<?php if(isset($otroMotivoEgreso)): ?><?=$otroMotivoEgreso?><?php else: ?><?php endif;?>">
+			</div>
+			<?php endif; ?> 
+			<!-- CONSIDERACIONES EGRESO -->
+			<div class="form-group">
+				<i class=""></i>
+				<label for="consideracionesEgreso">Consideraciones de egreso:</label>
+				<textarea class="form-control" id="consideracionesEgreso" rows="5" ><?php if(isset($consideracionesEgreso)): ?><?=$consideracionesEgreso?><?php else: ?><?php endif;?></textarea>
+			</div>
+			<!-- SELECTOR SIGUIENTE DESTINO -->
+            <div class="form-group">
+				<?php if(isset($idDestino)): ?>
+				<?= crear_select("idDestino", "nombreDestino", "destinos", true, $idDestino, "Destino"); ?>   
+				<?php else: ?>
+				<?= crear_select("idDestino", "nombreDestino", "destinos", true); ?>   
+				<?php endif; ?>
+			</div>
+			<!-- ESPECIFICACIONES DESTINO -->
+			<div class="form-group">
+				<i class=""></i>
+				<label for="especificacionesDestino">Especificaciones de destino:</label>
+				<textarea class="form-control" id="especificacionesDestino" rows="5"><?php if(isset($especificacionesDestino)): ?><?=$especificacionesDestino?><?php else: ?><?php endif;?></textarea>
+			</div>
+			<!-- NOMBRE DE QUIEN RECIBE -->
+			<div class="form-group">
+				<i class="fas fa-user"></i>
+				<label for="nombreReceptor">¿Quién recibe?</label>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="DIF Querétaro" id="nombreReceptor" value="<?php if(isset($nombreReceptor)): ?><?=$nombreReceptor?><?php else: ?><?php endif;?>">
+					</div>
+				<!-- CARTA FIRMADA DE QUIEN RECIBE -->
+				<div class="form-group">
+					<input type="file" class="form-control-file" id="actaNacimiento" aria-describedby="fileHelp" required>
+				</div>
+			</div>
+			<!--  LOGROS ALCANZADOS -->
+			<div class="form-group">
+				<i class="fas fa-bullseye"></i>
+				<label for="logros">Logros:</label>
+				<textarea class="form-control" id="logros" rows="5"><?php if(isset($logros)): ?><?=$logros?><?php else: ?><?php endif;?></textarea>
+			</div>
+			<!-- CARGA DE IMAGEN DE EGRESO -->
+			<div class="form-group">
+				<i class="fas fa-images"></i>
+				<label for="imagenEgreso">Carga de imagen de egreso:</label>
+				<input type="file" class="form-control-file" id="imagenEgreso" aria-describedby="fileHelp">
+			</div>
+		    </div>
+			</div>
+		</div>
+	</section>
+	<hr>
+	<center><button type="submit" class="btn btn-submit text-white">GUARDAR CAMBIOS</button></center>
+	</form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>

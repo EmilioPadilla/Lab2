@@ -1,0 +1,90 @@
+
+
+        <!-- Fluid Container -->
+        <div class="container-fluid">
+          <h1 class="mt-4" align="center">Modificar Datos de Beneficiarios de Nómina</h1>
+          <hr />
+        <!-- Fluid Container ends -->
+        </div>
+          <div class="container" id="guardarBien" >
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-success"><center><h5>CAMBIOS GUARDADOS CORRECTAMENTE</h5></center></div>
+                </div>
+              </div>
+          </div>
+        <!-- Sección 5 -->
+           <div class="container">
+          <section id="benefNomina">
+            <form action="/action_page.php" method="post">
+                <div class="form-group">
+                  <i class="fas fa-user"></i>
+                  <label for="nombreBeNom">Nombre:</label>
+                  <div class="form-inline">
+                    <input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control" placeholder="Nombre" id="nombreBeNom" required>
+                    <input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control" placeholder="Apellido paterno" id="paternoBeNom" required>
+                    <input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control" placeholder="Apellido materno" id="maternoBeNom" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="parentesco">Parentesco:</label>
+                  <input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control" placeholder="Hermano" id="parentesco" required>
+                </div>
+                <div class="form-group">
+                  <label for="rfcNom">RFC:</label>
+                  <input pattern="[A-Za-z0-9]+{13}" type="text" class="form-control" placeholder="SSMS950104FDE" id="rfcNom" required>
+                </div>
+                <div class="form-group">
+                  <i class="fas fa-home"></i>
+                  <label for="direccionBeNom">Dirección:</label>
+                  <div class="form-inline">
+                    <input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control" placeholder="Calle" id="calleBeNom" required>
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">#</span>
+                  </div>
+                    <input class="form-control" type="number" placeholder="213" id="numero" min="1" required>
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Col.</span>
+                  </div>
+                    <input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control" placeholder="Colonia" id="coloniaBeNom" required>
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">C.P.</span>
+                  </div>
+                    <input pattern="[0-9]{5}" type="text" class="form-control" placeholder="96053" id="cp">
+                  </div>
+                </div>
+                <label for="porcentaje">Porcentaje:</label>
+                <div class="form-group form-inline">
+                  <input class="form-control" type="number" placeholder="100" id="porcentaje" min="1" max="100" required>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">%</span>
+                  </div>
+                </div>
+                <button type="submit" onclick="guardarCam()" class="btn btn-submit text-white">Guardar cambios</button>
+            </form>
+          </section>
+        </div>
+          
+             
+
+<!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>

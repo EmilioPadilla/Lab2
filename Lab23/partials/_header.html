@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title><?= $titulo ?></title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Custom styles for this template -->
+  <link href="../css/simple-sidebar.css" rel="stylesheet">
+
+
+  <?php if(isset($estilos)): agregar_estilos($estilos); endif; ?>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Container wrapper -->
+    <div class="d-flex bodycontainer" id="wrapper">
+      <!-- Sidebar -->
+      <div class="border-right d-none d-md-block" id="sidebar-wrapper">
+		<?php if($_SESSION["usuario"] == "Administradora" && isset($registrando)) : ?>
+        <div class="sidebar-heading"><input type="image" data-toggle="modal" data-target=".modalSalir" src="../images/logo-CMG.jpg" class="logo-CMG rounded"></input></div>
+    <?php elseif($_SESSION["usuario"] == "Administradora") : ?>
+        <div class="sidebar-heading"><a href="../usuarios/vistaAdmin.php"><img src="../images/logo-CMG.jpg" class="logo-CMG rounded" alt="logo CMG"></a></div>
+    <?php else: ?>
+        <div class="sidebar-heading"><a href="../usuarios/vistaEmpleado.php"><img src="../images/logo-CMG.jpg" class="logo-CMG rounded" alt="logo CMG"></a></div>
+		<?php endif; ?>
+		<div class="list-group list-group-flush">
+          <?php botones_sidebar($botones); ?>
+        </div>
+      </div>
+      <!-- Sidebar ends -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <!-- Navbar  -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <button class="btn btn-blanco" id="menu-toggle">
+            <?= $titulo ?>
+          </button>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img src="https://cdn.mos.cms.futurecdn.net/qcXNfw7aYK3FwqxW3zepvS.jpg" class="imgprofile rounded-circle" alt="imgprofile">
+                  <?= $_SESSION["usuario"] ?>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="../controladores/cerrarSesion.php">Cerrar sesión</a>
+				  <a class="dropdown-item" href="../usuarios/modificarCuentaPersonal.php">Configuracion de cuenta</a>
+				  <!--El botón para configurar usuarios solo se muestra si la cuenta es admin-->
+				  <?php if($_SESSION["usuario"] === "Administradora"):?>
+                  	<div class="dropdown-divider"></div>
+                  	<a class="dropdown-item" href="../usuarios/consultarCuentas.php">Configuracion de usuarios</a>
+				  <?php endif; ?>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- Navbar ends -->

@@ -1,0 +1,112 @@
+<section>	
+    <h3>Laboratorio 17: Role Based Acess Control (RBAC)</h3>
+		<center><h2>Q & A</h2></center>
+		<ul>
+			<li>
+				<strong>¿En qué consiste el acceso basado en roles?</strong><br>
+         Consiste en asignar derechos de acceso a los usuarios dentro de un sitio web en función del rol que juegan dentro de la organización a la que pertenecen y las tareas y/o actividades que estos realizan.  [1]
+			</li>
+      <br>
+			<li>
+				<strong>¿Investiga y describe 6 sistemas, 3 conocidos que empleen RBAC y 3 desconocidos que no, junto con su funcionamiento general.</strong><br>
+        <ul>
+          <li>
+            <strong>1. SELinux</strong><br>
+            SELinux define los controles de acceso para las aplicaciones, los procesos y los archivos dentro de un sistema. Utiliza las políticas de seguridad, que consisten en un conjunto de reglas que indican a SELinux a qué se puede acceder.
+            <br>
+            Cuando una aplicación o un proceso, conocidos como sujetos, solicitan acceso a algún objeto, por ejemplo un archivo, SELinux consulta la caché de vector de acceso (AVC), donde se almacenan los permisos de los objetos y los sujetos. [3]
+          </li>
+          <br>
+          <li>
+            <strong>2. AppArmor</strong><br>
+            Apparmor es un sistema de control de acceso basado en módulos de seguridad. En la práctica, el núcleo pregunta a AppArmor antes de cada llamada al sistema para saber si un proceso está autorizado a realizar dicha operación. A través de este mecanismo, Apparmor confina un programa a un conjunto limitado de recursos. [4]
+          </li>
+          <br>
+          <li>
+            <strong>3. grsecurity</strong><br> 
+            Es una amplia mejora de seguridad para el kernel de Linux que defiende contra una amplia gama de amenazas de seguridad.
+            Grsecurity RBAC ha proporcionado el primer sistema de aprendizaje que puede generar automáticamente políticas de sistema completo con menos privilegios sin configuración manual, además, este no fue diseñado para ser un marco totalmente permisivo, tiene el propósito específico de bloquear el acceso a todo el sistema.
+            La organización de las políticas RBAC tiene un sentido intuitivo. Los roles se aplican a usuarios o grupos (con asignación para roles "especiales" que se pueden ingresar con o sin autenticación). Estos roles contienen una colección de temas que describen políticas para binarios y scripts en el sistema. Los sujetos contienen una colección de objetos, que son los archivos, las capacidades, los sockets de red y los recursos que un proceso puede usar. [5]
+          </li>
+          <br>
+          <li>
+            <strong>4. XACML</strong><br>
+            Significa "Lenguaje de marcado de control de acceso extensible". El estándar define un lenguaje declarativo de política de control de acceso basado en atributos, una arquitectura y un modelo de procesamiento que describe cómo evaluar las solicitudes de acceso de acuerdo con las reglas definidas en las políticas.
+            Los atributos (bits de datos) asociados con un usuario o acción o recurso son entradas en la decisión de si un usuario dado puede acceder a un recurso dado de una manera particular. [6]
+          </li>
+          <br>
+          <li>
+            <strong>5. Seguridad de bases de datos</strong><br>
+            Con ABAC, es posible definir políticas que se apliquen a múltiples bases de datos. Esto se llama enmascaramiento dinámico de datos.
+            Política: los gerentes pueden ver las transacciones en su región
+            Se rediseñó la política de forma centrada en los datos: los usuarios con rol == administrador pueden realizar la acción == SELECCIONAR en la tabla == TRANSACCIONES si user.region == transacción.region [7]
+          </li>
+          <br>
+          <li>
+            <strong>6. Seguridad de API y microservicios</strong><br>
+            ABAC se puede usar para aplicar autorizaciones basadas en atributos a los métodos o funciones API. Por ejemplo, una API bancaria puede exponer un método approveTransaction (transId). ABAC se puede usar para asegurar la llamada. Con ABAC, un autor de políticas puede escribir lo siguiente:
+            Política: los gerentes pueden aprobar transacciones hasta su límite de aprobación.
+            Atributos utilizados: rol, ID de acción, tipo de objeto, cantidad, límite de aprobación. [7]
+            <br>
+          </li>
+        </ul>
+			</li>
+      <br>
+			<li>
+				<strong>Beneficios y desventajas de este modelo.</strong><br>
+        <table>
+          <thead>
+            <tr>
+              <td>VENTAJAS [1]</td>
+              <td>DESVENTAJAS [2]</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>- Aumenta la eficiencia operativa:</strong> Con RBAC, las empresas pueden disminuir la necesidad de papeleo y cambios de contraseña cuando contratan empleados o cambian las funciones de los empleados existentes. Además, las empresas pueden integrar más fácilmente a terceros en sus redes.</td>
+              <td><strong>- Explosión de roles:</strong> Ocurre cuando el nivel de granularidad necesario para su control de acceso es demasiado detallado. Dicho problema es difícil y costoso de administrar y hace que el control de acceso sea confuso y complicado, reduciendo así su efectividad. La cantidad de roles puede conducir a agujeros de seguridad que a menudo son demasiado difíciles de encontrar y cerrar.</td>
+            </tr>
+            <tr>
+              <td><strong>- Mejora del cumplimiento:</strong> Las empresas con sistemas RBAC cumplen con los requisitos reglamentarios y estatutarios de confidencialidad y privacidad fácilmente porque los ejecutivos y los departamentos de TI pueden administrar de manera más eficaz cómo se accede y se utiliza la información.</td>
+              <td><strong>- Tolerancia al riesgo de seguridad:</strong> Realizar un análisis de riesgos de seguridad con un plan proactivo de prevención de riesgos es esencial para la implementación de RBAC. RBAC está enfocado en datos; si su organización es reactiva a los riesgos de seguridad, RBAC puede no ser la forma óptima de asegurar el acceso a los datos de su red. RBAC requiere que tenga un conocimiento profundo del diseño de seguridad de su empresa y de cómo se otorgan los permisos antes de la implementación. Una vez implementado, es difícil reaccionar ante los cambios en las amenazas y riesgos de seguridad.</td>
+            </tr>
+            <tr>
+              <td><strong>- Reducción de costos:</strong> Al no permitir el acceso del usuario a ciertos procesos y aplicaciones, las compañías pueden ahorrar recursos tales como ancho de banda de red, memoria y almacenamiento.</td>
+              <td><strong>- Escalabilidad y Dinamismo:</strong> RBAC puede ser difícil de mantener y administrar si el crecimiento de la organización es muy rápido. La escalabilidad de su implementación se ve limitada y puede requerir un rediseño. </td>
+            </tr>
+            <tr>
+              <td><strong>- Brindando mayor visibilidad:</strong> RBAC brinda a los administradores una mayor supervisión del negocio, al tiempo que garantiza que los usuarios e invitados autorizados en el sistema solo tengan acceso a lo que necesitan para hacer su trabajo.</td>
+              <td><strong>- Implementación costosa y difícil:</strong> La mayoría de las veces las migraciones tienen una variedad de dificultades y desafíos imprevistos, y resultan en agujeros de seguridad en ambos sistemas junto con otros defectos costosos, como tiempo de inactividad no planificado y pérdida de datos.</td>
+            </tr>
+            <tr>
+              <td><strong>- Disminución de brechas de seguridad:</strong> La implementación de RBAC significa restringir el acceso a información confidencial, reduciendo así la posibilidad de violaciones de datos.</td>
+            </tr>
+          </tbody>
+        </table>
+			</li>
+	</section>
+	<section>
+		<h2>Referencias</h2>
+		<ul>
+			<li>
+        <strong>[1]</strong> https://searchsecurity.techtarget.com/definition/role-based-access-control-RBAC</li>
+			<li>
+        <strong>[2]</strong> https://blog.plainid.com/problem-with-rbac</li>
+			<li>
+        <strong>[3]</strong> https://www.redhat.com/es/topics/linux/what-is-selinux
+      </li>
+      <li>
+        <strong>[4]</strong> https://debian-handbook.info/browse/es-ES/stable/sect.apparmor.html
+      </li>
+      <li>
+        <strong>[5]</strong> https://grsecurity.net/
+      </li>
+      <li>
+        <strong>[6]</strong> https://www.oasis-open.org/committees/xacml/
+      </li>
+      <li>
+        <strong>[7]</strong> https://en.wikipedia.org/wiki/Attribute-based_access_control
+      </li>
+		</ul>
+	</section>
+  </body>

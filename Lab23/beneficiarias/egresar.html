@@ -1,0 +1,93 @@
+<!-- MODAL EGRESAR BENEFICIARIAS -->
+<div class="modal fade" id="<?= $tituloModal ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<!-- HEADER DEL MODAL -->
+			<div class="modal-header">
+				<h3>DATOS DE EGRESO</h3>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
+			</div>
+			<form action="../beneficiarias/controlador_egresarBeneficiaria.php" method="post">
+			<div class="modal-body">
+				<div class="alert alert-danger" role="alert">
+					<h4 class="alert-heading">¿Estás seguro de que deseas egresar a esta beneficiaria?</h4>
+				</div>
+				<ul>
+					<li><strong>ID: </strong><?= $row['idBeneficiaria'] ?></li>
+					<div class="form-group">
+					<input name="idBeneficiaria" type="hidden" value="<?= $row['idBeneficiaria']?>" id="idBeneficiaria">
+					</div>
+					<li><strong>Nombre: </strong><?= $row['nombreCompleto'] ?></li>
+				</ul>			
+			</div>
+			<div class="container">
+			<!-- FECHA DE EGRESO -->
+			<div class="form-group">
+				<i class="far fa-calendar-alt"></i>
+				<label for="fechaEgreso">Fecha de egreso:</label>
+				<input type="date" class="form-control" placeholder="" name="fechaEgreso" required>
+			</div>
+			<!--  SELECTOR MOTIVO DE EGRESO -->
+			<div class="form-group">
+				<?php if(isset($idMotivoEgreso)): ?>
+				<?= crear_select("idMotivoEgreso", "motivoEgreso", "motivosEgreso", true, $idMotivoEgreso, ); ?>   
+				<?php else: ?>
+				<?= crear_select("idMotivoEgreso", "motivoEgreso", "motivosEgreso", true, "", "Motivo de Egreso"); ?>   
+				<?php endif; ?>
+			</div>
+			<!--  CAMPO DE OTRO MOTIVO DE EGRESO -->
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Inadaptación y falta de compromiso" name="otroMotivoEgreso">
+			</div>
+			<!-- CONSIDERACIONES EGRESO -->
+			<div class="form-group">
+				<i class=""></i>
+				<label for="consideracionesEgreso">Consideraciones de egreso:</label>
+				<textarea class="form-control" name="consideracionesEgreso" rows="5"></textarea>
+			</div>
+			<!-- SELECTOR SIGUIENTE DESTINO -->
+            <div class="form-group" name="idDestino">
+				<?php if(isset($idDestino)): ?>
+				<?= crear_select("idDestino", "nombreDestino", "destinos", true, $idDestino); ?>   
+				<?php else: ?>
+				<?= crear_select("idDestino", "nombreDestino", "destinos", true, "", "Destino"); ?>   
+				<?php endif; ?>
+			</div>
+			<!-- ESPECIFICACIONES DESTINO -->
+			<div class="form-group">
+				<label for="especificacionesDestino">Especificaciones de destino:</label>
+				<textarea class="form-control" name="especificacionesDestino" rows="5"></textarea>
+			</div>
+			<!-- NOMBRE DE QUIEN RECIBE -->
+			<div class="form-group">
+				<i class="fas fa-user"></i>
+				<label for="nombreReceptor">¿Quién recibe?</label>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="DIF Estatal Querétaro" name="nombreReceptor">
+					</div>
+				<!-- CARTA FIRMADA DE QUIEN RECIBE -->
+				<div class="form-group">
+					<input type="file" class="form-control-file" name="cartaRecibe" aria-describedby="fileHelp" required>
+				</div>
+			</div>
+			<!--  LOGROS ALCANZADOS -->
+			<div class="form-group">
+				<i class="fas fa-bullseye"></i>
+				<label for="logros">Logros:</label>
+				<textarea class="form-control" name="logros" rows="5"></textarea>
+			</div>
+			<!-- CARGA DE IMAGEN DE EGRESO -->
+			<div class="form-group">
+				<i class="fas fa-images"></i>
+				<label for="imagenEgreso">Carga de imagen de egreso:</label>
+				<input type="file" class="form-control-file" name="imagenEgreso" aria-describedby="fileHelp">
+			</div>
+		    </div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
+			<button type="submit" class="btn btn-success">EGRESAR</button>
+		</div>
+		</form>
+		</div>
+	</div>
+</div>

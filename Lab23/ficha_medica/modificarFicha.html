@@ -1,0 +1,76 @@
+
+
+        <!-- Fluid Container -->
+        <div class="container-fluid">
+          <h1 class="mt-4" align="center">Modificar Ficha Médica</h1>
+          <hr />
+        <!-- Fluid Container ends -->
+        </div>
+        <div class="container-fluid">      
+          
+          
+          <form id="llenado">
+            <div class="container" id="guardarBien" >
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-success"><center><h5>CAMBIOS GUARDADOS CORRECTAMENTE</h5></center></div>
+                </div>
+              </div>
+          </div>
+            <div class="row form-group">
+              <div class="col-12 col-md-8">
+                <!--calendario-->
+                <label for="fechacita" name ="fechacita">Fecha de cita: </label>
+                <input type="text" name="cita" value="01/01/2020" />
+
+
+              </div>
+              <div class="col-12 col-md-8">
+                
+                <label for="doctor" name ="doctor" >Nombre del Doctor: </label>
+                
+                <input type="text" class="form-control" id="doctor" name="doctor" aria-describedby="nombreHelp" placeholder="Doctor Norberto González" size="100" required/>         
+              
+              </div>
+            </div> 
+            
+            <div class="row form-group">
+              <div class="col-12 col-md-8">
+                  <label for="diagnostico">Diagnóstico dado:</label>
+                  <textarea class="form-control" id="diagnostico" rows="3" placeholder="Gripe y resfriado por cambios de clima. "required></textarea>
+                </div>       
+            </div>
+            
+            <div class="row form-group">
+              <div class="col-12 col-md-8">
+                  <label for="diagnostico">Medicamentos Recetados:</label>
+                  <textarea class="form-control" id="meds" rows="5" placeholder="Paracetamol" required></textarea>
+                </div>       
+            </div>
+            
+            <div class="row form-group">
+              <div class="col-12 col-md-8">
+                <!--calendario-->
+                <label for="fechapcita" name ="fechapcita">Próxima Cita: </label>
+                <input type="text" name="proxcita" value="01/01/2020" />
+
+
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col offset-md-6">   
+                <a href="#"><button onclick="BorradoEx()"type="button" class="btn btn-danger"><i class="material-icons text-white">delete</i></button></a>
+                <button type="button" onclick="guardarCam()" class="btn btn-primary btn-submit">Guardar cambios</button>
+              </div>
+            </div>
+          </form> 
+          <div class="container" id="borradoExitoso" >
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-success"><center><h5>FICHA BORRADA EXITOSAMENTE</h5></center></div>
+                </div>
+            </div>
+        </div>
+        </div>      
+        

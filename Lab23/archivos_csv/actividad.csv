@@ -1,0 +1,307 @@
+﻿1 1,1, Posición de acostado inestable.
+2,1,Mantiene las piernas y los brazos en flexión
+3,1,Espalda redondeada
+4,1,La cara la mantiene dirigida hacia un lado
+5,1,Manos empuñadas con el pulgar atrapado
+6,1,Al moverle su cabeza o su cuerpo se modifica
+7,1,Mínimo movimiento
+8,2,Posición estable de acostado
+9,2,Disminucion del tono muscular de brazos y piernas
+10,2,Espalda alineada y recta
+11,2,Gira la cabeza libremente
+12,2,Dirige sus movimientos hacia el objeto que se le muestra.
+13,2,Inicia el contacto entre las plantas de los pies
+14,2,Inicia el volteo
+15,3,Apoya codos y eleva la cabeza en la línea media o (acostado boca abajo)
+16,3,Modifica constantemente su postura por interés visual
+17,3,Sigue la trayectoria del objeto con la mano sin cruzar línea media
+18,3,Apoya codo y muslo del lado contrario al que ve
+19,3,Intenta elevar el brazo del lado de la cara o apoyándose en el contrario.
+20,3,Realiza movimientos  natatorios al tratar de alcanzar un objeto.
+21,3,Comienza el rodado
+22,4,Se mantiene muy estable en posición de acostado.
+23,4,Eleva brazos llevándolos a la línea media o siendo sus movimientos mas dirigidos hacia lo que desea
+24,4,Empieza a desarrollar la prensión
+25,4,Logra el rodado ágil
+26,5,Se mantiene estable acostado de lado
+27,5,Consigue la posición de sentado
+28,5,Se sienta de lado liberando la mano contraria
+29,5,Realiza pinza fina o flexionando los últimos dedos
+30,5,Se arrastra sin usar piernas
+31,5,Se arrastra con brazos y piernas
+32,5,Gatea incoordinadamente o se sienta  y continúa
+33,6,Gatea coordinadamente
+34,6,Logra pararse
+35,7,Se para de manera  más estable
+36,7,Logra la marcha lateral
+37,7,Se agarra con una mano y con la otra toma objetos (al estar de pie)
+38,8,Da sus primeros pasos sólo cambiando de un mueble a otro.
+39,8,Camina independientemente
+40,8,Arrastra y/o empuja objetos
+41,9,Mantiene su columna bien alineada y con curvatura en la zona de la cintura.
+42,9,Apoya su peso formando arco del pie.
+43,9,Realiza movimientos más complejos de antebrazos (destapa botes o carga o etc.)
+44,9,Se para en un pie o con un grado de equilibrio mayor permitiendo una descarga de peso adecuada
+45,9,Inicia el brincado
+46,9,Realiza marcha adelante o atrás y lateral con precisión.
+47,10,Sigue objetos en movimiento
+48,10,Atiende objetos próximos y distantes
+49,10,Busca el objeto perdido
+50,11,Responde a un estímulo sonoro
+51,11,Busca la fuente sonora
+52,12,Presenta disociación d labio
+53,12,Presenta disociación de lengua
+54,12,Presenta disociación d mandíbula
+55,13,Reconoce cabeza
+56,13,Reconoce brazos
+57,13,Reconoce manos
+58,13,Reconoce piernas
+59,13,Reconoce pies
+60,13,Reconoce ojos
+61,13,Reconoce boca
+62,14,Discrimina sonidos del medio ambiente.
+63,14,Sigue órdenes de un comando
+64,14,Sigue órdenes de dos comandos
+65,15,Expresa placer-displacer
+66,15,Maneja código elemental de comunicación o  (si-no).
+67,15,Presenta patrón básico de respuesta en palabra hablada
+68,15,Presenta patrón básico de respuesta en palabra escrita
+69,15,Presenta patrón básico de respuesta en movimiento de cabeza
+70,15,Presenta patrón básico de respuesta en movimiento de brazos o manos
+71,15,Presenta patrón básico de respuesta en movimientos de piernas o pies
+72,15,Presenta patrón básico de respuesta en movimientos oculares
+73,15,Repite vocales y sílabas simples: a-e-i-o-u pa-ca-la-el-li-up-co-es-si-me-im-be-ib
+74,15,Repite sílabas complejas:bra-glo-tre-dru-blo-afa-puen-cuan-guen
+75,15,Repite palabras: gallina-bolsa-cuento-ventana-peso-casa-semáforo
+76,15,Elabora frases con cualquier sistema de comunicación
+77,15,Es capaz de elaborar respuestas utilizando frases simples: sujeto -verbo
+78,16,Imita de manera voluntaria movimientos
+79,16,Imita movimientos en forma diferida.
+80,17,Sigue órdenes de tres comandos
+81,18,Tiene concepto de  mucho-poco
+82,18,Ordena
+83,19,Fija y mantiene la mirada con el interlocutor.
+84,19,Sonrisa social  (3 meses de edad)
+85,19,Reconoce su imagen en el espejo (8 meses)
+86,19,Reconoce y responde a las voces familiares
+87,19,Reconoce o identifica a la madre o figura sustituta  (8-9 meses)
+88,19,"Uso del  ""no"" indiscriminado"
+89,19,"Uso del  ""no"" adecuado"
+90,19,Tiene conciencia de propiedad
+91,19,Puede estar con una persona conocida como el maestro o tíos o amigos de la familia o etc.
+92,19,Participa en la elección de sus alimentos o prendas de vestir y juguetes.
+93,20,Discrimina colores primarios: rojo o azul o amarillo
+94,20,Discrimina colores secundarios: naranja o verde o morado.
+95,20,Discrimina otros colores:  blanco o negro rosa o café
+96,21,Discrimina formas geométricas básicas: círculo o cuadrado o triángulo y rectángulo.
+97,22,Identifica día-noche
+98,22,Identifica ayer-hoy-mañana
+99,22,Conoce días de la semana
+100,22,Conoce meses del año
+101,22,Diferencia: arriba - abajo
+102,22,Diferencia: atrás - adelante
+103,23,Idenfica derecha e izquierda
+104,23,Identifica patrón cruzado
+105,23,Identifica derecha e izquierda en objetos
+106,24,Recuerda sonidos diferentes 1 o 2 o 3
+107,24,Recuerda secuencias de sonidos diferentes 2 o 3.
+108,25,Recuerda estímulos visuales 1 o 2 o 3
+109,25,Recuerda secuencias de estímulos visuales    2 o 3.
+110,26,Identifica grande o chico
+111,26,Identifica largo o corto
+112,26,Identifica lleno o vacío
+113,26,Puede hacer relación 1 a 1
+114,26,Puede clasificar
+115,26,Maneja concepto numérico
+116,27,Identifica partes finas como orejas
+117,27,Identifica partes finas como nariz
+118,27,Identifica partes finas como cejas
+119,27,Identifica partes finas como pestañas
+120,27,Identifica partes finas como dientes
+121,27,Identifica partes finas como codo
+122,27,Identifica partes finas muñeca
+123,27,Identifica partes finas como tobillo
+124,28,Respeta espacios gráficos.
+125,28,Reconoce vocales mayúsculas y minúsculas.
+126,28,Reconoce consonantes mayúsculas y minúsculas.
+127,28,Reconoce su nombre escrito.
+128,28,Escribe su nombre
+129,28,Escribe enunciados
+130,28,Escribe al dictado
+131,29,Lee sílabas
+132,29,Lee palabras
+133,29,Lee frases
+134,29,Comprende frases que él lee.
+135,29,Comprende textos que él lee.
+136,30,Realiza conteo
+137,30,Reconoce números anteriores y posteriores
+138,30,Tiene concepto de unidad
+139,30,Tiene concepto de decena
+140,30,Tiene concepto de centena
+141,30,Tiene concepto de unidad de millar
+142,30,Tiene concepto de decenas de millar
+143,30,Tiene concepto de centenas de millar
+144,30,Realiza secuencia numérica escrita.
+145,30,Resuelve sumas sencillas con unidades
+146,30,Resuelve sumas sencillas con decenas
+147,30,Resuelve sumas sencillas con centenas
+148,30,Resuelve restas sencillas con unidades
+149,30,Resuelve restas sencillas con decenas
+150,30,Resuelve restas sencillas con centenas
+151,30,Resuelve multiplicaciones con multiplicador de una cifra
+152,30,Resuelve multiplicaciones con multiplicador de dos cifras
+153,30,Resuelve multiplicaciones con multiplicador de tres cifras
+154,30,Resuelve divisiones con el divisor de una cifra
+155,30,Resuelve divisiones con el divisor de dos cifras
+156,30,Resuelve divisiones con el divisor de tres cifras
+157,30,Resuelve problemas sencillos de suma y resta
+158,30,Usa calculadora
+159,31,Repite palabras con sílabas trabadas o compuestas.
+160,31,Elabora frases complejas (utilizando cualquier sistema de comunicación)
+161,31,Elabora narraciones cortas de manera espontánea.
+162,31,Reconoce bromas o absurdos (Tomado de Terman - Merril)
+163,31,El perro vuela
+164,31,Los árboles hablan
+165,31,Un hombre tuvo gripa 2 veces; la primera se murió y la segunda se curó rápido *
+166,31,Cuando iba a la escuela me comí mi torta porque no tenía hambre*
+167,31,Utiliza sistemas alterativos de comunicación como lenguaje de señas
+168,31,Utiliza sistemas alterativos de comunicación como braille
+169,31,Utiliza sistemas alterativos de comunicación como tablero de comunicación manual
+170,31,Utiliza sistemas alterativos de comunicación como tablero de comunicación computarizado.
+171,32,Es sociable
+172,32,Participa e interactúa con personas tanto con hombres como mujeres de su edad  (sentido del grupo)
+173,33,Sigue reglas y tiene tolerancia a la frustración en el juego.
+174,33,Demuestra valores en sus relaciones (solidario y cooperador)
+175,33,Reconoce y corrige un error / pide disculpas
+176,33,Reconoce consecuencias de sus actos
+177,33,Respeta objetos que no le pertenecen
+178,34,Con los hermanos manifiesta conductas de afecto (abrazar o besar o etc.)
+179,34,Con los hermanos platica con ellos
+180,34,Con los hermanos realiza actividades con ellos
+181,34,Con los padres manifiesta conductas de afecto (abrazar o besar o etc.)
+182,34,Con los padres platica con ellos
+183,34,Con los padres realiza actividades con ellos
+184,34,Tiene un grupo de amistades fuera de la escuela
+185,34,Presenta pautas sociales de comunicación (gracias o por favor o con permiso o saludo)
+186,34,Realiza un festejo de cumpleaños de acuerdo a su edad: en casa o en CMG
+187,34,Reconoce y acepta sus defectos y cualidades
+188,34,En el nucelo familiar reconoce quiénes integran su familia o y se observa sí él se incluye como parte.
+189,34,En el grupo social tiene un grupo social de amigos o en la escuela u otros lugares.
+190,34,Actúa de acuerdo a su propio criterio (autodeterminación)
+191,34,Soluciona problemas cotidianos
+192,34,Asiste a fiestas con jóvenes de su edad
+193,35,Tiene conciencia de género
+194,35,Maneja higiene sexual: asea genitales
+195,35,Maneja higiene sexual: usa métodos anticonceptivos / preservativos.
+196,35,Sigue la reglas familiares
+197,35,Maneja sus emociones
+198,35,Expresa sus acuerdos y desacuerdos tomando en cuenta lo que él quiere.
+199,35,Asume con responsabilidad las consecuencias de sus actos
+200,35,Expresa de manera clara sus ideas y actua de acuerdo a ellas
+201,35,Expresa de manera clara sus ideas y escucha las ideas de otros aunque no esté de acuerdo con ellas.
+202,36,Come con la mano
+203,36,Bebe con vaso / taza
+204,36,Utiliza cubiertos
+205,36,Pone y retira la mesa para sí mismo
+206,36,Sacude migajas / limpia líquidos o comida derramada.
+207,36,Saca alimentos de la despensa o del refrigerador.
+208,36,Prepara alimentos para sí fríos
+209,36,Prepara alimentos para sí calientes
+210,37,Quita ropa de la parte inferior
+211,37,Quita ropa de la parte superior
+212,37,Pone ropa de la parte superior
+213,37,Pone ropa de la parte inferior
+214,37,Abotona/acordona/cierres/broches
+215,37,Elige su ropa según el clima
+216,38,Avisa si ensució sus pañales
+217,38,Controla esfínteres/babeo
+218,38,Utiliza correctamente el WC
+219,38,Realiza higiene personal
+220,38,Se baña /lava su pelo
+221,38,Se maquilla/rasura
+222,38,Conoce los cuidados específicos de distintas partes de su cuerpo
+223,39,Reconoce ropa limpia y sucia
+224,39,Lava a mano/ a máquina
+225,39,Tiende/plancha/guarda la ropa
+226,39,Repara la ropa
+227,39,Compra su propia ropa (negocio/catálogo)
+228,40,Guarda en alacena/ refrigerador/ estantes
+229,40,Realiza recetas sencillas.
+230,40,Usa distintos modos de cocción
+231,40,Reconoce el buen estado de los alimentos
+232,40,Puede balancear su dieta
+233,40,Realiza lista de faltantes / compras
+234,41,Barre/trapea/sacude
+235,41,Tiende cama
+236,41,Lava y ordena trastes
+237,41,Lava ventanas
+238,41,Ordena closet
+239,41,Saca la basura
+240,42,Utiliza el teléfono de casa
+241,42,Utiliza el teléfono público
+242,42,Utiliza el teléfono celular
+243,42,Utiliza artefactos eléctricos/ computadora
+244,42,En situaciones de riesgo reconoce
+245,42,En situaciones de riesgo soluciona
+246,42,Cambia focos / destapa drenajes.
+247,42,Realiza pasajes de silla de ruedas a la cama o baño  o etc.
+248,43,Tiene en su casa alguna responsabilidad
+249,43,Sabe cuales son sus actividades
+250,43,Conoce su dirección particular
+251,43,Reconoce horarios y fechas
+252,43,Conoce el uso del reloj
+253,43,Regula tiempos y puntualidad
+254,43,Avisa en caso de retrasos.
+255,43,Conoce su agenda semanal
+256,43,Administra su medicación.
+257,43,Conoce-recuerda fechas familiares
+258,43,Realiza recorridos habituales
+259,43,Planifica sus actividades de ocio
+260,43,Organiza sus reuniones o salidas
+261,44,Utiliza dinero sin noción de valor
+262,44,Sabe marcar teléfonos de emergencia
+263,44,Reconoce trayectos habituales cercanos (dentro de su colonia)
+264,44,Reconoce trayectos habituales lejanos (fuera de su colonia)
+265,44,Se traslada a lugares cercanos / lejanos
+266,44,Utiliza medios de transporte
+267,44,Conoce trayectos alternativos a los medios habituales
+268,44,Reconoce centros de salud más cercanos
+269,44,Sabe solicitar consulta médica
+270,44,Identifica-previene situaciones de riesgo
+271,44,Reconoce señalizaciones
+272,44,Participa en actividades comunitarias
+273,44,Conoce recursos y servicios de su comunidad
+274,45,Participa en juegos tradicionales
+275,45,Participa en juegos de mesa
+276,45,Realiza actividades preferidas en el hogar
+277,45,Realiza actividades preferidas en el exterior
+278,45,Realiza deportes
+279,45,Conoce la actualidad de su ciudad/país
+280,46,Cuida materiales de trabajo
+281,46,Cuida su aseo y aliño personal
+282,46,Mantiene orden en su ámbito laboral
+283,46,Acepta indicaciones
+284,46,Cumple normas de trabajo
+285,46,Recuerda/respeta secuencias
+286,46,Presenta resistencia a la fatiga
+287,46,Se ajusta a las exigencias del trabajo
+288,46,Presenta las habilidades sociales necesarias con los compañeros
+289,46,Presenta las habilidades sociales necesarias con los superiores
+290,46,Respeta horarios
+291,46,Avisa inasistencias
+292,46,Solicita autorizaciones
+293,46,Soluciona acertadamente situaciones problemáticas
+294,46,Reconoce/previene riesgos laborales
+295,46,Se traslada de manera independiente
+296,46,Porta y conoce uso de la identificación.
+297,47,Presenta reacciones instintivas ante el peligro
+298,47,Expresa sensaciones de malestar
+299,47,Identifica tipos de malestar
+300,47,Identifica situaciones de peligro y los evita
+301,47,Denuncia las agresiones que sufre
+302,47,Identifica horario de administración de sus medicamentos
+303,47,Templa el agua para bañarse
+304,47,Dice no a propuestas inconvenientes
+305,47,Reconoce alimentos en mal estado
+306,47,Anticipa situaciones de riesgo
+307,47,Lee fechas de vencimiento de medicamento y alimentos

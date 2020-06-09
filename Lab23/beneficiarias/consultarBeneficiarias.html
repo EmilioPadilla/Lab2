@@ -1,0 +1,81 @@
+<!-- FILTROS Y BOTONES GLOBALES DE LA CONSULTA  -->
+
+<div class="row mx-auto flex-row text-left">
+	<div class="col-md-6">
+
+		<!-- DROPDOWN PARA CONSULTAR BENEFICIARIAS ACTIVAS O INACTIVAS -->
+		<form name="statusConsulta" method="get" action="consultarBeneficiarias.php">
+			<select name=status>
+				<option selected disabled><?= $status ?></option>
+				<option value="activas">ACTIVAS</option>
+				<option value="INACTIVAS">INACTIVAS</option>
+			</select>
+			<input name="statusB" type="Submit" value="VER">
+		</form>
+	</div>
+	
+	<!-- BOTON PARA REGISTRAR UNA NUEVA BENEFICIARIA -->
+	<div class="col col-md-6">
+	<a class="btn btn-primary float-right" href="registrarBeneficiaria.php">REGISTRAR BENEFICIARIA</a>
+	</div>
+
+	<!-- BOTON PARA REGRESAR A LA BUSQUEDA INICIAL -->
+	<div class="row mx-auto flex-row float-right">
+		<div class="col-md-12">
+			<button id="buscar" class="btn btn-info">VER TODO</button>
+		</div>
+	</div>
+</div>
+<!-- BUSQUEDA DE BENEFICIARIAS POR NOMBRE -->
+<div class="row  mx-auto flex-row text-center">
+	<div class="col-md-12">
+		<label  for="userInputbeneficiarias">NOMBRE: </label>
+		<input class="form-control" type="text" placeholder="Maria Santana Marin" id="userInputbeneficiarias" onkeyup="sendRequest('beneficiarias')">
+		<div id="ajaxResponsebeneficiarias" ></div>
+		<input type="hidden" name="beneficiarias" id="beneficiarias" value="">
+	</div>
+</div>
+<br>
+<!-- FILTROS DE BENEFICIARIAS ACTIVAS  -->
+<?php if($status === "activas"): ?>
+
+<!-- SELECTOR DE BENEFICIARIAS PARA BÚSQUEDA POR MOTIVO DE INGRESO -->
+<div class="row  mx-auto flex-row text-center">
+	<div class="col-md-6">
+		<?=crear_select("idMotivoIngreso", "motivoIngreso", "motivosIngreso", false, 0, "MOTIVO DE INGRESO", true);?>
+	</div>
+
+<!-- BUSQUEDA DE BENEFICIARIAS POR DIAGNOSTICO INTELECTUAL -->
+	<div class="col-md-6">
+		<label for="busquedaDiagnosticoIntelectual">DIAGNÓSTICO INTELECTUAL</label>
+		<input class="form-control" type="text" placeholder="Síndrome de down" id="userInput_beneficiarias" onkeyup="sendRequestD('beneficiarias')">
+		<div id="ajaxResponse_beneficiarias"></div>
+		<input type="hidden" name="_beneficiarias" id="_beneficiarias" value="">
+	</div>
+</div>
+
+<!-- TABLA DE BENEFICIARIAS ACTIVAS -->
+<div id="resultados_consulta" class="miTabla table-wrapper-scroll-y my-custom-scrollbar mx-auto text-center">
+            <?= consultarBeneficiarias(); ?>
+</div>
+
+<!-- FILTROS DE BENEFICIARIAS INACTIVAS -->
+<?php else: ?>
+
+<!-- SELECTOR DE BENEFICIARIAS PARA BÚSQUEDA POR MOTIVO DE EGRESO -->
+<div class="row  mx-auto flex-row text-center">
+	<div class="col-md-6">
+		<?=crear_select("idMotivoEgreso", "motivoEgreso", "motivosEgreso", false, 0, "MOTIVO DE EGRESO", true);?>
+	</div>
+
+<!-- SELECTOR DE BENEFICIARIAS PARA BÚSQUEDA POR DESTINO -->
+	<div class="col-md-6">
+		<?=crear_select("idDestino", "nombreDestino", "destinos", false, 0, "DESTINO", true);?>
+	</div>
+</div>
+<!-- TABLA DE BENEFICIARIAS INACTIVAS -->
+<div id="resultados_consultaEgreso" class="miTabla table-wrapper-scroll-y my-custom-scrollbar mx-auto text-center">
+            <?= consultarBeneficiariasEgresadas(); ?>
+</div>
+
+<?php endif;?>

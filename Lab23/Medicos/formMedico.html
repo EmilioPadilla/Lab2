@@ -1,0 +1,120 @@
+
+
+        <!-- Fluid Container -->
+        <div class="container-fluid">
+          <h1 class="mt-4" align="center"><?= $accion ?> a un Médico</h1>
+          <hr />
+        <!-- Fluid Container ends -->
+        </div>
+        <div class="container-fluid">
+          <?php if($accion === "Registrar"): ?>   
+          <form id="llenado" action="../controladores/controlador_registrarMedico.php" method="POST">
+          <?php else: ?>
+          <form id="llenado" action= "../controladores/controlador_modificarMedico.php" method= "POST">
+            <input type="hidden" name="idMedico" value="<?=$idMedico?>">
+          <?php endif; ?>
+            <div class="row">
+              <span class="badge badge-secondary">Información personal</span>
+            </div>
+            <div class="row form-group">
+              <div class="col-12 col-md-3">
+                
+                <label for="nombres">Nombre(s): </label>
+                
+                <input type="text" class="form-control" id="nombres" name="nombres" aria-describedby="nombreHelp"
+                <?php if(isset($nombre)): ?> value="<?= $nombre ?>" <?php endif; ?>
+                placeholder="Luis Fernando" size="40" required/>         
+              
+              </div> 
+              <div class="col-12 col-md-3">
+                <label for="apellidos" > Apellido(s): </label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos"
+                <?php if(isset($apellido)): ?> value="<?= $apellido ?>" <?php endif; ?>
+                placeholder="Romero" size="40" />
+              
+              </div>
+              
+              <div class="col-12 col-md-3">
+                <?php if(isset($idEspecialidad)): ?>
+                  <?= crear_select("idEspecialidad", "nombre", "especialidad", true, $idEspecialidad); ?>   
+                <?php else: ?>
+                 <?= crear_select("idEspecialidad", "nombre", "especialidad", true); ?>   
+                <?php endif; ?>
+              </div>
+            </div> 
+            
+            <div class="row form-group">
+              <div class="col-12 col-md-6">
+                <label for="dirección">Direccion: </label>
+                <input type="text" class="form-control" id="direccion" name="direccion" 
+                <?php if(isset($direccion)): ?> value="<?= $direccion ?>" <?php endif; ?>
+                placeholder="Calle Ignacio Allende 203, Querétero, Querétaro" size="120" />  
+              </div>           
+            </div>
+            
+            <div class="row">
+            <span class="badge badge-secondary">Información de contacto</span>
+            </div>
+            
+            <div class="row form-group">
+              <div class="col-12 col-md-3">
+                <label for="tel">Teléfono: </label>
+                <input type="number" class="form-control" id="tel" name="tel" 
+                <?php if(isset($telefono)): ?> value="<?= $telefono ?>" <?php endif; ?>
+                placeholder="442-456-12-78" size="10" /> 
+                
+              </div>  
+              
+              <div class="col-12 col-md-3">
+                <label for="cel">Celular: </label>
+                <input type="number" class="form-control" id="cel" name="cel"
+                <?php if(isset($celular)): ?> value="<?= $celular ?>" <?php endif; ?>
+                placeholder="442-456-12-78" size="10" /> 
+                
+              </div>  
+            </div>
+            
+            <div class="row form-group">
+              <div class="col-12 col-md-6">
+                <label for="email">Correo</label>
+                <input type="email" name="email" id="email" 
+                <?php if(isset($correo)): ?> value="<?= $correo ?>" <?php endif; ?>
+                placeholder="doctor34@ejemplo.com" class="form-control" size="30" />
+              </div>            
+            </div>
+            
+            <div class="row text-center">
+              <div class="col md-6">
+                <?php if($accion === "Modificar"): ?>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal<?= $idMedico ?>"><i class="material-icons text-white">delete</i></button>
+                <button type="submit" class="btn btn-primary btn-submit">Guardar cambios</button>
+                <?php else: ?>
+                <button type="submit" class="btn btn-primary btn-submit">Registrar</button>
+                <?php endif; ?>
+              </div>
+            </div>
+          </form> 
+        
+        </div>      
+        
+<!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <a href="../usuarios/vistaAdmin.php">
+        <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+      </div>
+    </div>
+  </div>
+</div>

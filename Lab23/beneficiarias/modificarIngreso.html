@@ -1,0 +1,98 @@
+
+<!-- Fluid Container -->
+<div class="container-fluid">
+	<h1 class="mt-4" align="center">Modificar Datos de Ingreso</h1>
+	<hr/>
+<!-- Fluid Container ends -->
+</div>
+
+<div class="container" id="guardarBien" >
+	<div class="row">
+		<div class="col">
+			<div class="alert alert-success"><center><h5>CAMBIOS GUARDADOS CORRECTAMENTE</h5></center></div>
+		</div>
+	</div>
+</div>
+
+<form method="post" action="controlador_modificarBeneficiaria.php">
+<!-- Sección 2 -->
+<div class="container">
+	<section id="datosIngreso">
+		<!-- FECHA DE INGRESO OBLIGATORIA-->
+		<div class="form-group">
+			<i class="far fa-calendar-alt"></i>
+			<label for="fechaIngreso">Fecha de ingreso:</label>
+			<input type="date" class="form-control" placeholder="" id="fechaIngreso" value="<?=$fechaIngreso?>" required>
+		</div>
+		<!-- SELECTOR PARA  MOTIVO DE INGRESO OBLIGATORIO-->
+		<div class="form-group">
+			<label for="motivoIngreso">Motivo de ingreso:</label>
+			<?php if(isset($idMotivoIngreso)): ?>
+				<?= crear_select("idMotivoIngreso", "motivoIngreso", "motivosIngreso", true, $idMotivoIngreso); ?> 
+			<?php else: ?>
+				<?= crear_select("idMotivoIngreso", "motivoIngreso", "motivosIngreso", true); ?>   
+			<?php endif; ?>  
+		</div>
+		<!-- CAMPO DE TEXTO A LLENAR CUANDO MOTIVO INGRESO = OTRO -->
+		<?php if($idMotivoIngreso == 17): ?>
+		<div class="form-group">
+			<label for="otroMotivoIngreso">Otro motivo de ingreso:</label>
+			<input type="text" class="form-control"  placeholder="Maltrato y abuso sexual" id="otroMotivoIngreso" value="<?php if(isset($otroMotivoIngreso)): ?><?=$otroMotivoIngreso?><?php else: ?><?php endif;?>">
+		</div>
+		<?php endif; ?> 
+		<!-- NOMBRE DEL CONTACTO QUE CANALIZA-->
+		<div class="form-group">
+			<i class="fas fa-user"></i>
+			<label for="nombreCanalizador">¿Quién canaliza?:</label>
+			<input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control" placeholder="DIF Estatal Querétaro" id="nombreCanalizador" value="<?php if(isset($nombreCanalizador)): ?><?=$nombreCanalizador?><?php else: ?><?php endif;?>">
+		</div>
+		<!-- CONSIDERACIONES RELEVANTES DEL INGRESO -->
+		<div class="form-group">
+			<i class="fas fa-pencil-alt"></i>
+			<label for="consideracionesIngreso">Consideraciones relevantes de ingreso:</label>
+			<textarea class="form-control" id="consideracionesIngreso" rows="5"><?php if(isset($consideracionesIngreso)): ?><?=$consideracionesIngreso?><?php else: ?><?php endif;?></textarea>
+		</div>
+		<!-- DIAGNOSTICO INTELECTUAL OBLIGATORIO -->
+		<div class="form-group">
+			<i class="fas fa-clipboard"></i>
+			<label for="diagnosticoInt">Diagnóstico Intelectual:</label>
+			<input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control"  placeholder="Síndrome de Down" id="diagnosticoInt" value="<?=$diagnosticoInt?>" required>
+		</div>
+		<!-- DIAGNOSTICO MOTRIZ -->
+		<div class="form-group">
+			<i class="fas fa-clipboard"></i>
+			<label for="diagnosticoMotriz">Diagnóstico Motriz:</label>
+			<input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control"  placeholder="Afasia motora" id="diagnosticoMotriz" value="<?php if(isset($diagnosticoMotriz)): ?><?=$diagnosticoMotriz?><?php else: ?><?php endif;?>">
+		</div>
+		<!-- ULTIMO CAMPO A LLENAR = EDAD MENTAL -->
+		<div class="form-group">
+			<label for="edadMentalBenef">Edad mental:</label>
+			<input class="form-control" type="number" value="<?php if(isset($edadMentalBenef)): ?><?=$edadMentalBenef?><?php else: ?><?php endif;?>" id="edadMentalBenef" min="1" max="100" value="5">
+		</div>
+	</section>
+	<hr>
+	<center><button type="submit" class="btn btn-submit text-white">GUARDAR CAMBIOS</button></center>
+</form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>

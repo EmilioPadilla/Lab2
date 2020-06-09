@@ -1,0 +1,75 @@
+<!-- Fluid Container -->
+<div class="container-fluid">
+  <h1 class="mt-4" align="center">Modificar Datos Familiares</h1>
+  <hr />
+<!-- Fluid Container ends -->
+</div>
+
+<div class="container" id="guardarBien" >
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-success"><center><h5>CAMBIOS GUARDADOS CORRECTAMENTE</h5></center></div>
+        </div>
+    </div>
+</div>
+
+<form method="post" action="controlador_modificarBeneficiaria.php">
+<!-- Sección 2 -->
+<div class="container">
+	<section id="datosFamiliares">
+		<!-- ANTECEDENTES  -->
+		<div class="form-group">
+				<i class="fas fa-pencil-alt"></i>
+			  <label for="antecedentes">Antecedentes:</label>
+			  <textarea class="form-control" id="antecedentes" rows="5"><?php if(isset($antecedentes)): ?><?=$antecedentes?><?php else: ?><?php endif;?></textarea>
+		</div>
+		<!-- RELACIONES PRESENTES CON FAMILIARES  -->
+		<div class="form-group">
+						<i class="fas fa-user"></i><i class="fas fa-user"></i><i class="fas fa-user"></i>
+			<label for="vinculosFam">Vínculos Familiares:</label>
+			<input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control" placeholder="Abuela materna" id="vinculosFam" value="<?php if(isset($vinculosFam)): ?><?=$vinculosFam?><?php else: ?><?php endif;?>">
+		</div>
+		<!-- VISITAS QUE HA TENIDO EN LA CASA HOGAR   -->
+		<div class="form-group">
+			<i class="fas fa-pencil-alt"></i>
+			<label for="vinculosFam">Convivencias:</label>
+			<textarea class="form-control" id="convivencias" rows="5"><?php if(isset($convivencias)): ?><?= $convivencias ?><?php else: ?><?php endif;?></textarea>
+		</div>
+		<!-- NOMBRE DE QUIEN ES RESPONSABLE  -->
+		<div class="form-group">
+			<label for="tutela">Tutela:</label>
+			<input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control" placeholder="Madre" id="tutela" value="<?php if(isset($tutela)): ?><?=$tutela?><?php else: ?><?php endif;?>">
+		</div>
+		<!-- PERDIDA DE LA POTESTAD  -->
+		<div class="form-group">
+			<i class="fas fa-gavel"></i>
+			<label for="tutela">Situacion Juridica:</label>
+			<input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control" placeholder="Perdida de patria potestad" id="tutela" value="<?php if(isset($situacionJuridica)): ?><?=$situacionJuridica?><?php else: ?><?php endif;?>">
+		</div>
+	</section>
+	<hr>
+	<center><button type="submit" class="btn btn-submit text-white">GUARDAR CAMBIOS</button></center>
+</form>
+</div>	
+
+<!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>

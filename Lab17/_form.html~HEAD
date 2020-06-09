@@ -1,0 +1,7 @@
+
+<form method="POST">
+	<?include("model.php");?>
+    <?=crear_select("id", "nombre", "estado");?>
+        <?=crear_select("id", "nombre", "lugar");?>
+            <input class="waves-effect waves-light btn" type="submit" value="Buscar">
+</form>

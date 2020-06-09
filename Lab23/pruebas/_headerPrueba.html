@@ -1,0 +1,61 @@
+<!-- Fluid Container -->
+<div class="fluid-container content">
+  <div class="d-flex flex-row justify-content-center">
+    <h1 class=""><?= $tituloPrueba ?></h1>
+  </div>
+
+  <div class="d-flex flex-row justify-content-end">
+    <div class="p-2">
+      <button type="button" class="btn btn-outline-dark" data-toggle="popover" data-placement="left" title="¿Qué significa esta barra?" data-content="El progreso dentro de la prueba. Rosa para completada, azul para en progreso y rosa claro para sin empezar"><i class="material-icons">info</i></button></a>
+    </div>
+
+  </div>
+
+      <div class="progress">
+        <div class="progress-bar progress-bar pb-completed progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 14.2%;">
+          <a href="#"> Info</a>
+        </div>
+        <div class="progress-bar progress-bar pb-completed progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:14.2%;">
+            <a href="#"> área 1</a>
+        </div>
+        <div class="progress-bar progress-bar pb-completed  progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 14.2%;">
+            <a href="#"> área 2</a>
+        </div>
+        <div class="progress-bar progress-bar pb-progress progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 14.2%;">
+          <a href="#"> area 3</a>
+        </div>
+        <div class="progress-bar progress-bar pb-undone progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:14.2%;">
+            <a href="#"> habilidad 1</a>
+        </div>
+        <div class="progress-bar progress-bar  pb-undone progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 14.2%;">
+            <a href="#"> habilidad 2</a>
+        </div>
+        <div class="progress-bar progress-bar pb-undone progress-bar-striped" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:14.2%;">
+            <a href="#"> habilidad 3</a>
+        </div>
+      <!-- Progress Bar Ends -->
+      </div>
+
+      <br>
+
+      <!-- Modal -->
+      <div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <a href="../usuarios/vistaAdmin.php">
+              <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+            </div>
+          </div>
+        </div>
+      </div>

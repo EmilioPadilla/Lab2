@@ -1,0 +1,16 @@
+<?php if(isset($editar)): ?>
+    <form method="POST" action="controlador_actualizar_caso.php">
+        <?php else: ?>
+            <form method="POST" action="controlador_insertar_caso.php">
+                <?php endif; ?>
+
+                    <?php if(isset($editar)): ?>
+                        <input type="hidden" name="caso_id" value="<?=$caso_id?>">
+                        <?php endif; ?>
+                            <?php if(isset($lugar_id)): ?>
+                                <?=crear_select("id", "nombre", "lugar", $lugar_id);?>
+                                    <?php else: ?>
+                                        <?=crear_select("id", "nombre", "lugar");?>
+                                            <?php endif; ?>
+                                                <input class="waves-effect waves-light btn" type="submit" value="Registrar">
+            </form>

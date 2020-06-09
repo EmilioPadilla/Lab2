@@ -1,0 +1,59 @@
+      <!-- Fluid Container -->
+        <div class="container-fluid">
+          <h1 class="mt-4">Modificacion de Cuentas</h1>      
+    <!-- Queda pendiente para el controlador de edicón de usuario-->
+    <form method="POST" action="../controladores/controlador_ModificarCuentaPersonal.php">
+                                        <!--Elegir usuario -->
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                             <label for="usuario">Usuario:</label>
+                                             <br>
+                                              <input  placeholder="maria123" name="usuario"
+                                              <?php if(isset($usuario)): ?> value= <?= $usuario ?> <?php endif; ?>
+                                              id="usuario" type="text" class="validate">
+                                            </div>
+                                          </div>
+                                      <!--Contraseña anterior-->
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                            <label for="oldPass">Contraseña anterior:</label>
+                                            <br>
+                                             <input name="oldPass" id="oldPass" type="password" class="validate">
+                                            </div>
+                                        </div> 
+                                          <!--Contraseña-->
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                             <label for="password">Contraseña: </label>
+                                             <br>
+                                             <input name="password" id="password" type="password" class="validate">
+                                            </div>
+                                        </div> 
+                                       
+
+                            
+                    <input class="waves-effect waves-light btn" type="submit" value="Registrar">
+            </form>
+
+            <!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>

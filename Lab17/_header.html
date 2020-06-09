@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Coronavirus App</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="controlador_session.php" class="brand-logo">Coronavirus App</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <?php if(isset($_SESSION["administrar"])): ?>
+                    <li><a href="controlador_modificarCuentas.php">Modificar usuarios</a></li>
+                    <li><a href="controlador_registrar_Usuario.php">Registro de usuario</a></li>
+                <?php endif; ?>
+                <?php if(isset($_SESSION["ver"])): ?>
+                    <li><a href="controlador_cerrarSesion.php">Cerrar Sesión</a></li>
+                <?php endif; ?>
+            </ul>
+        </div>
+    </nav>
+
+    <?php if(isset($_SESSION["warning"])): ?>
+      <?=$_SESSION["warning"] ?>
+      <?php unset($_SESSION["warning"])?>
+    <?php endif;?>
+
+    <?php if(isset($_SESSION["mensaje"])): ?>
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <div class="card blue lighten-1">
+            <div class="card-content white-text">
+              <span class="card-title"><?=$_SESSION["mensaje"] ?></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <?php unset($_SESSION["mensaje"])?>
+    <?php endif;?>
+
+    <div class="container">
+      <h2><?= $titulo?></h2>
+
+    <br>

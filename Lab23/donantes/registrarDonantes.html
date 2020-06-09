@@ -1,0 +1,176 @@
+
+		
+		<div class="container">
+            <div class="progress">
+                <div  id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" aria-valuemax="100" aria-valuenow="0"></div>
+            </div>
+        </div>
+
+
+    <!-- El tipo de donante particular y patronato tienen los mismos campos -->
+    <div class="container">
+		<?php if($editar): ?>
+		<form action="../controladores/donantes/controlador_modificarDonante.php" id="modificarDonante" method="POST" class="text-center needs-validation">
+		<input type="hidden" name="idDonante" value="<?=$idDonante?>">
+		<?php else: ?>
+		<form action="../controladores/donantes/controlador_insertarDonante.php" id="registrarDonante" method="POST" class="text-center needs-validation">	
+		<?php endif; ?>
+			<section id="donanteGeneral">
+				<h3>DATOS GENERALES</h3>
+						<div class="col-md-6 mx-auto">
+							
+							<?php if($editar): ?>
+								<?= crear_select("idTipo", "nombre", "tipodeDonante", true, $idTipo, "*Tipo de Donante:"); ?>  
+							<?php else: ?>
+								<?= crear_select("idTipo", "nombre", "tipodeDonante", true, 0, "*Tipo de Donante:"); ?>   
+							<?php endif; ?>
+							<div class="form-group">
+								*
+								<i class="fas fa-user"></i>
+								<label for="nombreDonante">Nombre del donante:</label>
+								<input name="nombreDonante" type="text" class="form-control" placeholder="Juan Sanchez/Fundación Dr. Simi"
+								<?php if($editar&& !empty($nombreDonante)): ?> value='<?= $nombreDonante?>' <?php endif; ?> 
+								id="nombreDonante" required>
+								<div class="invalid-feedback">Escribe un nombre válido (no puede tener números).</div>
+							</div>
+							<br/> 
+							<!--Nombre del contacto que obtuvo al donante-->
+							<div class="form-group">
+								<i class="fas fa-id-card-alt"></i>
+								<label for="contactoInterno">¿Quién obtuvo el contacto del donante?</label>
+								<input name="contactoInterno" type="text" class="form-control" placeholder="Suor Mago"
+								<?php if($editar && !empty($contactoInterno)): ?> value='<?= $contactoInterno?>' <?php endif; ?> 
+								id="contactoInterno">
+								<div class="invalid-feedback">Escribe un nombre válido (no puede tener números).</div>
+							</div>
+						</div>
+					<br/>
+					<button type="button" onclick="nextDatos()"class="btn btn-primary">Siguiente</button>
+			</section>
+			<!--ESTO SOLO SE LLENA SI ES DONANTE PARTICULAR-->
+			<section id="donanteParticular">
+				<h3>DATOS DONANTE PARTICULAR</h3>
+				<div class="col-md-6 mx-auto">
+					
+					<div class="form-group">
+						<i class="fas fa-envelope"></i>
+						<label for="correoParticular">Correo:</label>
+						<input class="form-control" type="text" placeholder="nombre@example.com" 
+						<?php if($editar && !empty($correoParticular)): ?> value='<?= $correoParticular?>' <?php endif; ?> 
+						name="correoParticular" id="correoParticular" >
+						<div class="invalid-feedback">Escribe un correo válido</div>
+					</div>
+				
+					<div class="form-group">
+						<i class="fas fa-phone-square"></i>
+						<label for="telefonoParticular">Teléfono:</label>
+						<input pattern="[0-9]{10}" class="form-control" type="tel" placeholder="4423045692" 
+						<?php if($editar && !empty($telefonoParticular)): ?> value='<?= $telefonoParticular?>' <?php endif; ?>
+						name="telefonoParticular" id="telefonoParticular" >
+						<div class="invalid-feedback">Escribe un teléfono válido (Deben ser solo 10 dígitos).</div>
+					</div>
+
+					<div class="form-group">
+						<i class="fas fa-plus-square"></i>
+						<label for="extensionParticular">Extensión:</label>
+						<input pattern="[0-9]{1,4}" class="form-control" type="tel" placeholder="556" 
+						<?php if($editar && !empty($extensionParticular)): ?> value='<?= $extensionParticular?>' <?php endif; ?> 
+						name="extensionParticular" id="extensionParticular" >
+						<div class="invalid-feedback">Escribe una extensión válida.</div>
+					</div>
+					
+					<div class="form-group">
+						<i class="fas fa-mobile-alt"></i>
+						<label for="celularParticular">Celular:</label>
+						<input pattern="[0-9]{10}" class="form-control" type="tel" placeholder="4423045692" 
+						<?php if($editar && !empty($celularParticular)): ?> value='<?= $celularParticular?>' <?php endif; ?>
+						name="celularParticular" id="celularParticular">
+						<div class="invalid-feedback">Escribe un celular válido (Deben ser solo 10 dígitos).</div>
+					</div>
+
+					<div class="form-group">
+						<i class="far fa-calendar-alt"></i>
+						<label for="fechaNacParticular">Fecha de nacimiento:</label>
+						<input type="text" class="form-control" placeholder="28-01-1980" id="fechaNacParticular" name="fechaNacParticular"
+						<?php if($editar && !empty($fechaNacParticular)): ?> value='<?=$fechaNacParticular?>'
+						<?php else: ?>value=""<?php endif; ?>' 
+						/>
+						<div class="invalid-feedback">Escribe una fecha válida (El formato es día/mes/año).</div>
+					</div>
+				</div>
+			</section>
+			<!--SOLO SE LLENA SI ES  Empresa, gobierno o fundacion-->
+			<section id="donanteEmpresa"> 
+				<h3>DATOS DE LA ENTIDAD</h3>
+				<div class="col-md-6 mx-auto">
+
+					<div class="form-group">
+						<label for="razonSocial">Razon Social</label>
+						<input  type="text" class="form-control" placeholder="FUNDACION DEL DR. S I M I , A. C." 
+						<?php if($editar && !empty($razonSocial)): ?> value='<?= $razonSocial?>' <?php endif; ?>
+						name="razonSocial" id="razonSocial" >
+						<div class="invalid-feedback">Escribe una razón social valida.</div>
+					</div>
+
+					<div class="form-group">
+						<label for="RFCEntidad">RFC</label>
+						<input class="form-control" type="text" placeholder="SMD860306MD8" 
+						<?php if($editar && !empty($RFCEntidad)): ?> value='<?= $RFCEntidad?>' <?php endif; ?>
+						name="RFCEntidad" id="RFCEntidad" >
+						<div class="invalid-feedback">Escribe un RFC valido.</div>
+					</div>
+
+					<div class="form-group">
+						<i class="fas fa-home"></i>
+						<label for="direccionEntidad">Dirección:</label>
+						<input  type="text" class="form-control" placeholder="Acceso III No. 107. Parque Industrial Benito Juárez. Qro Qro" 
+						<?php if($editar && !empty($direccionEntidad)): ?> value='<?= $direccionEntidad?>' <?php endif; ?>
+						name="direccionEntidad" id="direccionEntidad" >
+						<div class="invalid-feedback">Escribe una dirección valida.</div>
+					</div>
+
+					<div class="form-group">
+						<i class="fas fa-map-marker-alt"></i>
+						<label for="cpEntidad">Código Postal:</label>
+						<input pattern="[0-9]{5}"type="numeric" class="form-control" placeholder="96053" 
+						<?php if($editar && !empty($cpEntidad)): ?> value='<?= $cpEntidad?>' <?php endif; ?>
+						name="cpEntidad" id="cpEntidad">
+						<div class="invalid-feedback">Escribe un C.P. valido (Debe tener 5 dígitos).</div>
+					</div>
+					
+				</div>
+			</section>
+			
+			<!--seccion de botones-->
+			<section id="botonesDonantes">
+				<button type="button" onclick="backDonanteGeneral()"class="btn btn-primary">Regresar</button>
+				<button type="button"
+				<?php if($editar): ?> onclick="submitForm('modificarDonante')" <?php else: ?> onclick="submitForm('registrarDonante')"  <?php endif;?>
+				 class="btn btn-primary"><?= $accion ?></button>
+			</section>
+
+			*Los campos marcados con un asterisco son requeridos.
+		</form>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>
