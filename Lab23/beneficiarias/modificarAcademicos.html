@@ -1,0 +1,68 @@
+<!-- Fluid Container -->
+<div class="container-fluid">
+  <h1 class="mt-4" align="center">Modificar Datos Academicos</h1>
+  <hr/>
+<!-- Fluid Container ends -->
+</div>
+
+<div class="container" id="guardarBien" >
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-success"><center><h5>CAMBIOS GUARDADOS CORRECTAMENTE</h5></center></div>
+        </div>
+    </div>
+</div>
+<form method="post" action="controlador_modificarBeneficiaria.php">
+<!-- Sección 4 -->
+<div class="container">
+	<section id="datosAcademicos">
+		<!-- SELECTOR DE ESCOLARIDAD -->
+		<div class="form-group">
+			<i class="fas fa-graduation-cap"></i>
+			<label for="idEscolaridad">Escolaridad:</label>
+			<?php if(isset($idEscolaridad)): ?>
+				<?= crear_select("idEscolaridad", "nivelEscolar", "escolaridad", true, $idEscolaridad); ?>   
+			<?php else: ?>
+			    <?= crear_select("idEscolaridad", "nivelEscolar", "escolaridad", true); ?>   
+			<?php endif; ?>
+		</div>
+		<?php if($idEscolaridad <> 1): ?>
+		<!-- ESPECIFICACIÓN DEL ULTIMO AÑO CURSADO -->
+		<div class="form-group">
+			<label for="gradoEscolar">Grado escolar:</label>
+			<input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control"  placeholder="Primero" id="gradoEscolar" value="<?php if(isset($gradoEscolar)): ?><?=$gradoEscolar?><?php else: ?><?php endif;?>">
+		</div>
+		<?php endif; ?> 
+		<!-- SUBIDA DE ARCHIVOS VARIOS EL EXPEDIENTE ESCOLAR -->
+		<div class="form-group">
+			<i class="fas fa-file-upload"></i>
+			<label for="expedienteEscolar">Expediente Escolar</label>
+			<input type="file" id="archivosEscolares[]" name="archivosEscolares[]" multiple="" class="form-control-file">
+	    </div>
+	</section>
+	<hr>
+	<center><button type="submit" class="btn btn-submit text-white">GUARDAR CAMBIOS</button></center>
+</div>
+</form>
+
+<!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>

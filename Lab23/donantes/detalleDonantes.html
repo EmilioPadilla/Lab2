@@ -1,0 +1,53 @@
+
+
+        <!-- Fluid Container -->
+        <div class="container-fluid ">
+			<div class="alert alert-primary text-center" role="alert">
+				<h3><?= $tipo ?></h3>
+			</div>
+			<h1 class="display-4" align="center"><?= $nombre ?></h1>
+			<hr />
+			<div id="infoDonante" class="text-center">
+				<span class="badge badge-secondary badgeDonante ">Información del Donante</span>
+				<br/>
+				<strong>¿Quién obtuvo el contacto del donante? </strong><?php if($contacto != null): echo $contacto; else: echo " -"; endif;?>
+				<br/>
+				<div class="containerVer justify-content-around">
+					<?php if($detalle == "entidad" || $detalle == "todo"): ?>
+						<div id="infoEntidad" class="info">
+							<ul>
+								<li><strong>Razon Social: </strong><?php if($razonSocial != null): echo $razonSocial; else: echo " -"; endif;?></li>
+								<li><strong>RFC: </strong><?php if($rfc != null): echo $rfc; else: echo " -"; endif;?></li>
+								<li><strong>Dirección: </strong><?php if($dir != null): echo $dir; else: echo " -"; endif;?></li>
+								<li><strong>Código Postal: </strong><?php if($cp != null): echo $cp; else: echo " -"; endif;?></li>
+							</ul>
+						</div>
+					<?php endif; ?>
+
+					<?php if($detalle == "particular" || $detalle == "todo"): ?>
+						<div id="infoParticular" class="info">
+							<ul>
+								<li><strong>Correo: </strong><?php if($correo != null): echo $correo; else: echo " -"; endif;?></li>
+								<li><strong>Teléfono: </strong><?php if($tel != null): echo $tel; else: echo " -"; endif;?> </li>
+								<li><strong>Extensión: </strong><?php if($extension != null): echo $extension; else: echo " -"; endif;?></li>
+								<li><strong>Celular: </strong><?php if($cel != null): echo $cel; else: echo " -"; endif;?></li>
+								<li><strong>Fecha de Nacimiento: </strong><?php if($fechaNac != null): echo $fechaNac; else: echo " -"; endif;?></li>
+							</ul>
+						</div>
+					<?php endif; ?>
+				</div>
+				<hr/>
+			</div>
+			
+			<?php if($detalle == "entidad" || $detalle == "todo"): ?>
+				<div id="contctosDonante" class="text-center">
+					<span class="badge badge-secondary badgeDonante">Contactos</span>
+					<hr/>
+				</div>
+			<?php endif; ?>
+			<div id="historicoDonaciones" class="text-center">
+				<span class="badge badge-secondary badgeDonante">Historico de Donaciones</span>
+			</div>
+		  <!-- Fluid Container ends -->
+		  </div>
+  

@@ -1,0 +1,87 @@
+
+        <!-- Fluid Container -->
+        <div class="container-fluid">
+         
+<?php if(isset($editar)): ?>
+    <!-- Queda pendiente para el controlador de edicón de usuario-->
+    <form method="POST" action="../controladores/controlador_actualizarU.php">
+
+                <h1 class="mt-4">Modificacion de Cuentas</h1>      
+
+        <?php else: ?>
+            <form method="POST" action="../controladores/controlador_InsertarU.php">
+
+               <h1 class="mt-4">Creación de Cuentas</h1>      
+                <?php endif; ?>
+                    <!-- Queda pendiente para el controlador de edición de usuario-->
+                    <?php if(isset($editar)): ?>
+                        <input type="hidden" name="idUsuario" value="<?=$idUsuario?>" required>
+                        <?php endif; ?>
+                                <!-- Opcion de registro -->
+                                        <!--Elegir usuario -->
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                             <label for="usuario">Usuario:</label>
+                                             <br>
+                                              <input  placeholder="maria123" name="usuario" 
+                                              <?php if(isset($usuario)): ?> value= <?= $usuario ?> <?php endif; ?> 
+                                              id="usuario" type="text" class="form-contol" required>
+                                            </div>
+                                          </div>
+                                      
+                                        <!--Elegir contraseña -->
+                                        <div class="row">
+                                            <div class="input-field col s12" >
+                                            <label for="password">Contraseña: </label>
+                                            <br>
+                                             <input name="password" id="password" type="password" class="form-control" required>
+                                            </div>
+                                        </div> 
+                                        
+                                        <!--Elegir nombre -->
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                           <label for="nombre">Nombre: </label>
+                                           <br>
+
+                                              <input  name="nombre" placeholder="Juan Perez" id="nombre" 
+                                              <?php if(isset($nombre)): ?> value= <?= $nombre ?> <?php endif; ?>
+                                              type="text" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <!--Selecciona rol -->
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <?php if(isset($idRol)): ?> 
+                                                <?=crear_select("id", "nombre", "rol", true, $idRol);?>
+                                                <?php else: ?>
+                                                 <?=crear_select("id", "nombre", "rol", true);?>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+   
+                    <input class="waves-effect waves-light btn" type="submit" value="Registrar">
+            </form>
+          </div>
+
+          <!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>

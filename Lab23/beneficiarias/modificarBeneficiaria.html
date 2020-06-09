@@ -1,0 +1,114 @@
+<!-- Fluid Container -->
+<div class="container-fluid">
+  <center><h1>MODIFICACIÓN DE DATOS</h1>
+  <h3><?php if(isset($nombreCompleto)): ?><?=$nombreCompleto?><?php endif;?></h3></center>
+  <hr>
+<!-- Fluid Container ends -->
+</div>
+
+<div class="container-fluid">
+  <div class="container" id="guardarBien" >
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-success"><center><h5>CAMBIOS GUARDADOS CORRECTAMENTE</h5></center></div>
+        </div>
+      </div>
+  </div>
+  <h4>Elige las secciones que quieras editar </h4>
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <div class="card">
+        <!-- Card content -->
+          <div class="card-body">
+
+            <!-- Title -->
+            <h4 class="card-title text-primary"><i class="fas fa-user-circle"></i><br> Datos Personales</h4>
+            <!-- Text -->
+            <p class="card-text">Editar nombre, fecha de nacimiento, edad y/o foto de ingreso.</p>
+            <!-- Button -->
+            <a href="modificarBeneficiaria.php?editar=personal&idBeneficiaria=<?=$idBeneficiaria?>" class="btn btn-submit text-white">MODIFICAR</a>
+        </div>
+      </div>
+    </div>     
+    <div class="col-12 col-md-4">
+      <div class="card">
+        <!-- Card content -->
+          <div class="card-body">
+
+            <!-- Title -->
+            <h4 class="card-title text-primary"><i class="fas fa-id-card"></i><br>Datos de Ingreso</h4>
+            <!-- Text -->
+            <p class="card-text">Editar fecha de ingreso, motivo de ingreso, nombre de quien canalizó, consideraciones de ingreso, edad mental, diagnostico intelectual y/o motriz.</p>
+            <!-- Button -->
+            <a href="modificarBeneficiaria.php?editar=ingreso&idBeneficiaria=<?=$idBeneficiaria?>" class="btn btn-submit text-white">MODIFICAR</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card">
+        <!-- Card content -->
+          <div class="card-body">
+
+            <!-- Title -->
+            <h4 class="card-title text-primary"><i class="fas fa-home"></i><br>Datos Familiares</h4>
+            <!-- Text -->
+            <p class="card-text">Editar antecedentes, vinculos familiares, convivencias, situación jurífica y/o tutela.</p>
+            <!-- Button -->
+            <a href="modificarBeneficiaria.php?editar=familiares&idBeneficiaria=<?=$idBeneficiaria?>" class="btn btn-submit text-white">MODIFICAR</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <div class="card">
+        <!-- Card content -->
+          <div class="card-body">
+
+            <!-- Title -->
+            <h4 class="card-title text-primary"><i class="fas fa-school"></i><br>Datos Académicos</h4>
+            <!-- Text -->
+            <p class="card-text">Editar escolaridad, ultimo grado cursado y/o el expediente académico.</p>
+            <!-- Button -->
+            <a href="modificarBeneficiaria.php?editar=academicos&idBeneficiaria=<?=$idBeneficiaria?>" class="btn btn-submit text-white">MODIFICAR</a>
+        </div>
+      </div>
+    </div>     
+    <div class="col-12 col-md-4">
+      <div class="card">
+        <!-- Card content -->
+          <div class="card-body">
+
+            <!-- Title -->
+            <h4 class="card-title text-primary"><i class="fas fa-file-archive"></i><br>Archivos Varios</h4>
+            <!-- Text -->
+            <p class="card-text">Añadir o eliminar archivos del expediente médico y/o de los tres sacramentos.</p>
+            <!-- Button -->
+            <a href="modificarBeneficiaria.php?editar=archivos&idBeneficiaria=<?=$idBeneficiaria?>"class="btn btn-submit text-white">MODIFICAR</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>

@@ -1,0 +1,36 @@
+<!-- Modal -->
+<div class="modal fade" id="modal<?= $row['idDonante'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalCenterTitle">Dar de Baja Donante</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<div class="alert alert-danger" role="alert">
+				<h6 class="alert-heading">¿Estás seguro de que deseas dar de baja a este donante?</h6>
+			</div>
+			
+			<ul class="text-left">
+				<li><strong>Nombre: </strong><?= $row['nombre'] ?></li>
+				<li><strong>Tipo: </strong><?= $row['tipo'] ?></li>
+			</ul>
+			<form action="../controladores/donantes/controlador_egresarDonante.php" id="egresarDonante" method="POST">
+				<input type="hidden" name="idDonante" id="idDonante" value="<?=$row['idDonante']?>">
+				<div class="form-group">
+					<i class="fas fa-user-slash"></i>
+					<label for="motivoFinDonaciones">Motivo de fin de donaciones:</label>
+					<textarea rows="4" class="form-control" placeholder="..." id="motivoFinDonaciones" name="motivoFinDonaciones"></textarea>
+					<div class="invalid-feedback">Escribe un motivo válido.</div>
+				</div>
+				<hr/>
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+			<button type="submit" class="btn btn-danger">Dar de Baja</button>
+			</form>
+			
+		</div>
+	  </div>
+	</div>
+</div>

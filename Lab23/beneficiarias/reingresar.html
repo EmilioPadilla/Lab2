@@ -1,0 +1,44 @@
+<!-- MODAL EGRESAR BENEFICIARIAS -->
+<div class="modal fade" id="<?= $tituloModal ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<!-- HEADER DEL MODAL -->
+			<div class="modal-header">
+				<h3>DATOS DE REINGRESO</h3>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
+			</div>
+			<form action="../beneficiarias/controlador_reingresarBeneficiaria.php" method="post">
+			<div class="modal-body">
+				<div class="alert alert-warning" role="alert">
+					<h4 class="alert-heading">¿Estás seguro de que deseas reingresar a la beneficiaria?</h4>
+				</div>
+				<ul>
+					<li><strong>ID: </strong><?= $row['idBeneficiaria'] ?></li>
+					<div class="form-group">
+					<input name="idBeneficiaria" type="hidden" value="<?= $row['idBeneficiaria']?>" id="idBeneficiaria">
+					</div>
+					<li><strong>Nombre: </strong><?= $row['nombreCompleto'] ?></li>
+				</ul>			
+			</div>
+			<div class="container">
+			<!-- FECHA DE EGRESO -->
+			<div class="form-group">
+				<i class="far fa-calendar-alt"></i>
+				<label for="fechaEgreso">Fecha de reingreso:</label>
+				<input name="fechaReingreso" type="date" class="form-control" placeholder="" id="fechaReingreso" required>
+			</div>
+			<!-- CONSIDERACIONES REINGRESO -->
+			<div class="form-group">
+				<i class=""></i>
+				<label for="motivoReingreso">Especificaciones sobre el reingreso:</label>
+				<textarea name="motivoReingreso" class="form-control" id="motivoReingreso" rows="5"></textarea>
+			</div>
+		    </div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
+			<button type="submit" class="btn btn-success">REINGRESAR</button>
+		</div>
+	</form>
+		</div>
+	</div>
+</div>

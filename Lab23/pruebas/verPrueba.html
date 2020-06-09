@@ -1,0 +1,279 @@
+        <!-- Fluid Container -->
+
+			<!--Botones para generar plan y modificar plan-->
+			<div class="clearfix">
+        <a href="planSeguimiento.php?">
+            <button type="button" class="nav-link btn btn-outline-primary mx-auto float-md-left">Generar Plan de Seguimiento</button>
+        </a>
+
+				<a href="registrarPrueba.php?editar=registro">
+          <button type="button" class="nav-link btn btn-outline-danger mx-auto float-md-right"><span class="material-icons">settings</span>Modificar prueba</button>
+        </a>
+					</div>
+			<button type="button" class="nav-link btn btn-outline-info mx-auto" data-toggle="collapse" data-target="#tabs">Mostrar Áreas/Habilidades</button>
+			<hr/>
+			<!-- Tabs section starts-->
+			<div id="tabsSection">
+				<div class="collapse" id="tabs">
+					<ul class="nav nav-pills flex-column flex-sm-row">
+						<li class="col-12 flex-sm-fill text-sm-center  nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#general">General</a>
+						</li>
+						<li class="col-lg-3 col-md-6 flex-sm-fill text-sm-center nav-item">
+						<a class="nav-link" data-toggle="tab" href="#area1">Área Motora</a>
+						</li>
+						<li class="col-lg-3 col-md-6 flex-sm-fill text-sm-center nav-item">
+						<a class="nav-link" data-toggle="tab" href="#area2">Áreas Académicas Funcionales y de Comunicación.</a>
+						</li>
+						<li class="col-lg-3 col-md-6 flex-sm-fill text-sm-center nav-item">
+						<a class="nav-link" data-toggle="tab" href="#area3">Área Social.</a>
+						</li>
+						<li class="col-lg-3 col-md-6 flex-sm-fill text-sm-center nav-item">
+						<a class="nav-link" data-toggle="tab" href="#habilidad1">Habilidades Académicas Funcionales.</a>
+						</li>
+						<li class="col-lg-3 col-md-6 flex-sm-fill text-sm-center nav-item">
+						<a class="nav-link" data-toggle="tab" href="#habilidad2">Habilidades de Comunicación.</a>
+						</li>
+						<li class="col-lg-3 col-md-6 flex-sm-fill text-sm-center nav-item">
+						<a class="nav-link" data-toggle="tab" href="#habilidad3">Habilidades Sociales.</a>
+						</li>
+						<li class="col-lg-3 col-md-6 flex-sm-fill text-sm-center nav-item">
+						<a class="nav-link" data-toggle="tab" href="#habilidad4">Habilidades de Autocuidado.</a>
+						</li>
+						<li class="col-lg-3 col-md-6 flex-sm-fill text-sm-center nav-item">
+						<a class="nav-link" data-toggle="tab" href="#habilidad5">Habilidades de Vida en el Hogar.</a>
+						</li>
+						<li class="col-lg-3 col-md-6 flex-sm-fill text-sm-center nav-item">
+						<a class="nav-link" data-toggle="tab" href="#habilidad6">Habilidades de Autodirección.</a>
+						</li>
+						<li class="col-lg-3 col-md-6 flex-sm-fill text-sm-center nav-item">
+						<a class="nav-link" data-toggle="tab" href="#habilidad7">Habilidades de uso de Recursos de la Comunidad.</a>
+						</li>
+						<li class="col-lg-3 col-md-6 flex-sm-fill text-sm-center nav-item">
+						<a class="nav-link" data-toggle="tab" href="#habilidad8">Habilidades de Trabajo.</a>
+						</li>
+						<li class="col-lg-3 col-md-6 flex-sm-fill text-sm-center nav-item">
+						<a class="nav-link" data-toggle="tab" href="#habilidad9">Habilidades de Salud y Seguridad.</a>
+						</li>
+					  </ul>
+					  <hr/>
+				</div>
+
+				  <!--Contenido de los tabs-->
+				  <div class="tab-content">
+					<!--Tab de vista general-->
+					<div id="general" class="tab-pane active  align-self-center">
+					  <h3>General</h3>
+					  <img src="../images/descripcion-prueba-general.png">
+					  <br/>
+					  <img src="../images//prueba-general.png" >
+					</div>
+					<!--Tab de vista de área motora-->
+					<div id="area1" class="tab-pane fade">
+					  <h3>Área Motora</h3>
+					  <!--tabla 1-->
+					  <div class="clearfix">
+						  <img src="../images/descripcion-prueba-area1.png"  class="float-md-left">
+						  <img src="../images/graficas-prueba-area1.png"  class="float-md-right">
+					  </div>
+					  <!--tabla 2-->
+					  <div class="clearfix">
+						  <img src="../images/descripcion-prueba-area2.png"  class="float-md-left">
+						  <img src="../images/graficas-prueba-area2.png"  class="float-md-right">
+					  </div>
+					</div>
+					<!--Tab de vista de Áreas Académicas Funcionales y de Comunicación.-->
+					<div id="area2" class="tab-pane fade">
+						<h3>Áreas Académicas Funcionales y de Comunicación</h3>
+						<!--tabla 1-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area1.png"  class="float-md-left">
+							<div class="alert alert-danger float-md-right" role="alert">
+								<span class="material-icons">report_problem </span>
+								<h4 class="alert-heading">La prueba no esta terminada!</h4>
+								<hr/>
+								<p>Esta sección de la prueba aún no está terminada.</p>
+								<p> No se puede generar la gráfica correspondiente. </p>
+							</div>
+						</div>
+						<!--tabla 2-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area2.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area2.png"  class="float-md-right">
+						</div>
+					</div>
+					<!--Tab de vista de Área Social.-->
+					<div id="area3" class="tab-pane fade">
+						<h3>Área Social</h3>
+						<!--tabla 1-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area1.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area1.png"  class="float-md-right">
+						</div>
+						<!--tabla 2-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area2.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area2.png"  class="float-md-right">
+						</div>
+					</div>
+					<!--Tab de vista de Habilidades Académicas Funcionales.-->
+					<div id="habilidad1" class="tab-pane fade">
+					  <h3>Habilidades Académicas Funcionales</h3>
+					  						<!--tabla 1-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area1.png"  class="float-md-left">
+							<div class="alert alert-danger float-md-right" role="alert">
+								<span class="material-icons">report_problem </span>
+								<h4 class="alert-heading">La prueba no esta terminada!</h4>
+								<hr/>
+								<p>Esta sección de la prueba aún no está terminada.</p>
+								<p> No se puede generar la gráfica correspondiente. </p>
+							</div>
+						</div>
+						<!--tabla 2-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area2.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area2.png"  class="float-md-right">
+						</div>
+					</div>
+					<!--Tab de vista de Habilidades de Comunicación.-->
+					<div id="habilidad2" class="tab-pane fade">
+						<h3>Habilidades de Comunicación</h3>
+						<!--tabla 1-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area1.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area1.png"  class="float-md-right">
+						</div>
+						<!--tabla 2-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area2.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area2.png"  class="float-md-right">
+						</div>
+					</div>
+					<!--Tab de vista de Habilidades Sociales.-->
+					<div id="habilidad3" class="tab-pane fade">
+						<h3>Habilidades Sociales</h3>
+						<!--tabla 1-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area1.png"  class="float-md-left">
+							<div class="alert alert-danger float-md-right" role="alert">
+								<span class="material-icons">report_problem </span>
+								<h4 class="alert-heading">La prueba no esta terminada!</h4>
+								<hr/>
+								<p>Esta sección de la prueba aún no está terminada.</p>
+								<p> No se puede generar la gráfica correspondiente. </p>
+							</div>
+						</div>
+						<!--tabla 2-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area2.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area2.png"  class="float-md-right">
+						</div>
+					</div>
+					<!--Tab de vista de Habilidades de Autocuidado.-->
+					<div id="habilidad4" class="tab-pane fade">
+						<h3>Habilidades de Autocuidado</h3>
+						<!--tabla 1-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area1.png"  class="float-md-left">
+							<div class="alert alert-danger float-md-right" role="alert">
+								<span class="material-icons">report_problem </span>
+								<h4 class="alert-heading">La prueba no esta terminada!</h4>
+								<hr/>
+								<p>Esta sección de la prueba aún no está terminada.</p>
+								<p> No se puede generar la gráfica correspondiente. </p>
+							</div>
+						</div>
+						<!--tabla 2-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area2.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area2.png"  class="float-md-right">
+						</div>
+					</div>
+					<!--Tab de vista de Habilidades de Vida en el Hogar.-->
+					<div id="habilidad5" class="tab-pane fade">
+						<h3>Habilidades de Vida en el Hogar</h3>
+						<!--tabla 1-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area1.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area1.png"  class="float-md-right">
+						</div>
+						<!--tabla 2-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area2.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area2.png"  class="float-md-right">
+						</div>
+					</div>
+					<!--Tab de vista de Habilidades de Autodirección.-->
+					<div id="habilidad6" class="tab-pane fade">
+						<h3>Habilidades de Autodirección</h3>
+						<!--tabla 1-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area1.png"  class="float-md-left">
+							<div class="alert alert-danger float-md-right" role="alert">
+								<span class="material-icons">report_problem </span>
+								<h4 class="alert-heading">La prueba no esta terminada!</h4>
+								<hr/>
+								<p>Esta sección de la prueba aún no está terminada.</p>
+								<p> No se puede generar la gráfica correspondiente. </p>
+							</div>
+						</div>
+						<!--tabla 2-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area2.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area2.png"  class="float-md-right">
+						</div>
+					</div>
+					<!--Tab de vista de Habilidades de uso de Recursos de la Comunidad.-->
+					<div id="habilidad7" class="tab-pane fade">
+						<h3>Habilidades de uso de Recursos de la Comunidad</h3>
+						<!--tabla 1-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area1.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area1.png"  class="float-md-right">
+						</div>
+						<!--tabla 2-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area2.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area2.png"  class="float-md-right">
+						</div>
+					</div>
+					<!--Tab de vista de Habilidades de Trabajo.-->
+					<div id="habilidad8" class="tab-pane fade">
+						<h3>Habilidades de Trabajo</h3>
+						<!--tabla 1-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area1.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area1.png"  class="float-md-right">
+						</div>
+						<!--tabla 2-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area2.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area2.png"  class="float-md-right">
+						</div>
+					</div>
+					<!--Tab de vista de Habilidades de uso de Salud y Seguridad.-->
+					<div id="habilidad9" class="tab-pane fade">
+						<h3>Habilidades de uso de Salud y Seguridad</h3>
+						<!--tabla 1-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area1.png"  class="float-md-left">
+							<div class="alert alert-danger float-md-right" role="alert">
+								<span class="material-icons">report_problem </span>
+								<h4 class="alert-heading">La prueba no esta terminada!</h4>
+								<hr/>
+								<p>Esta sección de la prueba aún no está terminada.</p>
+								<p> No se puede generar la gráfica correspondiente. </p>
+							</div>
+						</div>
+						<!--tabla 2-->
+						<div class="clearfix">
+							<img src="../images/descripcion-prueba-area2.png"  class="float-md-left">
+							<img src="../images/graficas-prueba-area2.png"  class="float-md-right">
+						</div>
+					</div>
+				  </div>
+
+			</div>
+			<!--Tabs section ends-->
+			</div>

@@ -1,0 +1,26 @@
+
+        <div class="container-fluid">
+          <h1 class="mt-4" align="center">Empleados</h1>
+          <hr />
+        <!-- Fluid Container ends -->
+        </div>
+        <div class="row  mx-auto flex-row text-center">
+          <div class="col-md-4">
+            <label  for="nombre">Buscar por nombre:</label>
+            <input class="form-control" type="text" placeholder="Escriba un nombre" id="userInputempleado" onkeyup="sendRequest('empleado')">
+            <div id="ajaxResponseempleado"></div>
+            <input type="hidden" name="empleado" id="empleado" value="">
+          </div>
+          <div class="col-md-4">
+            <?=crear_select("idPuesto", "nombre", "puesto",false,0, "Buscar por puesto:", true);?>
+          </div>
+          <div class="col-md-4 text-center">
+            <button id="todoEmp" class="btn btn-info">Ver todo</button>
+          </div>
+        </div>
+ 
+        <div class="text-center">
+            <a class="btn btn-primary " href="registrarEmpleado.php">Registrar Empleado Nuevo
+              <span class="material-icons">add_circle_outline </span>
+            </a>
+        </div>

@@ -1,0 +1,44 @@
+
+ <!-- Fluid Container -->
+<div class="container-fluid">
+  <div class="clearfix">
+    
+    
+  </div>
+  <div class="clearfix">
+    <img style="opacity: 60%;" class="float-left img-reporte " src="../images/logo-CMG.jpg">
+    <div class="float-right"><h6 class="text-muted">fecha de creación: <?= $fecha ?></h6></div>
+  </div>
+  <div class="text-center">
+    <h1 class="mt-4"><?= $tipo ?></h1>
+    <br/>
+    <?php if($idPlantilla == 1): ?>
+    <img width="70%" src="../images/plantillasReporte/calendario.png">
+    <?php elseif($idPlantilla == 2): ?>
+    <img src="../images/plantillasReporte/benefIngresadas.png">
+    <?php elseif($idPlantilla == 3): ?>
+    <img src="../images/plantillasReporte/donaciones1.png">
+    <br/>
+    <img src="../images/plantillasReporte/donaciones2.png">
+    <img src="../images/plantillasReporte/donaciones3.png">
+    <?php elseif($idPlantilla == 4): ?>
+    <img src="../images/plantillasReporte/benefEdad1.png">
+    <img src="../images/plantillasReporte/benefEdad2.png">
+    <?php elseif($idPlantilla == 5): ?>
+    <img src="../images/plantillasReporte/diagnostico1.png">
+    <img src="../images/plantillasReporte/diagnostico2.png">
+    <?php elseif($idPlantilla == 6): ?>
+    <img src="../images/plantillasReporte/evaluacion1.png">
+    <img src="../images/plantillasReporte/evaluacion2.png">
+    <?php elseif($idPlantilla == 7): ?>
+    <img src="../images/plantillasReporte/historico.png">
+
+    <?php endif; ?>
+    <hr/>
+      
+    <button class="btn btn-primary btn-lg" onclick="window.print()"><span class="material-icons">get_app</span> Descargar Reporte</button>
+  </div>
+         <!-- Fluid Container ends -->
+</div>
+
+ 

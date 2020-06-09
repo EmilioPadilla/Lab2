@@ -1,0 +1,9 @@
+{
+    "require": {
+        "mailgun/mailgun-php": "^3.0",
+        "php-http/guzzle6-adapter": "^2.0",
+        "php-http/message": "^1.8",
+        "php-http/discovery": "^1.7",
+        "sendgrid/sendgrid": "^7.5"
+    }
+}

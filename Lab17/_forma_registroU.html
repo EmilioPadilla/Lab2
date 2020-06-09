@@ -1,0 +1,59 @@
+<?php if(isset($editar)): ?>
+    <!-- Queda pendiente para el controlador de edicón de usuario-->
+    <form method="POST" action="controlador_actualizarU.php">
+        <?php else: ?>
+            <form method="POST" action="controlador_insertarU.php">
+                <?php endif; ?>
+                    <!-- Queda pendiente para el controlador de edición de usuario-->
+                    <?php if(isset($editar)): ?>
+                        <input type="hidden" name="idUsuario" value="<?=$idUsuario?>">
+                        <?php endif; ?>
+                                <!-- Opcion de registro -->
+                                        <!--Elegir usuario -->
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                              <input  placeholder="anitahuerfanita" name="usuario"
+                                              <?php if(isset($usuario)): ?> value= <?= $usuario ?> <?php endif; ?>
+                                              id="usuario" type="text" class="validate">
+                                              <label for="usuario">usuario</label>
+                                            </div>
+                                          </div>
+                                        <!--Contraseña anterior-->
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                             <input name="oldPwd" id="oldPwd" type="password" class="validate">
+                                              <label for="oldPwd">Contraseña actual:</label>
+                                            </div>
+                                        </div> 
+                                        <!--Elegir contraseña -->
+                                        <?php if(isset($editar)): ?>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                             <input name="password" id="password" type="password" class="validate">
+                                              <label for="password">Contraseña <?php if(isset($editar)): ?> nueva <?php endif;?>:</label>
+                                            </div>
+                                        </div> 
+                                        <?php endif; ?>
+                                        <!--Elegir nombre -->
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                              <input  name="nombre" placeholder="Juan Perez" id="nombre" 
+                                              <?php if(isset($nombre)): ?> value= <?= $nombre ?> <?php endif; ?>
+                                              type="text" class="validate">
+                                              <label for="nombre">nombre</label>
+                                            </div>
+                                        </div>
+                                        <!--Selecciona rol -->
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <?php if(isset($idRol)): ?> 
+                                                <?=crear_select("id", "nombre", "rol", $idRol);?>
+                                                <?php else: ?>
+                                                 <?=crear_select("id", "nombre", "rol");?>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+
+                            
+                    <input class="waves-effect waves-light btn" type="submit" value="Registrar">
+            </form>

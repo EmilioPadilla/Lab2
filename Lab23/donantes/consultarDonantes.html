@@ -1,0 +1,40 @@
+
+
+        <!-- Fluid Container -->
+        <div class="container-fluid ">
+          <h1 class="mt-4" align="center">Consultar Donantes</h1>
+          <hr />
+
+          <div class="text-right">
+            <a class="btn btn-primary " href="registrarDonantes.php">Registrar Donante 
+              <span class="material-icons">add_circle_outline </span>
+            </a>
+          </div>
+          <br/>
+          <div id="filtrosBusqueda" class="clearfix text-center">
+            <!--Busqueda por nombre con searchbox-->
+            <div class="float-left col-md-4">
+              <label  for="userInput_donantes">Buscar por nombre:</label>
+              <input class="form-control" type="text" placeholder="DIF Municipal"  id="userInput_donantes" onkeyup="sendRequest('donantes')">
+              <div id="ajaxResponse_donantes" ></div>
+              <input type="hidden" name="donantes" id="donantes" value="">
+            </div>
+            <!--Busqueda por tipo con select-->
+            <div class="float-right col-md-4">
+              <?= crear_select("idTipo", "nombre", "tipodeDonante", false, 0, "Buscar por tipo:", true); ?>
+            </div>
+            
+            
+          </div>
+          <!--Boton para quitar filtros de busqueda-->
+          <div class="mx-auto text-center">
+            <button id="buscar" class="btn btn-info">Ver Todo</button>
+          </div>          
+          
+          <br/>
+          
+          <div id="resultados_consulta" class="miTabla table-wrapper-scroll-y my-custom-scrollbar mx-auto text-center">
+            <?= consultarDonantes(); ?>
+          </div>
+        <!-- Fluid Container ends -->
+        </div>

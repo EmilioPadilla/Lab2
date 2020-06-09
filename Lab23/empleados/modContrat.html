@@ -1,0 +1,109 @@
+
+
+        <!-- Fluid Container -->
+        <div class="container-fluid">
+          <h1 class="mt-4" align="center">Modificar Datos de Contratación</h1>
+          <hr />
+        <!-- Fluid Container ends -->
+        </div>
+          <div class="container" id="guardarBien" >
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-success"><center><h5>CAMBIOS GUARDADOS CORRECTAMENTE</h5></center></div>
+                </div>
+              </div>
+          </div>
+        <!-- Sección 3 -->
+           <div class="container">
+          <section id="datosContratacion">
+              <form action="/action_page.php" method="post">
+                  <div class="form-group">
+                    <i class="far fa-calendar-alt"></i>
+                    <label for="fechaIngreso">Fecha de ingreso:</label>
+                    <input type="date" class="form-control" placeholder="" id="fechaIngreso" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="puesto">Puesto:</label>
+                    <input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control" placeholder="Cuidadora" id="puesto" required>
+                  </div>
+                  <label for="salario">Salario:</label>
+                  <div class="form-group form-inline">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                    <input pattern="[0-9]" class="form-control" type="text" placeholder="2000" id="salario" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="horarioTrabajo">Horario de trabajo:</label><br>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="lunes" value="option1">
+                      <label class="form-check-label" for="lunes">Lunes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="martes" value="option2">
+                      <label class="form-check-label" for="martes">Martes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="miercoles" value="option3">
+                      <label class="form-check-label" for="miercoles">Miércoles</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="jueves" value="option3">
+                      <label class="form-check-label" for="jueves">Jueves</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="viernes" value="option3" >
+                      <label class="form-check-label" for="viernes">Viernes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="sabado" value="option3">
+                      <label class="form-check-label" for="sabado">Sábado</label>
+                    </div>
+                        <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="domingo" value="option3" >
+                      <label class="form-check-label" for="domingo">Domingo</label>
+                    </div>
+                  </div>
+                  <div class="form-group form-inline">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">INICIO</span>
+                  </div>
+                    <input class="form-control" type="time" placeholder="" id="horaInicio" required>
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">FIN</span>
+                  </div>
+                    <input class="form-control" type="time" placeholder="" id="horaFin" required>
+                  </div>
+                  <label for="horasLaborales">Horas laborales por semana:</label>
+                  <div class="form-group form-inline">
+                    <input class="form-control" type="number" placeholder="40" id="horasLaborales" min="1" max="168" required>
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">hrs</span>
+                  </div>
+                  </div>
+                  
+              </form>
+          </section>
+             <button type="submit" onclick="guardarCam()" class="btn btn-submit text-white">Guardar cambios</button>
+        </div>
+<!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>

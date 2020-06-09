@@ -1,0 +1,32 @@
+      <!-- Page-content-wrapper ends -->
+	</div>
+
+	<!-- Container ends -->
+	</div>
+
+</div>
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="../vendor/jquery/jquery-3.5.0.min.js"></script>
+	<script src="../vendor/jquery/jquery.min.js">
+
+	</script>
+	<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<?php if(isset($scripts)): agregar_js($scripts); endif; ?>
+
+	<!-- Menu Toggle Script -->
+	<script>
+	  $("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	  });
+	  $(function () {
+      	$('[data-toggle="popover"]').popover()
+  	 });
+	</script>
+
+  </body>
+
+  </html>

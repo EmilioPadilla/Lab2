@@ -1,0 +1,62 @@
+
+        <!-- Fluid Container -->
+        <div class="container-fluid">
+          <h1 class="mt-4" align="center">Modificar Carga de Archivos</h1>
+          <hr />
+        <!-- Fluid Container ends -->
+        </div>
+          <div class="container" id="guardarBien" >
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-success"><center><h5>CAMBIOS GUARDADOS CORRECTAMENTE</h5></center></div>
+                </div>
+              </div>
+          </div>
+        
+          <div class="container">
+        <section id="archivosEmp">
+            <!-- Sección 4 -->
+            <form name="archivos" method="post" action="guarda.php" enctype="mutltipart/form-data">
+                <div class="row">
+                    <div class="col-6 sm">
+                        <div class="form-group">
+                            <i class="fas fa-briefcase-medical"></i>
+                            <label for="expedienteMedico">Expediente Médico</label>
+                            <input type="file" id="archivosMedicos[]" name="archivosMedicos[]" multiple="" class="form-control-file">
+                        </div>
+                    </div>
+              </div>
+            </form>
+            <!-- Sección 5 -->
+                <div class="col-6 sm">
+                    <div class="form-group">
+                        <i class="fas fa-graduation-cap"></i>
+                        <label for="expedienteEscolar">Expediente Escolar</label>
+                        <input type="file" id="archivosEscolares[]" name="archivosEscolares[]" multiple="" class="form-control-file">
+                    </div>
+                </div>
+        </section>
+            <button type="submit" onclick="guardarCam()" class="btn btn-submit text-white">Guardar cambios</button>
+        </div>
+             
+<!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>

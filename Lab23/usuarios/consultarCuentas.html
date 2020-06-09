@@ -1,0 +1,18 @@
+
+
+        <!-- Fluid Container -->
+        <div class="container-fluid">
+          <h1 class="mt-4">Cuentas</h1>
+          <p>Agregar una nueva cuenta
+            <a href="registrarCuenta.php">
+              <span class="material-icons">add_circle_outline </span>
+            </a>
+          </p>
+          
+          <div id="resultados_consulta" class="miTabla table-wrapper-scroll-y my-custom-scrollbar mx-auto text-center">
+            <?= consultar_usuarios(); ?>
+          </div>
+        <!-- Fluid Container ends -->
+        </div>
+
+

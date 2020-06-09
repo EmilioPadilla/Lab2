@@ -1,0 +1,4 @@
+1,calendario para niñas,0,
+2,beneficiarias ingresadas,3,select nombre from Beneficiarias
+3,porcentaje de donaciones,2,select avg(cantidad) from Donativo
+4,beneficiarias por edad,1,select edad from Beneficiarias

@@ -1,0 +1,80 @@
+
+        <!-- Fluid Container -->
+        <div class="container-fluid">
+          <h1 class="mt-4" align="center">Modificar Datos de Nómina</h1>
+          <hr />
+        <!-- Fluid Container ends -->
+        </div>
+          <div class="container" id="guardarBien" >
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-success"><center><h5>CAMBIOS GUARDADOS CORRECTAMENTE</h5></center></div>
+                </div>
+              </div>
+          </div>
+        <!-- Sección 4 -->
+           <div class="container">
+          <section id="datosNomina">
+              <form action="/action_page.php" method="post">
+                  <div>
+                    <label for="estadoCivil">Estado Civil: </label>
+                    <select class="custom-select form-control" id="estadoCivil">
+                      <option selected disabled>Seleccionar...</option>
+                      <option value="1">Soltero/a</option>
+                      <option value="2">En Relación</option>
+                      <option value="3">Comprometido/a</option>
+                      <option value="4">Unión Libre </option>
+                      <option value="5">Casado/a</option>
+                      <option value="6">Separado/a.</option>
+                      <option value="7">Divorciado/a</option>
+                      <option value="8">Viudo/a.</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="inlineFormCustomSelect">Escolaridad: </label>
+                    <select class="custom-select" id="inlineFormCustomSelect">
+                      <option selected disabled>Seleccionar...</option>
+                      <option value="1">Primaria</option>
+                      <option value="2">Secundaria</option>
+                      <option value="3">Preparatoria</option>
+                      <option value="4">Técnico/a</option>
+                      <option value="5">Universidad</option>
+                      <option value="6">Posgrado</option>
+                    </select>
+                  </div>
+                  <label for="numBenef">No. de beneficiarios:</label>
+                  <div class="form-group form-inline">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">#</span>
+                      </div>
+                    <input class="form-control" type="number" placeholder="3" id="numBenef" min="1" max="5" required>
+                  </div>
+                  
+              </form>
+          </section>
+             <button type="submit" onclick="guardarCam()" class="btn btn-submit text-white">Guardar cambios</button>
+        </div>
+          
+             
+
+<!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>

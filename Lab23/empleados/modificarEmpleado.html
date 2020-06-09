@@ -1,0 +1,136 @@
+
+
+        <!-- Fluid Container -->
+        <div class="container-fluid">
+          <h1 class="mt-4" align="center">Modificar Empleado: Juan Hernandez</h1>
+          <hr />
+        <!-- Fluid Container ends -->
+        </div>
+        
+        <div class="container-fluid">
+          <div class="container" id="guardarBien" >
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-success"><center><h5>CAMBIOS GUARDADOS CORRECTAMENTE</h5></center></div>
+                </div>
+              </div>
+          </div>
+          <h4>Elige las secciones que quieras editar </h4>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="card">
+                <!-- Card content -->
+                  <div class="card-body">
+
+                    <!-- Title -->
+                    <h4 class="card-title text-primary">Datos Personales</h4>
+                    <!-- Text -->
+                    <p class="card-text">Editar nombre, fecha de nacimiento, RFC, CURP, No. de seguridad social.</p>
+                    <!-- Button -->
+                    <a href="modificarEmpleado.php?editar=personal" class="btn btn-submit text-white">Editar</a>
+                </div>
+              </div>
+            </div>     
+            <div class="col-12 col-md-4">
+              <div class="card">
+                <!-- Card content -->
+                  <div class="card-body">
+
+                    <!-- Title -->
+                    <h4 class="card-title text-primary">Datos de Contacto</h4>
+                    <!-- Text -->
+                    <p class="card-text">Editar direccion, teléfono, celular, correo.</p>
+                    <!-- Button -->
+                    <a href="modificarEmpleado.php?editar=contacto" class="btn btn-submit text-white">Editar</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="card">
+                <!-- Card content -->
+                  <div class="card-body">
+
+                    <!-- Title -->
+                    <h4 class="card-title text-primary">Datos de Contratación</h4>
+                    <!-- Text -->
+                    <p class="card-text">Editar fecha de ingreso, puesto, salario, horario de trabajo, horas laborales.</p>
+                    <!-- Button -->
+                    <a href="modificarEmpleado.php?editar=contratacion" class="btn btn-submit text-white">Editar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr/>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="card">
+                <!-- Card content -->
+                  <div class="card-body">
+
+                    <!-- Title -->
+                    <h4 class="card-title text-primary">Datos para Nómina</h4>
+                    <!-- Text -->
+                    <p class="card-text">Editar estado civil, escolaridad, no. de beneficiarias.</p>
+                    <!-- Button -->
+                    <a href="modificarEmpleado.php?editar=nomina" class="btn btn-submit text-white">Editar</a>
+                </div>
+              </div>
+            </div>     
+            <div class="col-12 col-md-4">
+              <div class="card">
+                <!-- Card content -->
+                  <div class="card-body">
+
+                    <!-- Title -->
+                    <h4 class="card-title text-primary">Datos de Beneficiarios de Nómina</h4>
+                    <!-- Text -->
+                    <p class="card-text">Editar direccion, parentezco, RFC, nombre.</p>
+                    <!-- Button -->
+                    <a href="modificarEmpleado.php?editar=beneficiarios" class="btn btn-submit text-white">Editar</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="card">
+                <!-- Card content -->
+                  <div class="card-body">
+
+                    <!-- Title -->
+                    <h4 class="card-title text-primary">Carga de archivos</h4>
+                    <!-- Text -->
+                    <p class="card-text">Agregar o quitar archivos del empleado, como CURP, INE o RFC.</p>
+                    <!-- Button -->
+                    <a href="modificarEmpleado.php?editar=archivos" class="btn btn-submit text-white">Editar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br/>
+          <div class="row">
+              <div class="col offset-md-8">   
+                <button type="button" onclick="guardarCam()" class="btn btn-primary">Guardar cambios</button>
+              </div>
+            </div>
+        
+        </div>
+   <!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>

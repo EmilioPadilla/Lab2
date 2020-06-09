@@ -1,0 +1,22 @@
+
+
+        <!-- Fluid Container -->
+        <div class="container-fluid">
+          <form id="formaGenerarReporte" class="text-center" method="POST" action="verReporte.php" >
+            <?= crear_select("idPlantilla", "nombre", "plantillaReporte", true, 0, "Tipo de Reporte:"); ?>
+            <!--El rango de fechas solo sale en algunos tipos de reporte-->
+            <div id="fecha" hidden> 
+              <label for="daterange" class="mt-4 h2">Selecciona el rango de fechas</label>
+              <br/>
+
+             <!-- <input type="text" id="daterange" name="daterange" value="" disabled required />-->
+            </div>
+            <hr/>
+            <button class="btn btn-primary btn-lg" type="submit" >Generar Reporte</button>
+          </form>
+
+
+        <!-- Fluid Container ends -->
+        </div>
+
+ 

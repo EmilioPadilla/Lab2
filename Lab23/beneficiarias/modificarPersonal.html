@@ -1,0 +1,85 @@
+<!-- Fluid Container -->
+<div class="container-fluid">
+	<h1 class="mt-4" align="center">Modificar Datos Personales</h1>
+	<hr/>
+<!-- Fluid Container ends -->
+</div>
+
+<div class="container" id="guardarBien" >
+	<div class="row">
+		<div class="col">
+			<div class="alert alert-success"><center><h5>CAMBIOS GUARDADOS CORRECTAMENTE</h5></center></div>
+		</div>
+	</div>
+</div>
+
+<form method="post" action="controlador_modificarBeneficiaria.php">
+<!-- Sección 1 -->
+<div class="container">
+	<section id="datosPersonales">
+		<div class="row">
+			<div class="col-sm">
+				<!-- NOMBRE COMPLETO -->
+				<div class="form-group">
+					<i class="fas fa-user"></i>
+					<label for="nombreCompleto">Nombre:</label>
+					<div class="form-inline">
+						<input pattern="[[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'- ]" type="text" class="form-control"  placeholder="María" id="nombreBenef" value="<?= $nombreCompleto ?>">
+					</div>
+					<span class="badge badge-warning" id="errorNombreBenef"></span>
+				</div>
+				<!-- FECHA Y ACTA DE NACIMIENTO -->
+				<i class="far fa-calendar-alt"></i>
+				<label for="fechaNacimiento">Fecha de nacimiento:</label>
+				<div class="form-group form-inline">
+					<input type="date" class="form-control" placeholder="" id="fechaNacimiento" value="<?= $fechaNacimiento ?>">
+					<div class="form-group">
+						<input type="file" class="form-control-file" id="actaNacimiento" aria-describedby="fileHelp">
+					</div>
+				</div>
+				<!-- EDAD DE LA BENEFICIARIA -->
+				<div class="form-group">
+					<label for="edad">Edad:</label>
+					<input class="form-control" type="number" value="<?= $edad ?>" placeholder="36" id="edad" min="1" max="100">
+				</div>
+				<!-- CARGA DE CURP -->
+				<i class="fas fa-file-upload"></i>
+				<label for="CURP">Carga de CURP:</label>
+				<div class="form-group box">
+					<input class="inputfile" type="file" class="form-control-file" id="CURP" aria-describedby="fileHelp">
+				</div>
+				<!-- CARGA DE IMAGEN DE INGRESO-->
+				<div class="form-group">
+					<i class="fas fa-images"></i>
+					<label for="imagenIngreso">Carga de imagen de ingreso:</label>
+					<input type="file" class="form-control-file" id="imagenIngreso" aria-describedby="fileHelp">
+				</div>
+			</div>
+		</div>
+	</section>
+	<hr>
+	<center><button type="submit" class="btn btn-submit text-white">GUARDAR CAMBIOS</button></center>
+</form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade modalSalir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">¿Ests seguro de querer salir?</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  Si selecionas <b>Regresar a inicio</b>, se perderan todos los cambios hasta el momento.
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+		  <a href="../usuarios/vistaAdmin.php">
+		  <button type="button" class="btn btn-primary salir">Regresar a inicio</button></a>
+		</div>
+	  </div>
+	</div>
+  </div>

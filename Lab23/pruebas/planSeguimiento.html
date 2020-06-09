@@ -1,0 +1,39 @@
+<!-- Informacion de beneficiaria/Deberia ser Autorellenada -->
+<!-- <div class="d-flex flex-row justify-content-end">
+    <button type="button" class="btn btn-outline-success" onclick="">Guardar</button>
+</div> -->
+
+<?php if($edad < 6): ?>
+  <div class="flex-row d-flex justify-content-center">
+    <h3>Áreas</h3>
+  </div>
+  <?= crear_plan("Área Motora", "Motora") ?>
+  <?= crear_plan("Área académica funcional y de comunicacion", "AreaAcad") ?>
+  <?= crear_plan("Área Social", "AreaSocial") ?>
+  <br> <br>
+
+<?php endif;?>
+  <div class="flex-row d-flex justify-content-center">
+    <h3>Habilidades Adaptativas</h3>
+  </div>
+  <?= crear_plan("Académica Funcional", "AcadFunc") ?>
+  <?= crear_plan("Habilidad de Comunicacion", "Comu") ?>
+  <?= crear_plan("Habilidades Sociales", "Social") ?>
+  <?= crear_plan("Habilidades de Autocuidado", "Autocuid") ?>
+  <?= crear_plan("Vida en el hogar", "Vida") ?>
+  <?= crear_plan("Habilidades de Autodirección", "Autodir") ?>
+  <?= crear_plan("Uso de recursos y de la comunidad", "Recursos") ?>
+  <?= crear_plan("Ocio y tiempo libre", "Ocio") ?>
+  <?= crear_plan("Habilidades de Trabajo", "Trabajo") ?>
+  <?= crear_plan("Saluds y Seguridad", "Salud") ?>
+
+  <br><br>
+
+<div class="d-flex flex-row justify-content-end">
+  <button type="button" class="btn btn-outline-success mr-5" onclick="">Guardar</button>
+  <a href="verPrueba.php">
+    <button type="button" class="btn btn-light" >Salir</button>
+  </a>
+</div>
+<!-- Fluid Container ends -->
+</div>
